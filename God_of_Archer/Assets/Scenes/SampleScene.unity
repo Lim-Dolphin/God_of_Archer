@@ -514,8 +514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b236e6401b2303418340b4d0975afa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClipWalk: {fileID: 8300000, guid: 74abbbf1b1724e34b894191db38e10a0, type: 3}
-  audioClipRun: {fileID: 8300000, guid: d2add02f58e61e640aba3ae9110591cb, type: 3}
+  audioClipWalk: {fileID: 8300000, guid: ce50e9acc3b3b4a4abbf05b929a95d45, type: 3}
+  audioClipRun: {fileID: 8300000, guid: e38547a4e916e5543a38bdd2237d71f7, type: 3}
 --- !u!114 &587257388
 MonoBehaviour:
   m_ObjectHideFlags: 0
