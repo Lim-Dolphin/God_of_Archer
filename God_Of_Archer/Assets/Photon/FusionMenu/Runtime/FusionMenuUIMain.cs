@@ -18,39 +18,39 @@ namespace Fusion.Menu
         /// <summary>
         /// The username label.
         /// </summary>
-        [InlineHelp, SerializeField] protected Text _usernameLabel;
+        //[InlineHelp, SerializeField] protected Text _usernameLabel;
         /// <summary>
         /// The scene thumbnail. Can be null.
         /// </summary>
-        [InlineHelp, SerializeField] protected UnityEngine.UI.Image _sceneThumbnail;
+        //[InlineHelp, SerializeField] protected UnityEngine.UI.Image _sceneThumbnail;
         /// <summary>
-        /// The username input UI part.
+        /// The Game Title View.
         /// </summary>
-        [InlineHelp, SerializeField] protected GameObject _usernameView;
+        [InlineHelp, SerializeField] protected GameObject _gameTitle;
         /// <summary>
         /// The actual username input field.
         /// </summary>
-        [InlineHelp, SerializeField] protected InputField _usernameInput;
+        //[InlineHelp, SerializeField] protected InputField _usernameInput;
         /// <summary>
         /// The username confirmation button (background).
         /// </summary>
-        [InlineHelp, SerializeField] protected UnityEngine.UI.Button _usernameConfirmButton;
+        //[InlineHelp, SerializeField] protected UnityEngine.UI.Button _usernameConfirmButton;
         /// <summary>
         /// The username change button.
         /// </summary>
-        [InlineHelp, SerializeField] protected UnityEngine.UI.Button _usernameButton;
+        //[InlineHelp, SerializeField] protected UnityEngine.UI.Button _usernameButton;
         /// <summary>
         /// The open character selection button.
         /// </summary>
-        [InlineHelp, SerializeField] protected UnityEngine.UI.Button _characterButton;
+        //[InlineHelp, SerializeField] protected UnityEngine.UI.Button _characterButton;
         /// <summary>
         /// The open party screen button.
         /// </summary>
-        [InlineHelp, SerializeField] protected UnityEngine.UI.Button _partyButton;
+        //[InlineHelp, SerializeField] protected UnityEngine.UI.Button _partyButton;
         /// <summary>
         /// The quick play button.
         /// </summary>
-        [InlineHelp, SerializeField] protected UnityEngine.UI.Button _playButton;
+        [InlineHelp, SerializeField] protected UnityEngine.UI.Button _SelectMatchButton;
         /// <summary>
         /// The quit button.
         /// </summary>
@@ -58,11 +58,11 @@ namespace Fusion.Menu
         /// <summary>
         /// The open scene screen button.
         /// </summary>
-        [InlineHelp, SerializeField] protected UnityEngine.UI.Button _sceneButton;
+        //[InlineHelp, SerializeField] protected UnityEngine.UI.Button _sceneButton;
         /// <summary>
         /// The open setting button.
         /// </summary>
-        [InlineHelp, SerializeField] protected UnityEngine.UI.Button _settingsButton;
+        //[InlineHelp, SerializeField] protected UnityEngine.UI.Button _settingsButton;
 
         partial void AwakeUser();
         partial void InitUser();
@@ -108,7 +108,7 @@ namespace Fusion.Menu
         {
             base.Show();
 
-            _usernameView.SetActive(false);
+            /*_usernameLabel.SetActive(false);
             _usernameLabel.text = ConnectionArgs.Username;
 
             if (Config.AvailableScenes.Count > 1)
@@ -123,7 +123,7 @@ namespace Fusion.Menu
             if (string.IsNullOrEmpty(ConnectionArgs.Scene.Name))
             {
                 _playButton.interactable = false;
-                _partyButton.interactable = false;
+                //_partyButton.interactable = false;
                 Debug.LogWarning("No valid scene to start found. Configure the menu config.");
             }
 
@@ -140,7 +140,7 @@ namespace Fusion.Menu
                     _sceneThumbnail.transform.parent.gameObject.SetActive(false);
                     _sceneThumbnail.sprite = null;
                 }
-            }
+            }*/
 
 
             ShowUser();
@@ -158,15 +158,15 @@ namespace Fusion.Menu
         /// <summary>
         /// Is called when the sceen background is pressed using SendMessage() from the UI object.
         /// </summary>
-        protected virtual void OnFinishUsernameEdit()
+        /*protected virtual void OnFinishUsernameEdit()
         {
             OnFinishUsernameEdit(_usernameInput.text);
-        }
+        }*/
 
         /// <summary>
         /// Is called when the <see cref="_usernameInput"/> has finished editing using SendMessage() from the UI object.
         /// </summary>
-        protected virtual void OnFinishUsernameEdit(string username)
+        /*protected virtual void OnFinishUsernameEdit(string username)
         {
             _usernameView.SetActive(false);
 
@@ -175,22 +175,22 @@ namespace Fusion.Menu
                 _usernameLabel.text = username;
                 ConnectionArgs.Username = username;
             }
-        }
+        }*/
 
         /// <summary>
         /// Is called when the <see cref="_usernameButton"/> is pressed using SendMessage() from the UI object.
         /// </summary>
-        protected virtual void OnUsernameButtonPressed()
+        /*protected virtual void OnUsernameButtonPressed()
         {
             _usernameView.SetActive(true);
             _usernameInput.text = _usernameLabel.text;
-        }
+        }*/
 
         /// <summary>
         /// Is called when the <see cref="_playButton"/> is pressed using SendMessage() from the UI object.
         /// Intitiates the connection and expects the connection object to set further screen states.
         /// </summary>
-        protected virtual async void OnPlayButtonPressed()
+       /* protected virtual async void OnPlayButtonPressed()
         {
             ConnectionArgs.Session = null;
             ConnectionArgs.Creating = false;
@@ -201,7 +201,7 @@ namespace Fusion.Menu
             var result = await Connection.ConnectAsync(ConnectionArgs);
 
             await HandleConnectionResult(result, this.Controller);
-        }
+        }*/
 
         /// <summary>
         /// Default connection error handling is reused in a couple places.
@@ -234,35 +234,35 @@ namespace Fusion.Menu
         }
 
         /// <summary>
-        /// Is called when the <see cref="_partyButton"/> is pressed using SendMessage() from the UI object.
+        /// Is called when the <see cref="_SelectMatchButton"/> is pressed using SendMessage() from the UI object.
         /// </summary>
-        protected virtual void OnPartyButtonPressed()
+        protected virtual void OnSelectMatchButtonPressed()
         {
-            Controller.Show<FusionMenuUIParty>();
+            Controller.Show<FusionMenuUISelectMatch>();
         }
 
         /// <summary>
         /// Is called when the <see cref="_sceneButton"/> is pressed using SendMessage() from the UI object.
         /// </summary>
-        protected virtual void OnScenesButtonPressed()
+        /*protected virtual void OnScenesButtonPressed()
         {
             Controller.Show<FusionMenuUIScenes>();
-        }
+        }*/
 
         /// <summary>
         /// Is called when the <see cref="_settingsButton"/> is pressed using SendMessage() from the UI object.
         /// </summary>
-        protected virtual void OnSettingsButtonPressed()
+        /*protected virtual void OnSettingsButtonPressed()
         {
             Controller.Show<FusionMenuUISettings>();
-        }
+        }*/
 
         /// <summary>
         /// Is called when the <see cref="_characterButton"/> is pressed using SendMessage() from the UI object.
         /// </summary>
-        protected virtual void OnCharacterButtonPressed()
+        /*protected virtual void OnCharacterButtonPressed()
         {
-        }
+        }*/
 
         /// <summary>
         /// Is called when the <see cref="_quitButton"/> is pressed using SendMessage() from the UI object.

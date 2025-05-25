@@ -372,6 +372,8 @@
 "Assets/Photon/FusionMenu/Runtime/FusionMenuUIParty.cs"
 "Assets/Photon/FusionMenu/Runtime/FusionMenuUIPopup.cs"
 "Assets/Photon/FusionMenu/Runtime/FusionMenuUIScenes.cs"
+"Assets/Photon/FusionMenu/Runtime/FusionMenuUISearching.cs"
+"Assets/Photon/FusionMenu/Runtime/FusionMenuUISelectMatch.cs"
 "Assets/Photon/FusionMenu/Runtime/FusionMenuUISettings.cs"
 -langversion:9.0
 

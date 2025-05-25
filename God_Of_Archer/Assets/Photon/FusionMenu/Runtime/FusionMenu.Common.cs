@@ -2,6 +2,18 @@
 
 #region IFusionMenuConfig.cs
 
+using System.IO;
+
+namespace Fusion.Menu
+{
+    public enum MatchType
+{
+    DeathMatch,
+    Conquer,
+    Practice
+}
+    }
+
 namespace Fusion.Menu
 {
     using System.Collections.Generic;
@@ -28,6 +40,10 @@ namespace Fusion.Menu
         /// The max player count for all game modes.
         /// </summary>
         int MaxPlayerCount { get; }
+        /// <summary>
+        /// The MatchType.
+        /// </summary>
+        MatchType MatchType { get; }
         /// <summary>
         /// The machine id shown in as an AppVersion option.
         /// </summary>
@@ -80,6 +96,13 @@ namespace Fusion.Menu
         /// The max player count for the connection.
         /// </summary>
         int MaxPlayerCount { get; set; }
+        /// <summary>
+        /// The MatchType.
+        /// </summary>
+        MatchType MatchType { 
+            get;
+            set; 
+        }
         /// <summary>
         /// The selected scene meta information.
         /// </summary>
@@ -293,6 +316,15 @@ namespace Fusion.Menu
         {
             get => PlayerPrefs.GetInt("Photon.Menu.MaxPlayerCount");
             set => PlayerPrefs.SetInt("Photon.Menu.MaxPlayerCount", value);
+        }
+
+        /// <summary>
+        /// The MatchType that the user selected in the menu.
+        /// </summary>
+        public virtual MatchType MatchType {
+
+            get;
+            set;
         }
 
         /// <summary>

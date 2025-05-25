@@ -16,6 +16,11 @@ namespace Fusion.Menu
         /// </summary>
         [InlineHelp, SerializeField] protected int _maxPlayers = 6;
         /// <summary>
+        /// The MatchType enum
+        /// </summary>
+        [InlineHelp, SerializeField] protected MatchType _matchType = MatchType.Practice;
+
+        /// <summary>
         /// Force 60 FPS during menu animations.
         /// </summary>
         [InlineHelp, SerializeField] protected bool _adaptFramerateForMobilePlatform = true;
@@ -57,5 +62,6 @@ namespace Fusion.Menu
         public virtual string MachineId => _machineId?.Id;
         public FusionMenuPartyCodeGenerator CodeGenerator => _codeGenerator;
         public bool AdaptFramerateForMobilePlatform => _adaptFramerateForMobilePlatform;
+        public MatchType MatchType => _matchType;
     }
 }
