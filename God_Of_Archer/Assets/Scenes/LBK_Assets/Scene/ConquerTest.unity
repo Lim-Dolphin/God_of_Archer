@@ -275,7 +275,7 @@ MonoBehaviour:
   AutoHideGUI: 1
   AutoClients: 1
   ClientStartDelay: 0.1
-  ServerPort: 0
+  ServerPort: 1
   DefaultRoomName: 
   InitialScenePath: 
   _currentStage: 0

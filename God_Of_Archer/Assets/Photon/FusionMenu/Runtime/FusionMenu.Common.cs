@@ -2,11 +2,17 @@
 
 #region IFusionMenuConfig.cs
 
+using System.Collections.Generic;
 using System.IO;
 
 namespace Fusion.Menu
 {
-    public enum MatchType
+    public enum Map : int
+    {
+        Gwanggyo,
+        Namhan,
+    }
+    public enum MatchType : int
 {
     DeathMatch,
     Conquer,
@@ -43,7 +49,7 @@ namespace Fusion.Menu
         /// <summary>
         /// The MatchType.
         /// </summary>
-        MatchType MatchType { get; }
+        Dictionary<string, SessionProperty>  Map_MatchType { get; }
         /// <summary>
         /// The machine id shown in as an AppVersion option.
         /// </summary>
@@ -99,7 +105,8 @@ namespace Fusion.Menu
         /// <summary>
         /// The MatchType.
         /// </summary>
-        MatchType MatchType { 
+        Dictionary<string, SessionProperty> Map_MatchType
+        { 
             get;
             set; 
         }
@@ -321,7 +328,8 @@ namespace Fusion.Menu
         /// <summary>
         /// The MatchType that the user selected in the menu.
         /// </summary>
-        public virtual MatchType MatchType {
+        public virtual Dictionary<string, SessionProperty> Map_MatchType
+        {
 
             get;
             set;

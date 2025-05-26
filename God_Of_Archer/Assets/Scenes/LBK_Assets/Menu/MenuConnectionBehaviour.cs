@@ -78,6 +78,7 @@ namespace GodOfArcher
             {
                 SessionName = connectionArgs.Session,
                 PlayerCount = connectionArgs.MaxPlayerCount,
+                SessionProperties = connectionArgs.Map_MatchType,
                 GameMode = GetGameMode(connectionArgs),
                 CustomPhotonAppSettings = appSettings
             };

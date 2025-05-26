@@ -18,7 +18,9 @@ namespace Fusion.Menu
         /// <summary>
         /// The MatchType enum
         /// </summary>
-        [InlineHelp, SerializeField] protected MatchType _matchType = MatchType.Practice;
+        [InlineHelp, SerializeField] protected Dictionary<string, SessionProperty> _map_matchType = new Dictionary<string, SessionProperty>(){ 
+                                                                                                                                                { "map", (int)Map.Gwanggyo},
+                                                                                                                                                { "type",(int)MatchType.Practice} };
 
         /// <summary>
         /// Force 60 FPS during menu animations.
@@ -62,6 +64,6 @@ namespace Fusion.Menu
         public virtual string MachineId => _machineId?.Id;
         public FusionMenuPartyCodeGenerator CodeGenerator => _codeGenerator;
         public bool AdaptFramerateForMobilePlatform => _adaptFramerateForMobilePlatform;
-        public MatchType MatchType => _matchType;
+        public Dictionary<string, SessionProperty> Map_MatchType => _map_matchType;
     }
 }

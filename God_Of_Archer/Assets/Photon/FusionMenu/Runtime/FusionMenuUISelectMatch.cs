@@ -250,9 +250,9 @@ namespace Fusion.Menu
         /// </summary>
         public virtual void OnDeathMatchButtonPressed()
         {
-
+            var custom_map_match = new Dictionary<string, SessionProperty>(){{ "map", (int)Map.Gwanggyo}, { "type",(int)MatchType.DeathMatch} };
             ConnectionArgs.MaxPlayerCount = 10;
-            ConnectionArgs.MatchType = MatchType.DeathMatch;
+            ConnectionArgs.Map_MatchType = custom_map_match;
             ConnectionArgs.Scene = Config.AvailableScenes[0];
             SaveChangesUser();
             Controller.Show<FusionMenuUISearching>();
@@ -263,8 +263,9 @@ namespace Fusion.Menu
         /// </summary>
         public virtual void OnConquerButtonPressed()
         {
+            var custom_map_match = new Dictionary<string, SessionProperty>() { { "map", (int)Map.Namhan }, { "type", (int)MatchType.Conquer } };
             ConnectionArgs.MaxPlayerCount = 20; //현재 20CCU Paln..원래는 60
-            ConnectionArgs.MatchType = MatchType.Conquer;
+            ConnectionArgs.Map_MatchType = custom_map_match;
             ConnectionArgs.Scene = Config.AvailableScenes[1];
             SaveChangesUser();
             Controller.Show<FusionMenuUISearching>();
@@ -275,8 +276,9 @@ namespace Fusion.Menu
         /// </summary>
         public virtual void OnPracticeButtonPressed()
         {
+            var custom_map_match = new Dictionary<string, SessionProperty>() { { "map", (int)Map.Gwanggyo }, { "type", (int)MatchType.Practice } };
             ConnectionArgs.MaxPlayerCount = 1;
-            ConnectionArgs.MatchType = MatchType.Practice;
+            ConnectionArgs.Map_MatchType = custom_map_match;
             ConnectionArgs.Scene = Config.AvailableScenes[2];
             SaveChangesUser();
             Controller.Show<FusionMenuUISearching>();

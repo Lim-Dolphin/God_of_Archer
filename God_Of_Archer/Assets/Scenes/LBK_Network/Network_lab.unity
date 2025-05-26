@@ -4592,62 +4592,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781275288}
   m_CullTransparentMesh: 1
---- !u!1 &1791618415
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1791618417}
-  - component: {fileID: 1791618416}
-  m_Layer: 0
-  m_Name: UI_Game_Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1791618416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791618415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe2d61d048f699344b19512d50304a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  Main_Screen_UI: {fileID: 296032953}
-  Select_Match_UI: {fileID: 2016422988}
-  Searching_UI: {fileID: 1521811759}
-  Select_Team_UI: {fileID: 1965711581}
-  Menu_UI: {fileID: 978760369}
-  End_Game_UI: {fileID: 1515757216}
-  MatchText:
-  - {fileID: 493395912}
-  - {fileID: 51021831}
-  Searching_Text: {fileID: 497387431}
-  Button_Searching_Tex: {fileID: 628136148}
---- !u!4 &1791618417
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791618415}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 587.6288, y: 285.40994, z: 121.93695}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1797008755
 GameObject:
   m_ObjectHideFlags: 0
@@ -5527,4 +5471,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 403160177}
   - {fileID: 1997300377}
-  - {fileID: 1791618417}

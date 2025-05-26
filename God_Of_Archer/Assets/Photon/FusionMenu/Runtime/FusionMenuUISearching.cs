@@ -124,13 +124,13 @@ namespace Fusion.Menu
             _searchingText.text = "Push to Play";
 
 
-            if (ConnectionArgs.MatchType == MatchType.DeathMatch) {
+            if (ConnectionArgs.Map_MatchType["type"] == (int)MatchType.DeathMatch) {
                 matchtitle = "5 vs 5 Match";
             }
-            if (ConnectionArgs.MatchType == MatchType.Conquer) {
+            if (ConnectionArgs.Map_MatchType["type"] == (int)MatchType.Conquer) {
                 matchtitle = "30 vs 30 Match";
             }
-            if(ConnectionArgs.MatchType == MatchType.Practice) {
+            if(ConnectionArgs.Map_MatchType["type"] == (int)MatchType.Practice) {
                 matchtitle = "Practice";
             }
 

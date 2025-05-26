@@ -663,7 +663,7 @@ MonoBehaviour:
   AutoHideGUI: 0
   AutoClients: 1
   ClientStartDelay: 0.1
-  ServerPort: 0
+  ServerPort: 2
   DefaultRoomName: 
   InitialScenePath: 
   _currentStage: 0
