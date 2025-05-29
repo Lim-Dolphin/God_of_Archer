@@ -15,9 +15,9 @@ namespace GodOfArcher
         [Header("Components")]
         public SimpleKCC KCC;
         public Weapons Weapons;
-        public Health Health;
+        /*public Health Health;
         public Animator Animator;
-        public HitboxRoot HitboxRoot;
+        public HitboxRoot HitboxRoot;*/
 
         [Header("Setup")]
         public float MoveSpeed = 6f;
@@ -55,7 +55,7 @@ namespace GodOfArcher
             if (Mathf.Abs(GetAnimationMoveVelocity().x) > 0.2f)
                 return;
 
-            Animator.SetTrigger("Fire");
+            //Animator.SetTrigger("Fire");
         }
 
         public override void Spawned()
@@ -87,7 +87,7 @@ namespace GodOfArcher
                 return;
             }
 
-            if (Health.IsAlive == false)
+            /*if (Health.IsAlive == false)
             {
                 // We want dead body to finish movement - fall to ground etc.
                 MovePlayer();
@@ -101,7 +101,7 @@ namespace GodOfArcher
                 // Force enable third person visual for local player.
                 SetFirstPersonVisuals(false);
                 return;
-            }
+            }*/
 
             if (GetInput(out NetworkedInput input))
             {
@@ -116,7 +116,7 @@ namespace GodOfArcher
             }
         }
 
-        public override void Render()
+        /*public override void Render()
         {
             if (_sceneObjects.Gameplay.State == EGameplayState.Finished)
                 return;
@@ -153,7 +153,7 @@ namespace GodOfArcher
             }
 
             _visibleJumpCount = _jumpCount;
-        }
+        }*/
 
         private void LateUpdate()
         {
@@ -192,7 +192,7 @@ namespace GodOfArcher
             {
                 bool justPressed = input.Buttons.WasPressed(_previousButtons, EInputButton.Fire);
                 Weapons.Fire(justPressed);
-                Health.StopImmortality();
+                //Health.StopImmortality();
             }
             else if (input.Buttons.IsSet(EInputButton.Reload))
             {
@@ -248,6 +248,7 @@ namespace GodOfArcher
         {
             // Camera is set based on KCC look rotation.
             Vector2 pitchRotation = KCC.GetLookRotation(true, false);
+            Debug.Log("pitchRotation : " + pitchRotation.x);
             CameraHandle.localRotation = Quaternion.Euler(pitchRotation);
         }
 

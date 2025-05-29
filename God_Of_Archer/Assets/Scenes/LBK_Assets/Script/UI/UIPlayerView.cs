@@ -14,10 +14,10 @@ namespace GodOfArcher
 		{
 			Nickname.text = playerData.Nickname;
 
-			Health.UpdateHealth(player.Health);
+			/*Health.UpdateHealth(player.Health);
 			Weapons.UpdateWeapons(player.Weapons);
 
-			Crosshair.gameObject.SetActive(player.Health.IsAlive);
+			Crosshair.gameObject.SetActive(player.Health.IsAlive);*/
 		}
 	}
 }

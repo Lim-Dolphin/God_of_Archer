@@ -72,7 +72,7 @@ namespace GodOfArcher
             {
                 // Heal effect is shown only to local player.
                 // We assume the prediction will be correct most of the time so we don't need to network anything explicitly.
-                _sceneObjects.GameUI.PlayerView.Health.ShowHeal(health);
+                //_sceneObjects.GameUI.PlayerView.Health.ShowHeal(health);
             }
 
             return true;
@@ -105,7 +105,7 @@ namespace GodOfArcher
                 PlayDamageEffect();
             }
 
-            ImmortalityIndicator.SetActive(IsImmortal);
+            //ImmortalityIndicator.SetActive(IsImmortal);
 
             // Sync network hit counter with local.
             _visibleHitCount = _hitCount;

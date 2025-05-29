@@ -32,7 +32,7 @@ namespace GodOfArcher
     [DefaultExecutionOrder(-10)]
     public sealed class PlayerInput : NetworkBehaviour, IBeforeUpdate
     {
-        public static float LookSensitivity;
+        public static float LookSensitivity = 2.78f;
 
         private NetworkedInput _accumulatedInput;
         private Vector2Accumulator _lookRotationAccumulator = new Vector2Accumulator(0.02f, true);
@@ -94,9 +94,10 @@ namespace GodOfArcher
             if (mouse != null)
             {
                 var mouseDelta = mouse.delta.ReadValue();
-
+                
                 var lookRotationDelta = new Vector2(-mouseDelta.y, mouseDelta.x);
                 lookRotationDelta *= LookSensitivity / 60f;
+                Debug.Log("lookRotationDelta : " + lookRotationDelta.x);
                 _lookRotationAccumulator.Accumulate(lookRotationDelta);
 
                 _accumulatedInput.Buttons.Set(EInputButton.Fire, mouse.leftButton.isPressed);

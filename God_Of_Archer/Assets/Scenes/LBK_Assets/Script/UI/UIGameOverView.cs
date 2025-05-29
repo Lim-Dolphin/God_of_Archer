@@ -19,7 +19,7 @@ namespace GodOfArcher
 		// Called from button OnClick event.
 		public void GoToMenu()
 		{
-			_gameUI.GoToMenu();
+			//_gameUI.GoToMenu();
 		}
 
 		private void Awake()
@@ -29,7 +29,7 @@ namespace GodOfArcher
 
 		private void Update()
 		{
-			if (_gameUI.Runner == null)
+			/*if (_gameUI.Runner == null)
 				return;
 
 			// Unlock cursor.
@@ -56,10 +56,10 @@ namespace GodOfArcher
 
 				Winner.text = $"Winner is {playerPair.Value.Nickname}";
 				localPlayerIsWinner = playerPair.Key == _gameUI.Runner.LocalPlayer;
-			}
+			}*/
 
-			VictoryGroup.SetActive(localPlayerIsWinner);
-			DefeatGroup.SetActive(localPlayerIsWinner == false);
+			/*VictoryGroup.SetActive(localPlayerIsWinner);
+			DefeatGroup.SetActive(localPlayerIsWinner == false);*/
 		}
 	}
 }

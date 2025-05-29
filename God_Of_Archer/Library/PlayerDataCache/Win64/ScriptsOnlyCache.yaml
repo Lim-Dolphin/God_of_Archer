@@ -1,10 +1,32 @@
 ScriptsOnlyBuild:
   usedScripts:
+    Assembly-CSharp:
+    - GodOfArcher.Health
+    - GodOfArcher.Player
+    - GodOfArcher.PlayerInput
     Assembly-CSharp.dll:
+    - GodOfArcher.GameUI
     - GodOfArcher.Gameplay
+    - GodOfArcher.Health
     - GodOfArcher.MenuConnectionBehaviour
     - GodOfArcher.MenuUI
+    - GodOfArcher.Player
+    - GodOfArcher.PlayerInput
     - GodOfArcher.SceneObjects
+    - GodOfArcher.SpawnPoint
+    Cinemachine:
+    - Cinemachine.CinemachineHardLockToTarget
+    - Cinemachine.CinemachineHardLookAt
+    - Cinemachine.CinemachinePipeline
+    - Cinemachine.CinemachineVirtualCamera
+    Cinemachine.dll:
+    - Cinemachine.CinemachineBrain
+    - Cinemachine.CinemachineHardLockToTarget
+    - Cinemachine.CinemachineHardLookAt
+    - Cinemachine.CinemachinePipeline
+    - Cinemachine.CinemachineVirtualCamera
+    Fusion.Addons.SimpleKCC.dll:
+    - Fusion.Addons.SimpleKCC.SimpleKCC
     Fusion.Menu:
     - Fusion.Menu.FusionMenuMachineId
     - Fusion.Menu.FusionMenuPartyCodeGenerator
@@ -21,6 +43,7 @@ ScriptsOnlyBuild:
     Fusion.Runtime.dll:
     - Fusion.NetworkEvents
     - Fusion.NetworkObject
+    - Fusion.NetworkObjectPrefabData
     - Fusion.NetworkProjectConfigAsset
     - Fusion.NetworkRunner
     Fusion.Unity:
@@ -37,6 +60,13 @@ ScriptsOnlyBuild:
     - Fusion.FusionBootstrap
     - Fusion.FusionBootstrapDebugGUI
     - Fusion.NetworkSceneManagerDefault
+    Unity.InputSystem.dll:
+    - UnityEngine.InputSystem.InputActionAsset
+    - UnityEngine.InputSystem.InputActionReference
+    - UnityEngine.InputSystem.InputSettings
+    - UnityEngine.InputSystem.InputSystemObject
+    - UnityEngine.InputSystem.RemoteInputPlayerConnection
+    - UnityEngine.InputSystem.UI.InputSystemUIInputModule
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -78,6 +108,14 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
   serializedClasses:
+    Cinemachine:
+    - Cinemachine.CinemachineBlendDefinition
+    - Cinemachine.CinemachineBrain/BrainEvent
+    - Cinemachine.CinemachineBrain/VcamActivatedEvent
+    - Cinemachine.CinemachineVirtualCameraBase/TransitionParams
+    - Cinemachine.LensSettings
+    Fusion.Addons.SimpleKCC:
+    - Fusion.Addons.SimpleKCC.KCCSettings
     Fusion.Common:
     - Fusion.SerializableType`1[Fusion.SimulationBehaviour]
     Fusion.Menu:
@@ -104,14 +142,24 @@ ScriptsOnlyBuild:
     - Fusion.NetworkEvents/SessionListUpdateEvent
     - Fusion.NetworkEvents/ShutdownEvent
     - Fusion.NetworkEvents/SimulationMessageEvent
+    - Fusion.NetworkObjectGuid
     - Fusion.NetworkPrefabTableOptions
     - Fusion.NetworkProjectConfig
     - Fusion.NetworkProjectConfigAsset/SerializableSimulationBehaviourMeta
     - Fusion.NetworkSimulationConfiguration
+    - Fusion.SerializableDictionary`2[Fusion.PlayerRef,GodOfArcher.PlayerData]
     - Fusion.SimulationConfig
     - Fusion.TickRate/Selection
     Fusion.Sockets:
     - Fusion.EncryptionConfig
+    Fusion.Unity:
+    - Fusion.NetworkPrefabSourceStaticLazy
+    Unity.InputSystem:
+    - UnityEngine.InputSystem.InputAction
+    - UnityEngine.InputSystem.InputActionMap
+    - UnityEngine.InputSystem.InputBinding
+    - UnityEngine.InputSystem.InputControlScheme
+    - UnityEngine.InputSystem.InputControlScheme/DeviceRequirement
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
     - TMPro.FontAssetCreationSettings
@@ -229,35 +277,35 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 632}
+      Script: {instanceID: 634}
     - Class: 114
-      Script: {instanceID: 2260}
+      Script: {instanceID: 2390}
     - Class: 114
-      Script: {instanceID: 2668}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 2892}
+      Script: {instanceID: 3106}
     - Class: 114
-      Script: {instanceID: 2996}
+      Script: {instanceID: 3220}
     - Class: 114
-      Script: {instanceID: 5210}
+      Script: {instanceID: 5828}
     - Class: 114
-      Script: {instanceID: 5790}
+      Script: {instanceID: 6492}
     - Class: 114
-      Script: {instanceID: 5916}
+      Script: {instanceID: 6652}
     - Class: 114
-      Script: {instanceID: 5920}
+      Script: {instanceID: 6656}
     - Class: 114
-      Script: {instanceID: 5928}
+      Script: {instanceID: 6664}
     - Class: 114
-      Script: {instanceID: 5986}
+      Script: {instanceID: 6732}
     - Class: 114
-      Script: {instanceID: 6340}
+      Script: {instanceID: 7136}
     - Class: 114
-      Script: {instanceID: 7064}
+      Script: {instanceID: 7978}
     - Class: 114
-      Script: {instanceID: 7546}
+      Script: {instanceID: 8538}
     - Class: 114
-      Script: {instanceID: 7670}
+      Script: {instanceID: 8696}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -281,9 +329,19 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 64
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -294,35 +352,59 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 632}
+      Script: {instanceID: 634}
     - Class: 114
-      Script: {instanceID: 2260}
+      Script: {instanceID: 1626}
     - Class: 114
-      Script: {instanceID: 2668}
+      Script: {instanceID: 1980}
     - Class: 114
-      Script: {instanceID: 2892}
+      Script: {instanceID: 2390}
     - Class: 114
-      Script: {instanceID: 2996}
+      Script: {instanceID: 2702}
     - Class: 114
-      Script: {instanceID: 5210}
+      Script: {instanceID: 2786}
     - Class: 114
-      Script: {instanceID: 5790}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 5916}
+      Script: {instanceID: 2942}
     - Class: 114
-      Script: {instanceID: 5920}
+      Script: {instanceID: 2994}
     - Class: 114
-      Script: {instanceID: 5928}
+      Script: {instanceID: 3106}
     - Class: 114
-      Script: {instanceID: 5986}
+      Script: {instanceID: 3220}
     - Class: 114
-      Script: {instanceID: 6340}
+      Script: {instanceID: 3600}
     - Class: 114
-      Script: {instanceID: 7064}
+      Script: {instanceID: 4194}
     - Class: 114
-      Script: {instanceID: 7546}
+      Script: {instanceID: 4742}
     - Class: 114
-      Script: {instanceID: 7670}
+      Script: {instanceID: 5318}
+    - Class: 114
+      Script: {instanceID: 6460}
+    - Class: 114
+      Script: {instanceID: 6492}
+    - Class: 114
+      Script: {instanceID: 6652}
+    - Class: 114
+      Script: {instanceID: 6656}
+    - Class: 114
+      Script: {instanceID: 6660}
+    - Class: 114
+      Script: {instanceID: 6664}
+    - Class: 114
+      Script: {instanceID: 7576}
+    - Class: 114
+      Script: {instanceID: 7646}
+    - Class: 114
+      Script: {instanceID: 7978}
+    - Class: 114
+      Script: {instanceID: 8438}
+    - Class: 114
+      Script: {instanceID: 8538}
+    - Class: 114
+      Script: {instanceID: 8696}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -330,8 +412,6 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 222
       Script: {instanceID: 0}
     - Class: 223
       Script: {instanceID: 0}
@@ -359,35 +439,35 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 632}
+      Script: {instanceID: 634}
     - Class: 114
-      Script: {instanceID: 2260}
+      Script: {instanceID: 2390}
     - Class: 114
-      Script: {instanceID: 2668}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 2892}
+      Script: {instanceID: 3106}
     - Class: 114
-      Script: {instanceID: 2996}
+      Script: {instanceID: 3220}
     - Class: 114
-      Script: {instanceID: 5210}
+      Script: {instanceID: 5828}
     - Class: 114
-      Script: {instanceID: 5790}
+      Script: {instanceID: 6492}
     - Class: 114
-      Script: {instanceID: 5916}
+      Script: {instanceID: 6652}
     - Class: 114
-      Script: {instanceID: 5920}
+      Script: {instanceID: 6656}
     - Class: 114
-      Script: {instanceID: 5928}
+      Script: {instanceID: 6664}
     - Class: 114
-      Script: {instanceID: 5986}
+      Script: {instanceID: 6732}
     - Class: 114
-      Script: {instanceID: 6340}
+      Script: {instanceID: 7136}
     - Class: 114
-      Script: {instanceID: 7064}
+      Script: {instanceID: 7978}
     - Class: 114
-      Script: {instanceID: 7546}
+      Script: {instanceID: 8538}
     - Class: 114
-      Script: {instanceID: 7670}
+      Script: {instanceID: 8696}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -411,11 +491,19 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
+      Script: {instanceID: 0}
+    - Class: 54
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -426,93 +514,113 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1628}
+      Script: {instanceID: 1626}
     - Class: 114
-      Script: {instanceID: 1700}
+      Script: {instanceID: 1646}
     - Class: 114
-      Script: {instanceID: 2230}
+      Script: {instanceID: 1730}
     - Class: 114
-      Script: {instanceID: 2310}
+      Script: {instanceID: 2354}
     - Class: 114
-      Script: {instanceID: 2474}
+      Script: {instanceID: 2446}
     - Class: 114
-      Script: {instanceID: 2668}
+      Script: {instanceID: 2626}
     - Class: 114
-      Script: {instanceID: 2774}
+      Script: {instanceID: 2786}
     - Class: 114
-      Script: {instanceID: 2874}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 2892}
+      Script: {instanceID: 2942}
     - Class: 114
-      Script: {instanceID: 2996}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 3208}
+      Script: {instanceID: 2994}
     - Class: 114
-      Script: {instanceID: 3278}
+      Script: {instanceID: 3088}
     - Class: 114
-      Script: {instanceID: 3348}
+      Script: {instanceID: 3106}
     - Class: 114
-      Script: {instanceID: 3386}
+      Script: {instanceID: 3220}
     - Class: 114
-      Script: {instanceID: 3980}
+      Script: {instanceID: 3466}
     - Class: 114
-      Script: {instanceID: 4108}
+      Script: {instanceID: 3544}
     - Class: 114
-      Script: {instanceID: 4162}
+      Script: {instanceID: 3600}
     - Class: 114
-      Script: {instanceID: 4206}
+      Script: {instanceID: 3632}
     - Class: 114
-      Script: {instanceID: 4220}
+      Script: {instanceID: 3678}
     - Class: 114
-      Script: {instanceID: 4484}
+      Script: {instanceID: 4368}
     - Class: 114
-      Script: {instanceID: 4534}
+      Script: {instanceID: 4538}
     - Class: 114
-      Script: {instanceID: 5082}
+      Script: {instanceID: 4602}
     - Class: 114
-      Script: {instanceID: 5134}
+      Script: {instanceID: 4654}
     - Class: 114
-      Script: {instanceID: 5210}
+      Script: {instanceID: 4668}
     - Class: 114
-      Script: {instanceID: 5466}
+      Script: {instanceID: 4742}
     - Class: 114
-      Script: {instanceID: 5610}
+      Script: {instanceID: 4976}
     - Class: 114
-      Script: {instanceID: 5614}
+      Script: {instanceID: 5034}
     - Class: 114
-      Script: {instanceID: 5790}
+      Script: {instanceID: 5318}
     - Class: 114
-      Script: {instanceID: 5916}
+      Script: {instanceID: 5676}
     - Class: 114
-      Script: {instanceID: 5926}
+      Script: {instanceID: 5738}
     - Class: 114
-      Script: {instanceID: 5928}
+      Script: {instanceID: 5828}
     - Class: 114
-      Script: {instanceID: 5986}
+      Script: {instanceID: 6120}
     - Class: 114
-      Script: {instanceID: 6340}
+      Script: {instanceID: 6282}
     - Class: 114
-      Script: {instanceID: 6348}
+      Script: {instanceID: 6286}
     - Class: 114
-      Script: {instanceID: 6654}
+      Script: {instanceID: 6492}
     - Class: 114
-      Script: {instanceID: 6760}
+      Script: {instanceID: 6652}
     - Class: 114
-      Script: {instanceID: 6768}
+      Script: {instanceID: 6656}
     - Class: 114
-      Script: {instanceID: 7166}
+      Script: {instanceID: 6660}
     - Class: 114
-      Script: {instanceID: 7252}
+      Script: {instanceID: 6662}
     - Class: 114
-      Script: {instanceID: 7448}
+      Script: {instanceID: 6664}
     - Class: 114
-      Script: {instanceID: 7480}
+      Script: {instanceID: 6732}
     - Class: 114
-      Script: {instanceID: 7546}
+      Script: {instanceID: 7136}
     - Class: 114
-      Script: {instanceID: 7744}
+      Script: {instanceID: 7146}
     - Class: 114
-      Script: {instanceID: 7782}
+      Script: {instanceID: 7512}
+    - Class: 114
+      Script: {instanceID: 7634}
+    - Class: 114
+      Script: {instanceID: 7642}
+    - Class: 114
+      Script: {instanceID: 7646}
+    - Class: 114
+      Script: {instanceID: 8102}
+    - Class: 114
+      Script: {instanceID: 8186}
+    - Class: 114
+      Script: {instanceID: 8416}
+    - Class: 114
+      Script: {instanceID: 8460}
+    - Class: 114
+      Script: {instanceID: 8538}
+    - Class: 114
+      Script: {instanceID: 8786}
+    - Class: 114
+      Script: {instanceID: 8826}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -544,10 +652,34 @@ ScriptsOnlyBuild:
     className: PanelRaycaster
   - hash:
       serializedVersion: 2
+      Hash: b3127eb015ce2bc9ddc8a4ebda3b16f3
+    assemblyName: Fusion.Addons.SimpleKCC.dll
+    namespaceName: Fusion.Addons.SimpleKCC
+    className: SimpleKCC
+  - hash:
+      serializedVersion: 2
       Hash: dd9dda1dfd39e605c49e72003342ef5d
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 0f19765290d81f9e93eff7828a091d40
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: PlayerInput
+  - hash:
+      serializedVersion: 2
+      Hash: 7be6f165c401a77598f3856e49374fa2
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: UIGameplayView
+  - hash:
+      serializedVersion: 2
+      Hash: a4fff2eeb15e9eeca12a89d6868051d5
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: BodyHitbox
   - hash:
       serializedVersion: 2
       Hash: bcfea5497a8ed1f75e6510fe99632ffc
@@ -556,16 +688,22 @@ ScriptsOnlyBuild:
     className: FusionMenuUISelectMatch
   - hash:
       serializedVersion: 2
+      Hash: a3901985eb076c1c9b7562fca82ca3e0
+    assemblyName: Unity.Timeline
+    namespaceName: UnityEngine.Timeline
+    className: SignalAsset
+  - hash:
+      serializedVersion: 2
       Hash: f45600bcc886206dd55a3208474aad61
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnScrollbarValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: a3901985eb076c1c9b7562fca82ca3e0
-    assemblyName: Unity.Timeline
-    namespaceName: UnityEngine.Timeline
-    className: SignalAsset
+      Hash: 85f24827eddd27f43d0c2c836b171707
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineExternalCamera
   - hash:
       serializedVersion: 2
       Hash: 8dff8e9853297d341afa0c11f9091b59
@@ -574,16 +712,46 @@ ScriptsOnlyBuild:
     className: LayoutElement
   - hash:
       serializedVersion: 2
+      Hash: 3f96f90ad4a27643778bc6a5d69f0f5b
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: UIKillFeedItem
+  - hash:
+      serializedVersion: 2
       Hash: 00bbd9db8634496d079d17711b2ff7c4
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 079f8bbb032c5137806627bae6787f1f
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineFreeLook
+  - hash:
+      serializedVersion: 2
+      Hash: 0e4ecf96cd149632a6c15b13dedeaaa7
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineTriggerAction
+  - hash:
+      serializedVersion: 2
       Hash: d0caa48b5fe6778ce3f0de7aec45c4e6
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: SkewTextExample
+  - hash:
+      serializedVersion: 2
+      Hash: 157d3cf40178d244cd11ae1c9791ead7
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.HID.Editor
+    className: HIDDescriptorWindow
+  - hash:
+      serializedVersion: 2
+      Hash: ed8e62f07ec878233f5493a335003493
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI
+    className: VirtualMouseInput
   - hash:
       serializedVersion: 2
       Hash: 8703b6ae2b0eefd9dafbc44d8d333fb1
@@ -616,6 +784,24 @@ ScriptsOnlyBuild:
     className: GameUI
   - hash:
       serializedVersion: 2
+      Hash: 5b47c667a93e350389d0f06f9be40d9d
+    assemblyName: Cinemachine
+    namespaceName: 
+    className: CinemachineCameraOffset
+  - hash:
+      serializedVersion: 2
+      Hash: 674f86f72fc0bf1ef8d192a4dea794c8
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineCollider
+  - hash:
+      serializedVersion: 2
+      Hash: 769f5e9c16ce785feedf230d7f91392f
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineBlenderSettings
+  - hash:
+      serializedVersion: 2
       Hash: b12640dfdb5966813e9dd838893e6c4a
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -634,6 +820,12 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
+      Hash: 5b900459d83a09e1ab67f94f9975f346
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: UIGameOverView
+  - hash:
+      serializedVersion: 2
       Hash: ad49e20f31ed572e586aa8bbaafb591b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -646,10 +838,16 @@ ScriptsOnlyBuild:
     className: UnityOnPointerUpMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 7ace59575f7b6ac2132addb1a4cd9cc4
+      Hash: d173391da4fac7c29227e6b8a452b6fb
     assemblyName: Assembly-CSharp
     namespaceName: GodOfArcher
     className: Gameplay
+  - hash:
+      serializedVersion: 2
+      Hash: b40f8ffcaa6b71545b8d6ff04b849814
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: AdvancedDropdownWindow
   - hash:
       serializedVersion: 2
       Hash: 7e93247d600e115dac0cdd880de94e99
@@ -688,10 +886,22 @@ ScriptsOnlyBuild:
     className: FusionMenuUIGameplay
   - hash:
       serializedVersion: 2
+      Hash: 8b62d9287fc1b6d2a2fc1ebbd2983519
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: SpawnPoint
+  - hash:
+      serializedVersion: 2
       Hash: 1321993db8249e1e05e1e0492b2bbdc3
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnBecameVisibleMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 76985d05e160474a34860b693b206ee2
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineVirtualCamera
   - hash:
       serializedVersion: 2
       Hash: ff3e3229b757d7eb6bb7f9639c491562
@@ -748,6 +958,12 @@ ScriptsOnlyBuild:
     className: UnityMessageListener
   - hash:
       serializedVersion: 2
+      Hash: efd02e05d05bad651e8a5a2d1836f6cb
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachinePipeline
+  - hash:
+      serializedVersion: 2
       Hash: ed8bac09ffacadca9994789e381c69ce
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -770,6 +986,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ArcherController
+  - hash:
+      serializedVersion: 2
+      Hash: 9a6bfc1bbbd2b31fc470c7ce85567266
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineHardLookAt
   - hash:
       serializedVersion: 2
       Hash: a7f9239e0d0115f7467131a0d30f18b9
@@ -838,16 +1060,40 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
+      Hash: 35bb517bac2f684076b9999b33de0400
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineInputProvider
+  - hash:
+      serializedVersion: 2
       Hash: aa09a17b7eb35b78faf45c731159c39b
     assemblyName: Assembly-CSharp
     namespaceName: GodOfArcher
     className: SceneObjects
   - hash:
       serializedVersion: 2
+      Hash: 43ba8d6499e36926549225e81183d2ca
+    assemblyName: Cinemachine
+    namespaceName: 
+    className: CinemachineTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 1de42070c8cfb5ce0dd077efe6147882
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: Cinemachine3rdPersonFollow
+  - hash:
+      serializedVersion: 2
       Hash: b98001682cba83786775c9e415b89a61
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnDropdownValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: b838cbada0b03f1cfbaebc8e124f4f39
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.OnScreen
+    className: OnScreenButton
   - hash:
       serializedVersion: 2
       Hash: 1d830bc5cfaaf24301dffea2877f4bea
@@ -860,6 +1106,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ToggleGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 8222243fab48a9bfee1ae736fccd9e84
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineMixingCamera
   - hash:
       serializedVersion: 2
       Hash: 915204dac8acad99f076d6e72ada0a0f
@@ -898,6 +1150,12 @@ ScriptsOnlyBuild:
     className: UnityOnMouseDragMessageListener
   - hash:
       serializedVersion: 2
+      Hash: cf9bba4fd0a210d410666c0da387e5f7
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: Health
+  - hash:
+      serializedVersion: 2
       Hash: d7c8092511063e0dae8106bfc8ed63dd
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -928,10 +1186,28 @@ ScriptsOnlyBuild:
     className: ContentSizeFitter
   - hash:
       serializedVersion: 2
+      Hash: 31666030fd51e4173e4cae669f8984e5
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineSmoothPath
+  - hash:
+      serializedVersion: 2
+      Hash: 86344100c716167fb86137c127ca9eee
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputActionImporterEditor
+  - hash:
+      serializedVersion: 2
       Hash: c6369b4cc3be620d6c9300e920bc3d52
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: VariablesAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 07ac5abbf1211711231ba9fc21c550e6
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachinePixelPerfect
   - hash:
       serializedVersion: 2
       Hash: 7bdff9e91edfd9600f92a185def7e34a
@@ -970,6 +1246,12 @@ ScriptsOnlyBuild:
     className: ChatController
   - hash:
       serializedVersion: 2
+      Hash: fda63dc73e54da8a91d6f5509824113e
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: Weapon
+  - hash:
+      serializedVersion: 2
       Hash: 418b67019f13f9684552f2693bae3971
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -980,6 +1262,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnControllerColliderHitMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: ad7a5ffad8a32193d069882ae204e288
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineFramingTransposer
   - hash:
       serializedVersion: 2
       Hash: 960935b102b3064f4b924de16426e340
@@ -1006,6 +1294,12 @@ ScriptsOnlyBuild:
     className: ScriptGraphAsset
   - hash:
       serializedVersion: 2
+      Hash: 42284ecb06b05bfc619be3758fa5dd7a
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: InputActionAsset
+  - hash:
+      serializedVersion: 2
       Hash: 72561d2e822b466169cd12a3b9f9ae0c
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -1016,6 +1310,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: ActivationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: c4cd63f10b16ed4d4ae3c19f0ab18f0d
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineIndependentImpulseListener
   - hash:
       serializedVersion: 2
       Hash: 552dca338f20933ce362ebbe559a6aa6
@@ -1030,16 +1330,52 @@ ScriptsOnlyBuild:
     className: EnvMapAnimator
   - hash:
       serializedVersion: 2
+      Hash: 95426d463074947dcbffc797c44e779c
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI.Editor
+    className: StandaloneInputModuleModuleEditor
+  - hash:
+      serializedVersion: 2
       Hash: 665da785348a8806bf1524fe10742a60
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: TMP_UiFrameRateCounter
   - hash:
       serializedVersion: 2
+      Hash: 5835aa044b7ea3413cc6d9d819e95dd9
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputActionDebuggerWindow
+  - hash:
+      serializedVersion: 2
       Hash: b747f5d40674055dd70e18552f1b0447
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Mask
+  - hash:
+      serializedVersion: 2
+      Hash: 164a37e0bc379311785dd54beac44331
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputDebuggerWindow
+  - hash:
+      serializedVersion: 2
+      Hash: e636708ac1677b6f3be0cafe31e1bf77
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineGroupComposer
+  - hash:
+      serializedVersion: 2
+      Hash: 32bfadf4ab14c1e4298d945ac7dbee8f
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputStateWindow
+  - hash:
+      serializedVersion: 2
+      Hash: 0bc7ef1b7516f21320ec49bfd31eef2e
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI
+    className: TrackedDeviceRaycaster
   - hash:
       serializedVersion: 2
       Hash: e425a6626218038a7a24591be8f9f5a4
@@ -1084,10 +1420,22 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: cacf61280eff55ba0f02a0f286c959ba
+    assemblyName: Cinemachine
+    namespaceName: 
+    className: CinemachineTouchInputMapper
+  - hash:
+      serializedVersion: 2
       Hash: 042785b832afb73fd0585521aa7baf43
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: ControlPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 65b8d80dea0932c164a60cf0ffe597ef
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: Cinemachine3rdPersonAim
   - hash:
       serializedVersion: 2
       Hash: 1a680d9a08de79b0d2c779e78c9843b4
@@ -1114,10 +1462,28 @@ ScriptsOnlyBuild:
     className: CameraController
   - hash:
       serializedVersion: 2
+      Hash: 70373e18181a2229c9ec8448873d7545
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineHardLockToTarget
+  - hash:
+      serializedVersion: 2
       Hash: 9ebc0a3016506a0cbb7e0306dfcb9497
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: DictionaryAsset
+  - hash:
+      serializedVersion: 2
+      Hash: a013bd07781ea71be78aca4d84398e85
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: GroupWeightManipulator
+  - hash:
+      serializedVersion: 2
+      Hash: 5321f58daa5797b2eac77b17ea0bb568
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineTargetGroup
   - hash:
       serializedVersion: 2
       Hash: e7e95903ca66d58e1a7cbd71f824e16d
@@ -1130,6 +1496,12 @@ ScriptsOnlyBuild:
     assemblyName: Fusion.Unity
     namespaceName: Fusion
     className: NetworkObjectProviderDefault
+  - hash:
+      serializedVersion: 2
+      Hash: 215d2dc6ec6ea06728398ea39a103cb3
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.OnScreen
+    className: OnScreenStick
   - hash:
       serializedVersion: 2
       Hash: 9078325c2a6f6a2d9612ade897511860
@@ -1162,10 +1534,34 @@ ScriptsOnlyBuild:
     className: TMP_ExampleScript_01
   - hash:
       serializedVersion: 2
+      Hash: 11d65a9119626daae656690fd1fb8d1e
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineCollisionImpulseSource
+  - hash:
+      serializedVersion: 2
+      Hash: 09a9ebb3299853f8a1d66f750e11097e
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachinePOV
+  - hash:
+      serializedVersion: 2
       Hash: dc31d211c7459841fe4f406ae2e51480
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: TextConsoleSimulator
+  - hash:
+      serializedVersion: 2
+      Hash: ea1b87a3bfed09792e7720338241c7a0
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputDeviceDebuggerWindow
+  - hash:
+      serializedVersion: 2
+      Hash: ff71db1a48de41d3a8a5ffdfae1ea607
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: InputSystemObject
   - hash:
       serializedVersion: 2
       Hash: 5a1710e1ce9ddf5eb06e0d2693171f49
@@ -1186,6 +1582,12 @@ ScriptsOnlyBuild:
     className: TMP_TextInfoDebugTool
   - hash:
       serializedVersion: 2
+      Hash: 4a9722e25906eb3159f131aea3de3b84
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: Player
+  - hash:
+      serializedVersion: 2
       Hash: 0b63f6d3335e11939ce8790b904c8691
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -1196,6 +1598,12 @@ ScriptsOnlyBuild:
     assemblyName: Fusion.Unity
     namespaceName: Fusion
     className: RunnerVisibilityLink
+  - hash:
+      serializedVersion: 2
+      Hash: 81c1ae8a097b2ae92f03307a9a3d2771
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineComposer
   - hash:
       serializedVersion: 2
       Hash: e402a382f213255c22bda9254dd831b3
@@ -1214,6 +1622,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: GridLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 90cf308600fb4aeb677786843453ec55
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: RemoteInputPlayerConnection
+  - hash:
+      serializedVersion: 2
+      Hash: 98ad84ab9a7070e8ba3b6a616a057e2d
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineBlendListCamera
   - hash:
       serializedVersion: 2
       Hash: ceeb6c51b89f022a3deb7b3408c66745
@@ -1244,6 +1664,24 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 0370b9f95798139b666659c7e1be6147
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI
+    className: BaseInputOverride
+  - hash:
+      serializedVersion: 2
+      Hash: cce88ec4737eb3cf0faab402148b7c4e
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachinePath
+  - hash:
+      serializedVersion: 2
+      Hash: 240a44072d406174c464da5916816589
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine.PostFX
+    className: CinemachineVolumeSettings
   - hash:
       serializedVersion: 2
       Hash: 47ee34eb8b6021efa0289dbbb17a5a85
@@ -1312,6 +1750,12 @@ ScriptsOnlyBuild:
     className: WarpTextExample
   - hash:
       serializedVersion: 2
+      Hash: 81a3b5ad5afe73011756ae996e38141d
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: ProjectileVisual
+  - hash:
+      serializedVersion: 2
       Hash: 17f82e3e7d8f8b07a270a4aad9bfe79d
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
@@ -1334,6 +1778,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UIElements
     className: PanelEventHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 0515d3107a65fdbab3ad88c2c94de99f
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineDollyCart
   - hash:
       serializedVersion: 2
       Hash: 9dd54ce33440072d6692a67e0c384ad1
@@ -1366,6 +1816,18 @@ ScriptsOnlyBuild:
     className: FusionMenuUIPopup
   - hash:
       serializedVersion: 2
+      Hash: 9ac28152530c41314b3347c6407d5e11
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: UIWeapons
+  - hash:
+      serializedVersion: 2
+      Hash: 2071f7ac454ae14eafecfd4041edae3a
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputActionEditorWindow
+  - hash:
+      serializedVersion: 2
       Hash: 81e92b60052f92ca99b6bc12b2c98b4e
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -1390,10 +1852,34 @@ ScriptsOnlyBuild:
     className: StateGraphAsset
   - hash:
       serializedVersion: 2
+      Hash: 3813539dbbd222831298ae93f76f1e38
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine.PostFX
+    className: CinemachinePostProcessing
+  - hash:
+      serializedVersion: 2
+      Hash: 6cf63e9dc888f92a3672d2e4db631c8e
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: PlayerInputManagerEditor
+  - hash:
+      serializedVersion: 2
+      Hash: 96f2309663796de0137da7344709f4a8
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineOrbitalTransposer
+  - hash:
+      serializedVersion: 2
       Hash: 35e0b31791c377513b6fc7b9568c50cd
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: Benchmark02
+  - hash:
+      serializedVersion: 2
+      Hash: 488f3922fa1ec8f7d72cbb04b88bf18d
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineBrain
   - hash:
       serializedVersion: 2
       Hash: 540882762544409cc4530e60db00e951
@@ -1402,16 +1888,40 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
+      Hash: 560346f4cbb7006f1b0bb6c77805d7ec
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineConfiner
+  - hash:
+      serializedVersion: 2
+      Hash: aa0d9690d4fcf762950bd9364343ca93
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineSameAsFollowTarget
+  - hash:
+      serializedVersion: 2
       Hash: 4166580c620718548959a77fa7b43fc1
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: TextMeshSpawner
   - hash:
       serializedVersion: 2
+      Hash: 285b9728cb2452ee51c717d0f19e8350
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineConfiner2D
+  - hash:
+      serializedVersion: 2
       Hash: ef38c1407dba8c1f5d69f5db61a694fe
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: AnimatorMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 7dee1d3c1d776b807847bc05d2a399d1
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineClearShot
   - hash:
       serializedVersion: 2
       Hash: 12df3b8a5cdc9f0d652a1e226494f2a1
@@ -1510,6 +2020,12 @@ ScriptsOnlyBuild:
     className: FusionMenuUIParty
   - hash:
       serializedVersion: 2
+      Hash: bcb46a60d3f11a63420399a72df3049e
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: UISettingsView
+  - hash:
+      serializedVersion: 2
       Hash: da5a949a0bbd2ff91bc51c5805c2c41f
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1520,6 +2036,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: Benchmark03
+  - hash:
+      serializedVersion: 2
+      Hash: 9756f3f4d409535d0e955b1a139918d7
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: UICrosshair
   - hash:
       serializedVersion: 2
       Hash: 946bc2f94fc4c61109c813901f6ee51b
@@ -1564,6 +2086,12 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 4bf8d6f446d3cafb03a885a5cf6f2cd9
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineImpulseSource
+  - hash:
+      serializedVersion: 2
       Hash: 672716ae97f6ddb615fa5ac3ec9da349
     assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools
@@ -1576,10 +2104,34 @@ ScriptsOnlyBuild:
     className: RunnerLagCompensationGizmos
   - hash:
       serializedVersion: 2
+      Hash: 84fd5b58131005680184ae89163ce396
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineImpulseListener
+  - hash:
+      serializedVersion: 2
       Hash: 1c7c7601758113864f23a13660642a47
     assemblyName: Fusion.Menu
     namespaceName: Fusion.Menu
     className: FusionMenuScreenPluginVersion
+  - hash:
+      serializedVersion: 2
+      Hash: bc75926bfd3609757f7bf33ff766f026
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.EnhancedTouch
+    className: TouchSimulation
+  - hash:
+      serializedVersion: 2
+      Hash: 8ed5daadd237bb82e132790f75ffccaf
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: PlayerInputEditor
+  - hash:
+      serializedVersion: 2
+      Hash: a92561298b80715aa69e8fa770123cb5
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI.Editor
+    className: InputSystemUIInputModuleEditor
   - hash:
       serializedVersion: 2
       Hash: 8bbce9932f67ad8e7f4eefec87800f94
@@ -1594,10 +2146,22 @@ ScriptsOnlyBuild:
     className: FusionMenuScreenPluginPing
   - hash:
       serializedVersion: 2
+      Hash: 3074afe1b03a0fb081e176a4ef1b9d09
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.Editor
+    className: InputActionAssetEditor
+  - hash:
+      serializedVersion: 2
       Hash: 7fdd3ee28e9042c3ec83463d0bb3b230
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: TMP_FrameRateCounter
+  - hash:
+      serializedVersion: 2
+      Hash: e63fe08659e7e4647a51098c666f8845
+    assemblyName: Unity.InputSystem
+    namespaceName: 
+    className: DownloadableSample
   - hash:
       serializedVersion: 2
       Hash: 9ade08d0fbfc189b73f9c15d39ddc70f
@@ -1630,6 +2194,12 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+      Hash: 33eb495d99aa9bea4dbe8b4c4e02c7bb
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: InputActionReference
+  - hash:
+      serializedVersion: 2
       Hash: 1b6a87e49313d1cc46647641ee2e25f2
     assemblyName: Assembly-CSharp
     namespaceName: 
@@ -1660,10 +2230,22 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: 3f7d427f060a6462823ddc6ddb3599f2
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: PlayerInput
+  - hash:
+      serializedVersion: 2
       Hash: 5a9c75b899ab7db394b5fdade00d5312
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ArrowSO
+  - hash:
+      serializedVersion: 2
+      Hash: 007cdf5f8025adc0b0d6bd71e664c865
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineFixedSignal
   - hash:
       serializedVersion: 2
       Hash: c4b85a67513b4f0cf7b5fb2d5ded04b0
@@ -1690,6 +2272,12 @@ ScriptsOnlyBuild:
     className: BasicPlayableBehaviour
   - hash:
       serializedVersion: 2
+      Hash: a86c76e3081313bbddd26f2d2c1c6830
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: NoiseSettings
+  - hash:
+      serializedVersion: 2
       Hash: e8d390bd9ecacc453a7500b90d0c0292
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
@@ -1700,6 +2288,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayModeRunnerCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 00115e6b071bb5af8bb248c47a425458
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: UIPlayerView
   - hash:
       serializedVersion: 2
       Hash: afb7b65d28d5a7423e69a1b076be0064
@@ -1732,6 +2326,12 @@ ScriptsOnlyBuild:
     className: FusionBootstrapDebugGUI
   - hash:
       serializedVersion: 2
+      Hash: a1936c8dd11adbfb9defff5f8b6a9967
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineTransposer
+  - hash:
+      serializedVersion: 2
       Hash: ee34255e3e86289bde9bad5e07b84cbc
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1748,6 +2348,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: EventTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: 275dc6493d45e38624c78d3863da376c
+    assemblyName: Cinemachine
+    namespaceName: 
+    className: CinemachineShot
+  - hash:
+      serializedVersion: 2
+      Hash: 4895209f48657ff949db7815a6062743
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: InputSettings
   - hash:
       serializedVersion: 2
       Hash: a89b0448af4e1cd103a77f9fec0a961f
@@ -1804,6 +2416,12 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: ec0d35329484cbf83a42d8dd297fe94b
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineTrackedDolly
+  - hash:
+      serializedVersion: 2
       Hash: 89cdcdb3e1180a6b485d5a6e33868001
     assemblyName: Fusion.Unity
     namespaceName: Fusion.Statistics
@@ -1820,6 +2438,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: BowAndArrowControllerDemoScript
+  - hash:
+      serializedVersion: 2
+      Hash: 71f010b92f6ae849294b18c9c9536bad
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: UIKillFeed
   - hash:
       serializedVersion: 2
       Hash: 2d13cc265213b933f225256ce02e90bb
@@ -1846,10 +2470,22 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: dbe80c9dc024d18e75107a0b4da06133
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI
+    className: InputSystemUIInputModule
+  - hash:
+      serializedVersion: 2
       Hash: d5cd7f207e91ca8336c65a577a6fb2a0
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: a60af254e2ebc5110cafa7b84a3649ce
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: Weapons
   - hash:
       serializedVersion: 2
       Hash: fd8f09012d8de356cf3ef5a4943352cd
@@ -1858,10 +2494,22 @@ ScriptsOnlyBuild:
     className: FusionMenuImageFitter
   - hash:
       serializedVersion: 2
+      Hash: a99265337bbcb574a8c61bbdc198821a
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineStoryboard
+  - hash:
+      serializedVersion: 2
       Hash: 0f914259e37b6ddf936ea6b6e30d3645
     assemblyName: Fusion.Unity
     namespaceName: Fusion
     className: NetworkSceneManagerDefault
+  - hash:
+      serializedVersion: 2
+      Hash: a049c5dd35cb574ae69ebee47a5f1bb8
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineStateDrivenCamera
   - hash:
       serializedVersion: 2
       Hash: c927779b6a85752066d1d4af13377809
@@ -1874,6 +2522,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnParticleCollisionMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 40be2ad159aa1a2b72ecc74cb38c7824
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.UI
+    className: MultiplayerEventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 2bbd05175d4cdd21e24f9716cdd24f83
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem.XR
+    className: TrackedPoseDriver
   - hash:
       serializedVersion: 2
       Hash: 0f5a086d4d028363983ba6ca30a01397
@@ -1942,16 +2602,34 @@ ScriptsOnlyBuild:
     className: TeleType
   - hash:
       serializedVersion: 2
+      Hash: c8efb8be0478240d4791acc3735f449b
+    assemblyName: Cinemachine
+    namespaceName: 
+    className: CinemachineRecomposer
+  - hash:
+      serializedVersion: 2
       Hash: 9fb1c3ab48b256d508ecddd967f98652
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: VertexZoom
   - hash:
       serializedVersion: 2
+      Hash: 5c07dd30a788898a98f349bde9e84e19
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineBasicMultiChannelPerlin
+  - hash:
+      serializedVersion: 2
       Hash: ff76cf6cf52b4db7b95af6ffadca9288
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
+  - hash:
+      serializedVersion: 2
+      Hash: c4cdb902228df56d5b2b639d6a6bbd3c
+    assemblyName: Unity.InputSystem
+    namespaceName: UnityEngine.InputSystem
+    className: PlayerInputManager
   - hash:
       serializedVersion: 2
       Hash: 02a47340661d2ea7c6d30e292cfef403
@@ -1966,16 +2644,28 @@ ScriptsOnlyBuild:
     className: UnityOnMouseEnterMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 216f6c07bfa250e44b3e8d62572474e8
-    assemblyName: Assembly-CSharp
-    namespaceName: TMPro.Examples
-    className: Benchmark01
+      Hash: 0ccd3dafcf8319e223afdb4ffed425f4
+    assemblyName: Cinemachine
+    namespaceName: Cinemachine
+    className: CinemachineFollowZoom
   - hash:
       serializedVersion: 2
       Hash: 4fcf0bb4aff1d14a1dfcdedc4b07bd05
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 216f6c07bfa250e44b3e8d62572474e8
+    assemblyName: Assembly-CSharp
+    namespaceName: TMPro.Examples
+    className: Benchmark01
+  - hash:
+      serializedVersion: 2
+      Hash: 7246e850bfda597cbe1ffe516007602c
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: UIHealth
   - hash:
       serializedVersion: 2
       Hash: 00eef92bf387da2c9009267123d9d674

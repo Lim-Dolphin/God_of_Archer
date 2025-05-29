@@ -10,7 +10,7 @@ namespace GodOfArcher
     /// </summary>
     public class GameUI : MonoBehaviour
     {
-        public Gameplay Gameplay;
+        /*public Gameplay Gameplay;
         [HideInInspector]
         public NetworkRunner Runner;
 
@@ -95,6 +95,6 @@ namespace GodOfArcher
             {
                 PlayerView.gameObject.SetActive(false);
             }
-        }
+        }*/
     }
 }

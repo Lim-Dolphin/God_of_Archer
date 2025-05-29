@@ -43,7 +43,7 @@ namespace GodOfArcher
 		public void CloseView()
 		{
 			gameObject.SetActive(false);
-			GetComponentInParent<GameUI>().MenuView.SetActive(false);
+			//GetComponentInParent<GameUI>().MenuView.SetActive(false);
 		}
 
 		private void Update()
