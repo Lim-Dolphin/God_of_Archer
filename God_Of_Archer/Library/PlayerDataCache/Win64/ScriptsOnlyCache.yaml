@@ -1,15 +1,19 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp:
+    - GodOfArcher.DummyProjectile
     - GodOfArcher.Health
+    - GodOfArcher.My_Weapons
     - GodOfArcher.Player
     - GodOfArcher.PlayerInput
     Assembly-CSharp.dll:
+    - GodOfArcher.DummyProjectile
     - GodOfArcher.GameUI
     - GodOfArcher.Gameplay
     - GodOfArcher.Health
     - GodOfArcher.MenuConnectionBehaviour
     - GodOfArcher.MenuUI
+    - GodOfArcher.My_Weapons
     - GodOfArcher.Player
     - GodOfArcher.PlayerInput
     - GodOfArcher.SceneObjects
@@ -405,6 +409,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8538}
     - Class: 114
       Script: {instanceID: 8696}
+    - Class: 114
+      Script: {instanceID: 26936}
+    - Class: 114
+      Script: {instanceID: 26946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -621,6 +629,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8786}
     - Class: 114
       Script: {instanceID: 8826}
+    - Class: 114
+      Script: {instanceID: 26936}
+    - Class: 114
+      Script: {instanceID: 26946}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1582,7 +1594,7 @@ ScriptsOnlyBuild:
     className: TMP_TextInfoDebugTool
   - hash:
       serializedVersion: 2
-      Hash: 4a9722e25906eb3159f131aea3de3b84
+      Hash: ae9ff625e92cb9a033971b6a22f33bcc
     assemblyName: Assembly-CSharp
     namespaceName: GodOfArcher
     className: Player
@@ -2678,6 +2690,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: b1f1910b0678bf681ffdc32105d99798
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: My_Weapons
+  - hash:
+      serializedVersion: 2
+      Hash: dc50ec6db783fb2805279ddd5ae1ec6e
+    assemblyName: Assembly-CSharp
+    namespaceName: GodOfArcher
+    className: DummyProjectile
   platform: 19
   scenePathNames:
   - Assets/Scenes/LBK_Network/Network_lab.unity

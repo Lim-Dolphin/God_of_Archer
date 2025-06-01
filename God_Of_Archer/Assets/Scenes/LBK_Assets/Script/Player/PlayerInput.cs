@@ -97,7 +97,7 @@ namespace GodOfArcher
                 
                 var lookRotationDelta = new Vector2(-mouseDelta.y, mouseDelta.x);
                 lookRotationDelta *= LookSensitivity / 60f;
-                Debug.Log("lookRotationDelta : " + lookRotationDelta.x);
+                //Debug.Log("lookRotationDelta : " + lookRotationDelta.x);
                 _lookRotationAccumulator.Accumulate(lookRotationDelta);
 
                 _accumulatedInput.Buttons.Set(EInputButton.Fire, mouse.leftButton.isPressed);

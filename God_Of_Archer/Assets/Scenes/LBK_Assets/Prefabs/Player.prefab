@@ -213,6 +213,7 @@ Transform:
   - {fileID: 15530381059096356}
   - {fileID: 9075810847088020812}
   - {fileID: 4362513791482069534}
+  - {fileID: 580440275207331999}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &4205367067920802324
@@ -263,6 +264,7 @@ MonoBehaviour:
   - {fileID: 8380728947568772947}
   - {fileID: 5042934556709888650}
   - {fileID: 4093793032568801860}
+  - {fileID: 1821667255659841642}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &4078965940466023404
 MonoBehaviour:
@@ -277,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KCC: {fileID: 5042934556709888650}
-  Weapons: {fileID: 0}
+  Weapons: {fileID: 1821667255659841642}
   MoveSpeed: 6
   JumpForce: 10
   JumpSound: {fileID: 0}
@@ -441,6 +443,38 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4632820334633719974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 580440275207331999}
+  m_Layer: 0
+  m_Name: Weapons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &580440275207331999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4632820334633719974}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7236072119602219190}
+  m_Father: {fileID: 3109535094791702158}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7105286676300959151
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +538,61 @@ Transform:
   - {fileID: 4794662538139303558}
   m_Father: {fileID: 3109535094791702158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8100988007257534320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7236072119602219190}
+  - component: {fileID: 1821667255659841642}
+  m_Layer: 0
+  m_Name: Archer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7236072119602219190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100988007257534320}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 580440275207331999}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1821667255659841642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100988007257534320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46180b5013ebbf746aeafbee8be2650a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireTransform: {fileID: 7236072119602219190}
+  _fireClip: {fileID: 0}
+  _fireSoundSourcesRoot: {fileID: 0}
+  _speed: 50
+  _hitMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _hitImpulse: 50
+  _lifeTime: 4
+  _lifeTimeAfterHit: 2
+  _dummyProjectilePrefab: {fileID: 8812232325100472270, guid: e9df19ada134ce946abb5f4619b88212, type: 3}
 --- !u!1 &8980318710076146384
 GameObject:
   m_ObjectHideFlags: 0

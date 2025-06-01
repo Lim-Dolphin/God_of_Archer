@@ -14,7 +14,7 @@ namespace GodOfArcher
     {
         [Header("Components")]
         public SimpleKCC KCC;
-        public Weapons Weapons;
+        public My_Weapons Weapons;
         /*public Health Health;
         public Animator Animator;
         public HitboxRoot HitboxRoot;*/
@@ -192,9 +192,10 @@ namespace GodOfArcher
             {
                 bool justPressed = input.Buttons.WasPressed(_previousButtons, EInputButton.Fire);
                 Weapons.Fire(justPressed);
+                Debug.Log("Fire");
                 //Health.StopImmortality();
             }
-            else if (input.Buttons.IsSet(EInputButton.Reload))
+           /* else if (input.Buttons.IsSet(EInputButton.Reload))
             {
                 Weapons.Reload();
             }
@@ -210,7 +211,7 @@ namespace GodOfArcher
             else if (input.Buttons.WasPressed(_previousButtons, EInputButton.Shotgun))
             {
                 Weapons.SwitchWeapon(EWeaponType.Shotgun);
-            }
+            }*/
 
             if (input.Buttons.WasPressed(_previousButtons, EInputButton.Spray) && HasStateAuthority)
             {
@@ -248,7 +249,7 @@ namespace GodOfArcher
         {
             // Camera is set based on KCC look rotation.
             Vector2 pitchRotation = KCC.GetLookRotation(true, false);
-            Debug.Log("pitchRotation : " + pitchRotation.x);
+            //Debug.Log("pitchRotation : " + pitchRotation.x);
             CameraHandle.localRotation = Quaternion.Euler(pitchRotation);
         }
 
