@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/LBK_Network/Network_lab.unity
+=======
+- path: Assets/_JS/Scenes/PlayerTest.unity
+>>>>>>> main
   isLoaded: 1
   isActive: 1
   isSubScene: 0
