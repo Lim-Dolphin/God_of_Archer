@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioMixerGroup walkMixerGroup;
     [SerializeField] private AudioMixerGroup runMixerGroup;
 
-    private RotateYaw _rotateYaw;
+    //private RotateYaw _rotateYaw;
+    private RotateCam _rotateCam;
     private RotateCamera _rotateCamera;
     private MovementCharacterController _movementCharacterController;
     private PlayerAnimatorController animator;
@@ -44,7 +45,8 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        _rotateYaw = GetComponent<RotateYaw>();
+        _rotateCam = GetComponent<RotateCam>();
+        //_rotateYaw = GetComponent<RotateYaw>();
         _rotateCamera = GetComponentInChildren<RotateCamera>();
         _movementCharacterController = GetComponent<MovementCharacterController>();
 
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
         float cameraX = Input.GetAxis("Mouse X");
         float cameraY = Input.GetAxis("Mouse Y");
 
-        _rotateYaw.UpdateRotateYaw(cameraX);
+        _rotateCam.UpdateRotate(cameraX, cameraY);
         _rotateCamera.UpdateRotatePitch(cameraY);
     }
 

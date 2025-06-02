@@ -12690,7 +12690,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7459504746231892427}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e06e26f47964a8439c67586f34ba58d, type: 3}
   m_Name: 
@@ -15128,7 +15128,8 @@ GameObject:
   - component: {fileID: 8541067461180016236}
   - component: {fileID: 5634758534886360686}
   - component: {fileID: 8541067461180016238}
-  - component: {fileID: 8541067461180016237}
+  - component: {fileID: 8541067461180016242}
+  - component: {fileID: 8541067461180016241}
   - component: {fileID: 1468195516781471146}
   - component: {fileID: 5600621952690412226}
   - component: {fileID: 1954256974240338900}
@@ -16751,19 +16752,6 @@ Transform:
   - {fileID: 3306788272329539701}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8541067461180016237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7667735203609332945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 239430415c2abf54daff114500fd1e53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotCamXAxisSpeed: 5
 --- !u!114 &8541067461180016238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16892,6 +16880,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8541067461180016241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667735203609332945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e71e7801891c7542b80c2e5e461c0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotCamXAxisSpeed: 5
+  rotCamYAxisSpeed: 5
+--- !u!114 &8541067461180016242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7667735203609332945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e71e7801891c7542b80c2e5e461c0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotCamXAxisSpeed: 5
+  rotCamYAxisSpeed: 5
 --- !u!4 &8578417771228173935
 Transform:
   m_ObjectHideFlags: 0
@@ -17093,7 +17109,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8847199878962897984}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a82bdd422bb6e9b4996674cd1dfea022, type: 3}
   m_Name: 

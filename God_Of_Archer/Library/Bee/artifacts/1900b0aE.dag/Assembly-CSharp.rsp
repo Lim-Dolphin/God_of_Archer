@@ -391,6 +391,7 @@
 "Assets/_JS/Scripts/Player/PlayerAnimatorController.cs"
 "Assets/_JS/Scripts/Player/PlayerController.cs"
 "Assets/_JS/Scripts/Player/PlayerStatus.cs"
+"Assets/_JS/Scripts/Player/RotateCam.cs"
 "Assets/_JS/Scripts/Player/RotateCamera.cs"
 "Assets/_JS/Scripts/Player/RotateModel.cs"
 "Assets/_JS/Scripts/Player/RotateYaw.cs"
