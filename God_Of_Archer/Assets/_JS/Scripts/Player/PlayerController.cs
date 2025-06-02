@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class PlayerController : MonoBehaviour
     private AudioClip audioClipWalk;
     [SerializeField] 
     private AudioClip audioClipRun;
+
+    [Header("Audio Mixer Groups")]
+    [SerializeField] private AudioMixerGroup walkMixerGroup;
+    [SerializeField] private AudioMixerGroup runMixerGroup;
 
     private RotateYaw _rotateYaw;
     private RotateCamera _rotateCamera;
@@ -97,8 +102,9 @@ public class PlayerController : MonoBehaviour
             _movementCharacterController.MoveSpeed = (isRun == true) ? status.RunSpeed : status.WalkSpeed;
             animator.MoveSpeed = (isRun == true) ? 1 : 0.5f;
             audioSource.clip = (isRun == true) ? audioClipRun : audioClipWalk;
-            
-            if(audioSource.isPlaying == false)
+            audioSource.outputAudioMixerGroup = (isRun == true) ? runMixerGroup : walkMixerGroup;
+
+            if (audioSource.isPlaying == false)
             {
                 audioSource.loop = true;
                 audioSource.Play();

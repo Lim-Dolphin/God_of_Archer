@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AttackController : MonoBehaviour
 {
-    [Header("Audio Clips")]
+    [Header("Audio")]
     [SerializeField]
     private AudioClip drawSound;
     [SerializeField]
     private AudioClip shootSound;
-
     [SerializeField] private AudioSource audioSource;
+
+    [Header("Audio Mixer Groups")]
+    [SerializeField] private AudioMixerGroup drawMixerGroup;
+    [SerializeField] private AudioMixerGroup shootMixerGroup;
+
     [SerializeField] private PlayerAnimatorController animator;
 
     [SerializeField] private PlayerStatus status;
@@ -21,32 +26,29 @@ public class AttackController : MonoBehaviour
         if (animator.MoveSpeed > 0.5f || status.CurrentStamina == 0f)
         {
             animator.BowState = 0;
-            //if (audioSource.isPlaying) audioSource.Stop();
+            audioSource.Stop();
             return;
         }
         else
-        {
-            Debug.Log("¾ßÈ£!");
-            //if (animator.BowState == 0 && Input.GetMouseButton(0)) { PlaySound(null);}
-
+        { 
             if (Input.GetMouseButtonUp(0))
             {
-                Debug.Log("shoot");
-                PlaySound(shootSound);
+                PlaySound(shootSound, shootMixerGroup);
             }
 
             if (animator.BowState > 0.1f)
             {
-                PlaySound(drawSound);
+                PlaySound(drawSound, drawMixerGroup);
             }
         }
     }
 
-    private void PlaySound(AudioClip clip)
+    private void PlaySound(AudioClip clip, AudioMixerGroup group)
     {
         if (audioSource.clip == clip) { return; }
         audioSource.Stop();
         audioSource.clip = clip;
+        audioSource.outputAudioMixerGroup = group;
         audioSource.Play();
     }
 }
