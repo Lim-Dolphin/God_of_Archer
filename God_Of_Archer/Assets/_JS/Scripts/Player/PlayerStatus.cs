@@ -35,7 +35,7 @@ public class PlayerStatus : MonoBehaviour
     public float CurrentHp => currentHp; // Current HP Getter
 
     // 플레이어 사망 이벤트
-    public event Action OnDeath;
+    //public event Action OnDeath;
 
     void Awake()
     {
@@ -56,10 +56,12 @@ public class PlayerStatus : MonoBehaviour
 
         Debug.Log("현재 HP: " + currentHp);
 
+        /*
         if(currentHp <= 0)
         {
             OnDeath?.Invoke(); // 사망 이벤트 호출
         }
+        */
     }
 
     public void UseStamina(float amountPerSecond) // 스테미나 소모
@@ -79,8 +81,8 @@ public class PlayerStatus : MonoBehaviour
             }
 
             currentStamina = Mathf.Max(0f, currentStamina);// 항상 최소 0으로 맞추기
-            Debug.Log("소모 스테미나: " + amountPerSecond);
-            Debug.Log("현재 스테미나: " + currentStamina);
+            //Debug.Log("소모 스테미나: " + amountPerSecond);
+            //Debug.Log("현재 스테미나: " + currentStamina);
         }
     }
 
@@ -92,7 +94,7 @@ public class PlayerStatus : MonoBehaviour
 
         currentStamina += staminaRegenPerSecond * Time.deltaTime;
         currentStamina = Mathf.Min(currentStamina, maxStamina);
-        Debug.Log("충전 스테미나: " + staminaRegenPerSecond);
-        Debug.Log("현재 스테미나: " + currentStamina);
+        //Debug.Log("충전 스테미나: " + staminaRegenPerSecond);
+        //Debug.Log("현재 스테미나: " + currentStamina);
     }
 }

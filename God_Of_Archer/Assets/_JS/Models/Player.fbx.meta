@@ -39,14 +39,14 @@ ModelImporter:
       firstFrame: 0
       lastFrame: 71
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -71
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
@@ -68,14 +68,14 @@ ModelImporter:
       firstFrame: 0
       lastFrame: 23
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -71
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
@@ -94,18 +94,18 @@ ModelImporter:
       name: Jump_ani
       takeName: Jump_ani
       internalID: -1266524925930879270
-      firstFrame: 16
-      lastFrame: 19.31
+      firstFrame: 20
+      lastFrame: 44
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -71
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
@@ -126,7 +126,7 @@ ModelImporter:
       firstFrame: 0
       lastFrame: 26
       wrapMode: 0
-      orientationOffsetY: -15.31
+      orientationOffsetY: -24.1
       level: 0
       cycleOffset: 0
       loop: 0
@@ -184,14 +184,14 @@ ModelImporter:
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
-      orientationOffsetY: 0
+      orientationOffsetY: -71
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
@@ -656,6 +656,93 @@ ModelImporter:
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Nock_ani
+      takeName: Draw_ani
+      internalID: -1940897401705378574
+      firstFrame: 0
+      lastFrame: 17.8
+      wrapMode: 0
+      orientationOffsetY: -71
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: DrawStart
+      takeName: Draw_ani
+      internalID: -4859164119970255498
+      firstFrame: 17.8
+      lastFrame: 23.9
+      wrapMode: 0
+      orientationOffsetY: -50.3
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: DrawEnd
+      takeName: Draw_ani
+      internalID: 4537184494688003872
+      firstFrame: 23.9
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: -87.2
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
@@ -1370,8 +1457,7 @@ ModelImporter:
     - name: FootHeelMid_Left
       parentName: FootHeelIn_Left
       position: {x: 0.00046865444, y: 0.00002323621, z: 2.7939676e-10}
-      rotation: {x: -0.000000002107832, y: 0.00000001117587, z: -0.000000037204885,
-        w: 1}
+      rotation: {x: -0.000000002107832, y: 0.00000001117587, z: -0.000000037204885, w: 1}
       scale: {x: 1.0000128, y: 1.0000043, z: 1.0000049}
     - name: ToeEnd_Left
       parentName: FootHeelMid_Left
@@ -1396,8 +1482,7 @@ ModelImporter:
     - name: Ctrl_Toe_IK_Left
       parentName: ToeEnd_Left
       position: {x: -3.5521225e-10, y: -0.0006769795, z: 1.193257e-11}
-      rotation: {x: 0.000000019557774, y: -0.00000031664968, z: 0.0000000041909516,
-        w: 1}
+      rotation: {x: 0.000000019557774, y: -0.00000031664968, z: 0.0000000041909516, w: 1}
       scale: {x: 1.0000082, y: 1.0000052, z: 1.0000048}
     - name: ToeEnd_01_Left
       parentName: ToeEnd_Left
@@ -1432,8 +1517,7 @@ ModelImporter:
     - name: Toe01_IK_Right
       parentName: ToeTrack_Right
       position: {x: 0.0000000013495446, y: -0.00000003963185, z: 0.000000033704563}
-      rotation: {x: -0.000000059604638, y: -0.0000001657754, z: 0.000000013969837,
-        w: 1}
+      rotation: {x: -0.000000059604638, y: -0.0000001657754, z: 0.000000013969837, w: 1}
       scale: {x: 1.000005, y: 1.0000024, z: 1.0000037}
     - name: Toe02_Right
       parentName: Toe01_IK_Right
@@ -1453,8 +1537,7 @@ ModelImporter:
     - name: FootHeelMid_Right
       parentName: FootHeelIn_Right
       position: {x: -0.000465338, y: 0.000023085997, z: -8.085044e-10}
-      rotation: {x: 0.0000000011641268, y: 0.0000000037252903, z: -0.000000029780495,
-        w: 1}
+      rotation: {x: 0.0000000011641268, y: 0.0000000037252903, z: -0.000000029780495, w: 1}
       scale: {x: 1.0000014, y: 1.0000038, z: 0.99999785}
     - name: ToeEnd_Right
       parentName: FootHeelMid_Right
@@ -1479,14 +1562,12 @@ ModelImporter:
     - name: Ctrl_Toe_IK_Right
       parentName: ToeEnd_Right
       position: {x: 1.2703821e-10, y: -0.0006729882, z: 0}
-      rotation: {x: -0.000000022351742, y: -0.0000003632158, z: 0.000000026921043,
-        w: 1}
+      rotation: {x: -0.000000022351742, y: -0.0000003632158, z: 0.000000026921043, w: 1}
       scale: {x: 1.0000039, y: 0.99999946, z: 1.0000052}
     - name: ToeEnd_01_Right
       parentName: ToeEnd_Right
       position: {x: 3.374589e-10, y: 6.8394e-11, z: 1.3969838e-11}
-      rotation: {x: -0.00000002142042, y: -0.00000034086406, z: 0.000000030355295,
-        w: 1}
+      rotation: {x: -0.00000002142042, y: -0.00000034086406, z: 0.000000030355295, w: 1}
       scale: {x: 1.0000039, y: 0.99999946, z: 1.0000052}
     - name: Ctrl_Hand_IK_Left
       parentName: Mixamo_Armature
@@ -1606,14 +1687,12 @@ ModelImporter:
     - name: Ctrl_Spine1
       parentName: Ctrl_Spine
       position: {x: 2.3283063e-11, y: 0.00087999797, z: 5.5879353e-11}
-      rotation: {x: -0.0000006705522, y: -0.000000037197484, z: 0.000000014813751,
-        w: 1}
+      rotation: {x: -0.0000006705522, y: -0.000000037197484, z: 0.000000014813751, w: 1}
       scale: {x: 1.0000001, y: 0.99999094, z: 0.9999978}
     - name: Ctrl_Spine2
       parentName: Ctrl_Spine1
       position: {x: 3.259629e-11, y: 0.0010057117, z: 5.401671e-10}
-      rotation: {x: 0.00000022351736, y: 0.000000037220545, z: -0.000000014927858,
-        w: 1}
+      rotation: {x: 0.00000022351736, y: 0.000000037220545, z: -0.000000014927858, w: 1}
       scale: {x: 1.0000002, y: 1.0000067, z: 1.0000012}
     - name: Ctrl_Arm_FK_Left
       parentName: Ctrl_Spine2
@@ -1748,14 +1827,12 @@ ModelImporter:
     - name: mixamorig:Spine1
       parentName: mixamorig:Spine
       position: {x: -4.1909514e-11, y: 0.00087999797, z: -9.778887e-11}
-      rotation: {x: -0.00000062584877, y: 0.000000015854683, z: -0.0000000010317498,
-        w: 1}
+      rotation: {x: -0.00000062584877, y: 0.000000015854683, z: -0.0000000010317498, w: 1}
       scale: {x: 1.0000005, y: 0.9999997, z: 0.9999984}
     - name: mixamorig:Spine2
       parentName: mixamorig:Spine1
       position: {x: 1.0710209e-10, y: 0.0010057129, z: 5.494803e-10}
-      rotation: {x: 0.00000011920924, y: -0.000000044805812, z: -0.000000003453002,
-        w: 1}
+      rotation: {x: 0.00000011920924, y: -0.000000044805812, z: -0.000000003453002, w: 1}
       scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
     - name: mixamorig:LeftShoulder
       parentName: mixamorig:Spine2
@@ -1890,8 +1967,7 @@ ModelImporter:
     - name: mixamorig:LeftHandMiddle4
       parentName: mixamorig:LeftHandMiddle3
       position: {x: 0.00000215441, y: 0.00024310728, z: -8.9406965e-10}
-      rotation: {x: 0.000000078231075, y: -0.00000022837948, z: -0.00000009125043,
-        w: 1}
+      rotation: {x: 0.000000078231075, y: -0.00000022837948, z: -0.00000009125043, w: 1}
       scale: {x: 1.0000046, y: 1.0000126, z: 1.000014}
     - name: mixamorig:LeftHandPinky1
       parentName: mixamorig:LeftHand
@@ -1911,8 +1987,7 @@ ModelImporter:
     - name: mixamorig:LeftHandPinky4
       parentName: mixamorig:LeftHandPinky3
       position: {x: -0.0000009225309, y: 0.00017816763, z: 1.4901161e-10}
-      rotation: {x: -0.000000103376806, y: 0.000000062330855, z: 0.000000075296924,
-        w: 1}
+      rotation: {x: -0.000000103376806, y: 0.000000062330855, z: 0.000000075296924, w: 1}
       scale: {x: 1.0000091, y: 1.0000151, z: 1.0000093}
     - name: mixamorig:LeftHandRing1
       parentName: mixamorig:LeftHand
@@ -1932,8 +2007,7 @@ ModelImporter:
     - name: mixamorig:LeftHandRing4
       parentName: mixamorig:LeftHandRing3
       position: {x: -0.0000009128451, y: 0.0002282226, z: 0.0000000010430813}
-      rotation: {x: -0.00000022724262, y: -0.00000007916921, z: 0.00000003561933,
-        w: 1}
+      rotation: {x: -0.00000022724262, y: -0.00000007916921, z: 0.00000003561933, w: 1}
       scale: {x: 0.99999577, y: 0.9999892, z: 0.99999}
     - name: mixamorig:LeftHandThumb1
       parentName: mixamorig:LeftHand
@@ -1953,8 +2027,7 @@ ModelImporter:
     - name: mixamorig:LeftHandThumb4
       parentName: mixamorig:LeftHandThumb3
       position: {x: -0.00005774021, y: 0.0002991502, z: -0.00000007581897}
-      rotation: {x: -0.00000078976143, y: 0.000000030410046, z: -0.000000024898707,
-        w: 1}
+      rotation: {x: -0.00000078976143, y: 0.000000030410046, z: -0.000000024898707, w: 1}
       scale: {x: 0.99999964, y: 1.0000045, z: 1.000005}
     - name: mixamorig:Neck
       parentName: mixamorig:Spine2
@@ -2084,8 +2157,7 @@ ModelImporter:
     - name: mixamorig:RightHandIndex4
       parentName: mixamorig:RightHandIndex3
       position: {x: -0.000004385486, y: 0.00017539851, z: 0.0000000014249235}
-      rotation: {x: -0.0000000037252894, y: 0.00000007419304, z: -0.000000613993,
-        w: 1}
+      rotation: {x: -0.0000000037252894, y: 0.00000007419304, z: -0.000000613993, w: 1}
       scale: {x: 1.0000045, y: 1.0000104, z: 1.0000147}
     - name: mixamorig:RightHandMiddle1
       parentName: mixamorig:RightHand
@@ -2125,8 +2197,7 @@ ModelImporter:
     - name: mixamorig:RightHandPinky4
       parentName: mixamorig:RightHandPinky3
       position: {x: -0.00000026667374, y: 0.00018892539, z: -2.840534e-10}
-      rotation: {x: -0.000000058673322, y: -0.00000010419467, z: 0.000000020388047,
-        w: 1}
+      rotation: {x: -0.000000058673322, y: -0.00000010419467, z: 0.000000020388047, w: 1}
       scale: {x: 1.0000026, y: 0.9999938, z: 1.0000031}
     - name: mixamorig:RightHandRing1
       parentName: mixamorig:RightHand
@@ -2166,8 +2237,7 @@ ModelImporter:
     - name: mixamorig:RightHandThumb4
       parentName: mixamorig:RightHandThumb3
       position: {x: 0.000083584186, y: 0.0002561941, z: -0.00000007567927}
-      rotation: {x: 0.00000026822087, y: 0.0000000051477964, z: -0.0000011361274,
-        w: 1}
+      rotation: {x: 0.00000026822087, y: 0.0000000051477964, z: -0.0000011361274, w: 1}
       scale: {x: 1.0000005, y: 1.0000023, z: 1.0000103}
     - name: Soldiers_Shoes
       parentName: Player(Clone)
