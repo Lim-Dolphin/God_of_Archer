@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+/God_Of_Archer/[Ll]ibrary/
+/God_Of_Archer/[Tt]emp/
+/God_Of_Archer/[Oo]bj/
+/God_Of_Archer/[Bb]uild/
+/God_Of_Archer/[Bb]uilds/
+/God_Of_Archer/[Ll]ogs/
+/God_Of_Archer/[Uu]ser[Ss]ettings/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
