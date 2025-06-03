@@ -119,9 +119,9 @@
 -define:ENABLE_INPUT_SYSTEM
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
+-define:FUSION_LOGLEVEL_INFO
 -define:FUSION_WEAVER
 -define:FUSION2
--define:FUSION_LOGLEVEL_INFO
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/Photon/Fusion/Assemblies/Fusion.Common.dll"
@@ -340,27 +340,17 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
 -r:"Library/PackageCache/com.unity.nuget.mono-cecil@1.10.2/Mono.Cecil.dll"
--r:"Library/PackageCache/com.unity.testtools.codecoverage@1.2.5/lib/ReportGenerator/ReportGeneratorMerged.dll"
--r:"Library/PackageCache/com.unity.visualscripting@1.9.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/PackageCache/com.unity.visualscripting@1.9.7/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Cinemachine.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/com.unity.cinemachine.editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Fusion.Menu.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Fusion.Menu.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Fusion.Unity.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Fusion.Unity.ref.dll"
--r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.EditorCoroutines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.InputSystem.ForUI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.InputSystem.ref.dll"
--r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Performance.Profile-Analyzer.Editor.ref.dll"
--r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.PlasticSCM.Editor.ref.dll"
--r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Rider.Editor.ref.dll"
--r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.ref.dll"
--r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.ref.dll"
--r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.TestTools.CodeCoverage.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.TextMeshPro.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.TextMeshPro.ref.dll"
--r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Timeline.Editor.ref.dll"
--r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.Timeline.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VisualScripting.Core.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VisualScripting.Core.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VisualScripting.Flow.Editor.ref.dll"
@@ -369,20 +359,10 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VisualScripting.Shared.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VisualScripting.State.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VisualScripting.State.ref.dll"
--r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VisualStudio.Editor.ref.dll"
--r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.22f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/External_Assets/Nephilite Studios/Bow & Arrow Animation Set/Demo/Scripts/BowAndArrowControllerDemoScript.cs"
-"Assets/External_Assets/Nephilite Studios/Bow & Arrow Animation Set/Demo/Scripts/ResetAnimatorBool.cs"
-"Assets/External_Assets/ScriptedArrows/SampleScene/Scripts/CharacterTeleport.cs"
-"Assets/External_Assets/ScriptedArrows/SampleScene/Scripts/MoveLeftAndRight.cs"
-"Assets/External_Assets/ScriptedArrows/Scripts/ArcherController.cs"
-"Assets/External_Assets/ScriptedArrows/Scripts/ArrowController.cs"
-"Assets/External_Assets/ScriptedArrows/Scripts/MathParabola.cs"
-"Assets/External_Assets/ScriptedArrows/Scripts/ScriptableObjects/ArrowSO.cs"
 "Assets/Scenes/LBK_Assets/Menu/MenuConnectionBehaviour.cs"
 "Assets/Scenes/LBK_Assets/Menu/MenuUIConnectionPlugin.cs"
 "Assets/Scenes/LBK_Assets/Menu/MenuUIController.cs"
