@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,13 +9,13 @@ public class PlayerController : MonoBehaviour
     [Tooltip("플레이어가 달릴 수 있는 최대 시간 (초 단위)")]
     [SerializeField] 
     private float runDuration = 7f;
-    //[Tooltip("활을 당길 수 있는 최대 시간 (초 단위)")]
-    //[SerializeField] 
-    //private float drawDuration = 5f;
+    [Tooltip("활을 당길 수 있는 최대 시간 (초 단위)")]
+    [SerializeField] 
+    private float drawDuration = 5f;
 
     private PlayerStatus status;
     private float runCost => status.MaxStamina / runDuration; // 달리기 소모 코스트
-    //private float drawCost => status.MaxStamina / drawDuration;
+    private float drawCost => status.MaxStamina / drawDuration;
 
     [Header("Audio Clips")]
     [SerializeField]
@@ -22,13 +23,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] 
     private AudioClip audioClipRun;
 
-    private RotateCamera _rotateCamera;
+    [Header("Audio Mixer Groups")]
+    [SerializeField] private AudioMixerGroup walkMixerGroup;
+    [SerializeField] private AudioMixerGroup runMixerGroup;
+
+    //private RotateYaw _rotateYaw;
+    private RotateCam _rotateCam;
     private MovementCharacterController _movementCharacterController;
     private PlayerAnimatorController animator;
     private AudioSource audioSource;
     
     bool running = false; // 달리는가?
     bool attacking = false; // 공격중인가?
+    bool isFirstDeath = true; // 첫 죽음인가?
 
 
     private void Awake()
@@ -37,11 +44,11 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
 
-        _rotateCamera = GetComponent<RotateCamera>();
+        _rotateCam = GetComponent<RotateCam>();
         _movementCharacterController = GetComponent<MovementCharacterController>();
 
         status = GetComponent<PlayerStatus>();
-        status.OnDeath += Die; // 사망 이벤트 구독
+       //status.OnDeath += Die; // 사망 이벤트 구독
 
         animator = GetComponent<PlayerAnimatorController>();    
         audioSource = GetComponent<AudioSource>();
@@ -58,18 +65,21 @@ public class PlayerController : MonoBehaviour
         {
             status.RecoverStamina();
         }
-        if(status.CurrentHp == 0) // HP가 0이면 죽음 & 위치 리스폰
+        if(status.CurrentHp == 0 && isFirstDeath) // HP가 0이면 죽음
         {
+            isFirstDeath = false;
             Die();
         }
     }
 
     private void UpdateRotate()
     {
-        float cameraX = Input.GetAxis("Mouse X");
-        float cameraY = Input.GetAxis("Mouse Y");
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+        //float joystickX = Input.GetAxis("JoyX");
+        //float joystickY = Input.GetAxis("JoyY");
 
-        _rotateCamera.UpdateRotate(cameraX, cameraY);
+        _rotateCam.UpdateRotate(mouseX, mouseY);
     }
 
     private bool UpdateMove()
@@ -92,8 +102,9 @@ public class PlayerController : MonoBehaviour
             _movementCharacterController.MoveSpeed = (isRun == true) ? status.RunSpeed : status.WalkSpeed;
             animator.MoveSpeed = (isRun == true) ? 1 : 0.5f;
             audioSource.clip = (isRun == true) ? audioClipRun : audioClipWalk;
-            
-            if(audioSource.isPlaying == false)
+            audioSource.outputAudioMixerGroup = (isRun == true) ? runMixerGroup : walkMixerGroup;
+
+            if (audioSource.isPlaying == false)
             {
                 audioSource.loop = true;
                 audioSource.Play();
@@ -123,7 +134,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateJump() 
     {
-        if(Input.GetButtonDown("Jump"))
+        if(Input.GetButtonDown("Jump") && _movementCharacterController.IsGrounded)
         {
             _movementCharacterController.Jump();
             animator.TriggerJump();
@@ -132,11 +143,10 @@ public class PlayerController : MonoBehaviour
 
     private bool UpdateAttack()
     {
-        
 
         if (animator.BowState > 0.5f)
         {
-            //status.UseStamina(drawCost);
+            status.UseStamina(drawCost);
             return true; // 기력 회복 불가
         }
         return false; // 기력 회복 가능(animator.BowState <= 0.5f)
@@ -145,11 +155,14 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         Debug.Log("플레이어 사망");
+        animator.TriggerDie();
     }
 
+    /*
     private void OnDestroy()
     {
         if (status != null)
             status.OnDeath -= Die; // 구독 해제 (메모리 누수 방지)
     }
+    */
 }
