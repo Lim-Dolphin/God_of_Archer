@@ -25,7 +25,6 @@ public class AttackController : MonoBehaviour
     {
         if (animator.MoveSpeed > 0.5f || status.CurrentStamina == 0f)
         {
-            animator.BowState = 0;
             audioSource.Stop();
             return;
         }
@@ -36,7 +35,7 @@ public class AttackController : MonoBehaviour
                 PlaySound(shootSound, shootMixerGroup);
             }
 
-            if (animator.BowState > 0.1f)
+            if (Input.GetMouseButtonDown(0))
             {
                 PlaySound(drawSound, drawMixerGroup);
             }
@@ -45,7 +44,6 @@ public class AttackController : MonoBehaviour
 
     private void PlaySound(AudioClip clip, AudioMixerGroup group)
     {
-        if (audioSource.clip == clip) { return; }
         audioSource.Stop();
         audioSource.clip = clip;
         audioSource.outputAudioMixerGroup = group;

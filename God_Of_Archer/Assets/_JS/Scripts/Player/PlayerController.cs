@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
 
     //private RotateYaw _rotateYaw;
     private RotateCam _rotateCam;
-    private RotateCamera _rotateCamera;
     private MovementCharacterController _movementCharacterController;
     private PlayerAnimatorController animator;
     private AudioSource audioSource;
@@ -46,8 +45,6 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         _rotateCam = GetComponent<RotateCam>();
-        //_rotateYaw = GetComponent<RotateYaw>();
-        _rotateCamera = GetComponentInChildren<RotateCamera>();
         _movementCharacterController = GetComponent<MovementCharacterController>();
 
         status = GetComponent<PlayerStatus>();
@@ -77,11 +74,12 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateRotate()
     {
-        float cameraX = Input.GetAxis("Mouse X");
-        float cameraY = Input.GetAxis("Mouse Y");
+        //float mouseX = Input.GetAxis("Mouse X");
+        //float mouseY = Input.GetAxis("Mouse Y");
+        float joystickX = Input.GetAxis("JoyX");
+        float joystickY = Input.GetAxis("JoyY");
 
-        _rotateCam.UpdateRotate(cameraX, cameraY);
-        _rotateCamera.UpdateRotatePitch(cameraY);
+        _rotateCam.UpdateRotate(joystickX, joystickY);
     }
 
     private bool UpdateMove()

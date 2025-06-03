@@ -4,71 +4,80 @@ using UnityEngine;
 
 public class PlayerAnimatorController : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator anim;
 
-    // Base Layer(0번 레이어)에서 현재 재생 중인 State 정보를 가져옵니다.
-    AnimatorStateInfo stateInfo;
-    public AnimatorStateInfo StateInfo => stateInfo;
-
-    private void Start()
+    private void Update()
     {
-        stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        if (MoveSpeed == 0.5f)
+        {
+            anim.SetLayerWeight(1, 1);
+        }
+        else
+        {
+            anim.SetLayerWeight(1, 0);
+        }
     }
 
     public float MoveSpeed
     {
-        set => animator.SetFloat("movementSpeed", value);
-        get => animator.GetFloat("movementSpeed");
+        set => anim.SetFloat("movementSpeed", value);
+        get => anim.GetFloat("movementSpeed");
     }
 
     public float BowState
     {
-        set => animator.SetFloat("BowState", value);
-        get => animator.GetFloat("BowState");
+        set => anim.SetFloat("BowState", value);
+        get => anim.GetFloat("BowState");
     }
 
     public void TriggerJump()
     {
-        animator.SetTrigger("Jump");
+        anim.SetTrigger("Jump");
     }
 
     public void TriggerNock()
     {
-        animator.SetTrigger("Nock");
+        anim.SetTrigger("Nock");
     }
     public void TriggerRelease()
     {
-        animator.SetTrigger("Release");
+        anim.SetTrigger("Release");
     }
 
     public void TriggerHit()
     {
-        animator.SetTrigger("Hit");
+        anim.SetTrigger("Hit");
     }
     public void TriggerDie()
     {
-        animator.SetTrigger("Die");
+        anim.SetTrigger("Die");
     }
 
     public void TriggerShoot() 
     {
-        animator.SetTrigger("Shoot");
+        anim.SetTrigger("Shoot");
+    }
+
+    public void ResetRelease()
+    {
+        anim.ResetTrigger("Release");
     }
     public void Play(string stateName, int layer, float normalizedTime)
     {
-        animator.Play(stateName, layer, normalizedTime);
+        anim.Play(stateName, layer, normalizedTime);
     }
 
+    public Transform GetSpineTransform => anim.GetBoneTransform(HumanBodyBones.Spine);
 
     // 외부에서 호출할 수 있도록 Spine 본 회전을 래핑해서 노출
     public void SetSpineRotation(Quaternion rot)
     {
-        animator.SetBoneLocalRotation(HumanBodyBones.Spine, rot);
+        anim.SetBoneLocalRotation(HumanBodyBones.Spine, rot);
     }
 
     // Head 본 회전도 필요하다면 추가
     public void SetHeadRotation(Quaternion rot)
     {
-        animator.SetBoneLocalRotation(HumanBodyBones.Head, rot);
+        anim.SetBoneLocalRotation(HumanBodyBones.Head, rot);
     }
 }

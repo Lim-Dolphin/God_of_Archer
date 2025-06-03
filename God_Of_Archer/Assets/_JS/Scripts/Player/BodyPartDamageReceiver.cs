@@ -5,24 +5,42 @@ using UnityEngine;
 public class BodyPartDamageReceiver : MonoBehaviour
 {
     [SerializeField] private float damageMultiplier = 1.0f; // 부위별 계수 설정 (예: 머리 2.0, 팔 0.5 등)
-    private PlayerStatus playerStat;
+    float testDamage = 10f;
+    float totalDamage;
 
-    void Awake()
-    {
-        playerStat = GetComponent<PlayerStatus>();
-    }
+    [SerializeField] private PlayerStatus playerStat;
+    [SerializeField] private PlayerAnimatorController animator;
+    [SerializeField] private DamageSetting damageSetting;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
+        GameObject other = collision.gameObject;
         if (other.CompareTag("Arrow"))
         {
-            Arrow arrow = other.GetComponent<Arrow>();
-            float hitVelocity = other.attachedRigidbody != null ? other.attachedRigidbody.velocity.magnitude : 1.0f;
-            
-            float totalDamage = arrow.BaseDamage * hitVelocity * damageMultiplier;
+            // 데미지 계산식 = 화살 가속도, 화살 데미지, 플레이어 부위별 타격 계수를 합친 값
+            switch (gameObject.tag)
+            {
+                case "Head":
+                    damageMultiplier = damageSetting.Head;
+                    break;
+                case "Body":
+                    damageMultiplier = damageSetting.Body;
+                    break;
+                case "Arm":
+                    damageMultiplier = damageSetting.Arm;
+                    break;
+                case "Leg":
+                    damageMultiplier = damageSetting.Leg;
+                    break;
+                default:
+                    break;   
+            }
+            totalDamage = testDamage * damageMultiplier; // 데미지 계산식 넣기 (테스트)
             Debug.Log(totalDamage + "맞았다!");
-            //playerStat.ReduceHp(totalDamage);
+
+            animator.TriggerHit();
+
+            playerStat.ReduceHp(totalDamage);
         }
-        
     }
 }
