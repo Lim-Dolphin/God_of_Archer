@@ -15,9 +15,10 @@ namespace GodOfArcher
         [Header("Components")]
         public SimpleKCC KCC;
         public My_Weapons Weapons;
-        /*public Health Health;
-        public Animator Animator;
-        public HitboxRoot HitboxRoot;*/
+        public Health Health;
+        public PlayerStatus Status;
+        public PlayerAnimatorController Animator;
+        //public HitboxRoot HitboxRoot;
 
         [Header("Setup")]
         public float MoveSpeed = 6f;
@@ -116,7 +117,7 @@ namespace GodOfArcher
             }
         }
 
-        /*public override void Render()
+        public override void Render()
         {
             if (_sceneObjects.Gameplay.State == EGameplayState.Finished)
                 return;
@@ -124,16 +125,20 @@ namespace GodOfArcher
             var moveVelocity = GetAnimationMoveVelocity();
 
             // Set animation parameters.
-            Animator.SetFloat("LocomotionTime", Time.time * 2f);
+            /*Animator.SetFloat("LocomotionTime", Time.time * 2f);
             Animator.SetBool("IsAlive", Health.IsAlive);
             Animator.SetBool("IsGrounded", KCC.IsGrounded);
             Animator.SetBool("IsReloading", Weapons.CurrentWeapon.IsReloading);
             Animator.SetFloat("MoveX", moveVelocity.x, 0.05f, Time.deltaTime);
             Animator.SetFloat("MoveZ", moveVelocity.z, 0.05f, Time.deltaTime);
             Animator.SetFloat("MoveSpeed", moveVelocity.magnitude);
-            Animator.SetFloat("Look", -KCC.GetLookRotation(true, false).x / 90f);
+            Animator.SetFloat("Look", -KCC.GetLookRotation(true, false).x / 90f);*/
+            //Debug.Log("movevelocity.magnitude" + moveVelocity.magnitude * (MoveSpeed / RunSpeed));
 
-            if (Health.IsAlive == false)
+            Animator.MoveSpeed = moveVelocity.magnitude * (MoveSpeed/Status.RunSpeed);
+            
+
+            /*if (Health.IsAlive == false)
             {
                 // Disable UpperBody (override) and Look (additive) layers. Death animation is full-body.
 
@@ -143,17 +148,18 @@ namespace GodOfArcher
                 int lookLayerIndex = Animator.GetLayerIndex("Look");
                 Animator.SetLayerWeight(lookLayerIndex, Mathf.Max(0f, Animator.GetLayerWeight(lookLayerIndex) - Time.deltaTime));
             }
+            */
 
             if (_visibleJumpCount < _jumpCount)
             {
-                Animator.SetTrigger("Jump");
+                Animator.TriggerJump();
 
                 JumpSound.clip = JumpClips[Random.Range(0, JumpClips.Length)];
                 JumpSound.Play();
             }
 
             _visibleJumpCount = _jumpCount;
-        }*/
+        }
 
         private void LateUpdate()
         {
@@ -175,9 +181,30 @@ namespace GodOfArcher
             var inputDirection = KCC.TransformRotation * new Vector3(input.MoveDirection.x, 0f, input.MoveDirection.y);
             var jumpImpulse = 0f;
 
-            if (input.Buttons.WasPressed(_previousButtons, EInputButton.Jump) && KCC.IsGrounded)
+            bool hasStamina = Status.currentStamina > 0f; ;
+
+            if (input.Buttons.WasPressed(_previousButtons, EInputButton.Jump)&& KCC.IsGrounded)
             {
                 jumpImpulse = JumpForce;
+            }
+
+            if (inputDirection.x != 0 || inputDirection.z != 0)
+            {
+                if (hasStamina && (input.IsRun && input.MoveDirection == Vector2.up))
+                {
+                    MoveSpeed = Status.RunSpeed;
+                    Status.setRunning(true);
+                }
+                else
+                {
+                    Status.setRunning(false);
+                    MoveSpeed = Status.WalkSpeed;
+                }
+            }
+            else
+            {
+                Status.setRunning(false);
+                MoveSpeed = 0f;
             }
 
             MovePlayer(inputDirection * MoveSpeed, jumpImpulse);
@@ -213,7 +240,7 @@ namespace GodOfArcher
                 Weapons.SwitchWeapon(EWeaponType.Shotgun);
             }*/
 
-            if (input.Buttons.WasPressed(_previousButtons, EInputButton.Spray) && HasStateAuthority)
+            /*if (input.Buttons.WasPressed(_previousButtons, EInputButton.Spray) && HasStateAuthority)
             {
                 if (Runner.GetPhysicsScene().Raycast(CameraHandle.position, KCC.LookDirection, out var hit, 2.5f, LayerMask.GetMask("Default"), QueryTriggerInteraction.Ignore))
                 {
@@ -222,7 +249,7 @@ namespace GodOfArcher
                     Runner.Spawn(SprayPrefab, hit.point, sprayOrientation * Quaternion.LookRotation(-hit.normal));
                 }
             }
-
+*/
             // Store input buttons when the processing is done - next tick it is compared against current input buttons.
             _previousButtons = input.Buttons;
         }

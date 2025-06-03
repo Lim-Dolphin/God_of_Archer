@@ -342,6 +342,7 @@
 "Assets/Scenes/LBK_Assets/Script/GameScript/SceneObject.cs"
 "Assets/Scenes/LBK_Assets/Script/GameScript/SpawnPoint.cs"
 "Assets/Scenes/LBK_Assets/Script/Player/BodyHitbox.cs"
+"Assets/Scenes/LBK_Assets/Script/Player/Footsteps.cs"
 "Assets/Scenes/LBK_Assets/Script/Player/Health.cs"
 "Assets/Scenes/LBK_Assets/Script/Player/Player.cs"
 "Assets/Scenes/LBK_Assets/Script/Player/PlayerInput.cs"
@@ -398,6 +399,20 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
+"Assets/_JS/Scripts/Bow/Arrow.cs"
+"Assets/_JS/Scripts/Bow/ArrowData.cs"
+"Assets/_JS/Scripts/Bow/ArrowForce.cs"
+"Assets/_JS/Scripts/Bow/Bow.cs"
+"Assets/_JS/Scripts/Bow/BowSetting.cs"
+"Assets/_JS/Scripts/Bow/EmbedArrow.cs"
+"Assets/_JS/Scripts/Bow/ShootBow.cs"
+"Assets/_JS/Scripts/Player/AimCamera.cs"
+"Assets/_JS/Scripts/Player/BodyPartDamageReceiver.cs"
+"Assets/_JS/Scripts/Player/MovementCharacterController.cs"
+"Assets/_JS/Scripts/Player/PlayerAnimatorController.cs"
+"Assets/_JS/Scripts/Player/PlayerController.cs"
+"Assets/_JS/Scripts/Player/PlayerStatus.cs"
+"Assets/_JS/Scripts/Player/RotateCamera.cs"
 -langversion:9.0
 /unsafe+
 /deterministic

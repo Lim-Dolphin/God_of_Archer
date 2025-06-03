@@ -14,6 +14,7 @@ namespace GodOfArcher
         Rifle,
         Shotgun,
         Spray,
+        Sprint,
     }
 
     /// <summary>
@@ -24,6 +25,7 @@ namespace GodOfArcher
         public Vector2 MoveDirection;
         public Vector2 LookRotationDelta;
         public NetworkButtons Buttons;
+        public bool IsRun;
     }
 
     /// <summary>
@@ -106,14 +108,16 @@ namespace GodOfArcher
             if (keyboard != null)
             {
                 var moveDirection = Vector2.zero;
+                
 
+                
                 if (keyboard.wKey.isPressed) { moveDirection += Vector2.up; }
                 if (keyboard.sKey.isPressed) { moveDirection += Vector2.down; }
                 if (keyboard.aKey.isPressed) { moveDirection += Vector2.left; }
                 if (keyboard.dKey.isPressed) { moveDirection += Vector2.right; }
 
                 _accumulatedInput.MoveDirection = moveDirection.normalized;
-
+                _accumulatedInput.IsRun = keyboard.leftShiftKey.isPressed;
                 _accumulatedInput.Buttons.Set(EInputButton.Jump, keyboard.spaceKey.isPressed);
                 _accumulatedInput.Buttons.Set(EInputButton.Reload, keyboard.rKey.isPressed);
                 _accumulatedInput.Buttons.Set(EInputButton.Pistol, keyboard.digit1Key.isPressed || keyboard.numpad1Key.isPressed);
