@@ -30,7 +30,7 @@ public class PlayerStatus : MonoBehaviour
     private float staminaDepletedTime = -1f; // 고갈된 시각 (Time.time 기준)
 
     // 플레이어 HP
-    [SerializeField] private float maxHp = 100f; // MAX HP
+    [SerializeField] public float maxHp = 100f; // MAX HP
     [SerializeField] private float currentHp; // 플레이어 HP
     public float CurrentHp => currentHp; // Current HP Getter
 
