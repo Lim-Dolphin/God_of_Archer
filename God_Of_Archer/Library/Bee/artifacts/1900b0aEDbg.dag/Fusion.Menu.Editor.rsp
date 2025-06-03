@@ -360,6 +360,10 @@
 "Assets/_JS/Scenes/Editor/FusionMenuEditor.Common.cs"
 "Assets/_JS/Scenes/Editor/FusionMenuEditor.Sdk.cs"
 "Assets/_JS/Scenes/Editor/FusionMenuMachineIdImporter.cs"
+"Assets/_JS/Scenes/Editor/MaterialMappingApplyEditor.cs"
+"Assets/_JS/Scenes/Editor/MaterialMappingApplyWindow.cs"
+"Assets/_JS/Scenes/Editor/MaterialMappingEditor.cs"
+"Assets/_JS/Scenes/Editor/MaterialMappingProfile.cs"
 -langversion:9.0
 
 /deterministic
