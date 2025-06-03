@@ -74,12 +74,12 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateRotate()
     {
-        //float mouseX = Input.GetAxis("Mouse X");
-        //float mouseY = Input.GetAxis("Mouse Y");
-        float joystickX = Input.GetAxis("JoyX");
-        float joystickY = Input.GetAxis("JoyY");
+        float mouseX = Input.GetAxis("Mouse X");
+        float mouseY = Input.GetAxis("Mouse Y");
+        //float joystickX = Input.GetAxis("JoyX");
+        //float joystickY = Input.GetAxis("JoyY");
 
-        _rotateCam.UpdateRotate(joystickX, joystickY);
+        _rotateCam.UpdateRotate(mouseX, mouseY);
     }
 
     private bool UpdateMove()
