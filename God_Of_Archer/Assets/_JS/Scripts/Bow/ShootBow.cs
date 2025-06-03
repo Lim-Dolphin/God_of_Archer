@@ -20,11 +20,13 @@ public class ShootBow : MonoBehaviour {
     private Quaternion originalRot;
     private Vector3 originalPos;
 
-    private float changeRot = 45f / 46f;
+    [SerializeField] private float changeRotPitch = 45f / 46f;
+    [SerializeField] private float changeRotYaw = -90f;
+    [SerializeField] private float changeRotRoll = 0f;
     private float totalHipRotChange = -85f;
 
-    private Vector3 changeBowPos = new Vector3(0, 0.005f * 2f, -0.0025f * 2f);
-    private Vector3 changeArrowPos = new Vector3(-0.01651724137f*2f, -0.00655172413f*2f, 0.00125862068f*2f);
+    [SerializeField] private Vector3 changeBowPos = new Vector3(0, 0.005f * 2f, -0.0025f * 2f);
+    [SerializeField] private Vector3 changeArrowPos = new Vector3(-0.01651724137f*2f, -0.00655172413f*2f, 0.00125862068f*2f);
 
     private Vector3 totalBowPosChanges = new Vector3(0, 0, 0);
     private Vector3 totalArrowPosChanges = new Vector3(0, 0, 0);
@@ -98,7 +100,7 @@ public class ShootBow : MonoBehaviour {
 
                     if (drawDistance < 100) {
                         bow.transform.localPosition += changeBowPos; transform.localPosition += changeArrowPos;
-                        bow.transform.localRotation = Quaternion.Euler(totalHipRotChange += changeRot, -90, 0);
+                        bow.transform.localRotation = Quaternion.Euler(totalHipRotChange += changeRotPitch, changeRotYaw, changeRotRoll);
                         totalBowPosChanges += changeBowPos; totalArrowPosChanges += changeArrowPos;
                     }
                     else drawDistance = 100; //Keep drawdistance at or below 100

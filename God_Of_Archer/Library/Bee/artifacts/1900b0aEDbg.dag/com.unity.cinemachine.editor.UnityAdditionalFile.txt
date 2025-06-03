@@ -1,1 +1,5 @@
+<<<<<<< HEAD:God_Of_Archer/Library/Bee/artifacts/1900b0aEDbg.dag/com.unity.cinemachine.editor.UnityAdditionalFile.txt
 C:\Users\imbq8\Desktop\God_of_Archer\God_of_Archer\God_Of_Archer
+=======
+C:\Users\user\Desktop\God_of_Archer\God_Of_Archer
+>>>>>>> origin/Player_JS:God_Of_Archer/Library/Bee/artifacts/1900b0aE.dag/com.unity.cinemachine.editor.UnityAdditionalFile.txt

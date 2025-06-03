@@ -14,6 +14,8 @@ public class MovementCharacterController : MonoBehaviour
     [SerializeField]
     private float gravity;
 
+    public bool IsGrounded => characterController.isGrounded;
+
     public float MoveSpeed
     {
         set => moveSpeed = Mathf.Max(0, value);
