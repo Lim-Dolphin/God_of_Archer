@@ -376,6 +376,10 @@
 "Assets/External_Assets/ScriptedArrows/Scripts/ArrowController.cs"
 "Assets/External_Assets/ScriptedArrows/Scripts/MathParabola.cs"
 "Assets/External_Assets/ScriptedArrows/Scripts/ScriptableObjects/ArrowSO.cs"
+"Assets/_JS/Material/MaterialMappingApplyEditor.cs"
+"Assets/_JS/Material/MaterialMappingApplyWindow.cs"
+"Assets/_JS/Material/MaterialMappingEditor.cs"
+"Assets/_JS/Material/MaterialMappingProfile.cs"
 "Assets/_JS/Scripts/Bow/ArrowData.cs"
 "Assets/_JS/Scripts/Bow/ArrowForce.cs"
 "Assets/_JS/Scripts/Bow/EmbedArrow.cs"
@@ -396,6 +400,7 @@
 "Assets/_JS/Scripts/Player/PlayerAnimatorController.cs"
 "Assets/_JS/Scripts/Player/PlayerController.cs"
 "Assets/_JS/Scripts/Player/PlayerStatus.cs"
+"Assets/_JS/Scripts/Player/PostDie.cs"
 "Assets/_JS/Scripts/Player/RotateCam.cs"
 "Assets/_JS/Scripts/Player/RotateModeling.cs"
 -langversion:9.0

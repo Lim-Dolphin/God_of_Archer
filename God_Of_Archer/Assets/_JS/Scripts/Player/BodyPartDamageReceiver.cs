@@ -5,7 +5,8 @@ using UnityEngine;
 public class BodyPartDamageReceiver : MonoBehaviour
 {
     [SerializeField] private float damageMultiplier = 1.0f; // 부위별 계수 설정 (예: 머리 2.0, 팔 0.5 등)
-    float testDamage = 10f;
+    [SerializeField] float velocityValue;
+    [SerializeField] float testDamage = 10f;
     float totalDamage;
 
     [SerializeField] private PlayerStatus playerStat;
@@ -35,8 +36,12 @@ public class BodyPartDamageReceiver : MonoBehaviour
                 default:
                     break;   
             }
-            totalDamage = testDamage * damageMultiplier; // 데미지 계산식 넣기 (테스트)
-            Debug.Log(totalDamage + "맞았다!");
+
+            velocityValue = Mathf.Pow(collision.rigidbody.velocity.magnitude, 2);
+            Debug.Log("활 속도: " + velocityValue);
+
+            totalDamage = testDamage * damageMultiplier ; // 데미지 계산식 넣기 (테스트)
+            Debug.Log("활 데미지: " + totalDamage + "/" + gameObject.tag + "맞았다!");
 
             animator.TriggerHit();
 

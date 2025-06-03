@@ -53,6 +53,7 @@ public class PlayerAnimatorController : MonoBehaviour
         anim.SetTrigger("Die");
     }
 
+
     public void TriggerShoot() 
     {
         anim.SetTrigger("Shoot");
