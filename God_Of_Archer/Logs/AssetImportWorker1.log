@@ -15,7 +15,7 @@ C:/Users/dalss/Desktop/God_of_Archer/God_Of_Archer
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-4123
+2200
 Successfully changed project path to: C:/Users/dalss/Desktop/God_of_Archer/God_Of_Archer
 C:/Users/dalss/Desktop/God_of_Archer/God_Of_Archer
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Users/dalss/Desktop/God_of_Archer/God_Of_Archer
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [28304] Host "[IP] 192.168.0.151 [Port] 0 [Flags] 2 [Guid] 3379101904 [EditorId] 3379101904 [Version] 1048832 [Id] WindowsEditor(7,含PC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [7336] Host "[IP] 192.168.0.151 [Port] 0 [Flags] 2 [Guid] 3154747207 [EditorId] 3154747207 [Version] 1048832 [Id] WindowsEditor(7,含PC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [28304] Host "[IP] 192.168.0.151 [Port] 0 [Flags] 2 [Guid] 3379101904 [EditorId] 3379101904 [Version] 1048832 [Id] WindowsEditor(7,含PC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [7336] Host "[IP] 192.168.0.151 [Port] 0 [Flags] 2 [Guid] 3154747207 [EditorId] 3154747207 [Version] 1048832 [Id] WindowsEditor(7,含PC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 23 workers.
-Refreshing native plugins compatible for Editor in 36.08 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 35.29 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.22f1 (887be4894c44)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/Unity 2022.3.22f1/Editor/Data/Resources/UnitySubsystems
@@ -70,44 +70,44 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/Unity 2022.3.22f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/Unity 2022.3.22f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/Unity 2022.3.22f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56784
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56492
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/Unity 2022.3.22f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.027278 seconds.
-- Loaded All Assemblies, in  0.462 seconds
+Registered in 0.027491 seconds.
+- Loaded All Assemblies, in  0.452 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.257 seconds
-Domain Reload Profiling: 710ms
-	BeginReloadAssembly (166ms)
+- Finished resetting the current domain, in  0.243 seconds
+Domain Reload Profiling: 685ms
+	BeginReloadAssembly (170ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (40ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (98ms)
-	LoadAllAssembliesAndSetupDomain (137ms)
-		LoadAssemblies (160ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (97ms)
+	LoadAllAssembliesAndSetupDomain (129ms)
+		LoadAssemblies (162ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (135ms)
-			TypeCache.Refresh (133ms)
-				TypeCache.ScanAssembly (120ms)
+		AnalyzeDomain (126ms)
+			TypeCache.Refresh (125ms)
+				TypeCache.ScanAssembly (112ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (257ms)
+	FinalizeReload (244ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (202ms)
+		SetupLoadedEditorAssemblies (192ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (16ms)
-			SetLoadedEditorAssemblies (7ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (133ms)
-			ProcessInitializeOnLoadMethodAttributes (44ms)
+			ProcessInitializeOnLoadAttributes (125ms)
+			ProcessInitializeOnLoadMethodAttributes (45ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -115,41 +115,158 @@ Domain Reload Profiling: 710ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.781 seconds
-Refreshing native plugins compatible for Editor in 21.58 ms, found 2 plugins.
+- Loaded All Assemblies, in  0.822 seconds
+Refreshing native plugins compatible for Editor in 25.47 ms, found 2 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.571 seconds
-Domain Reload Profiling: 1341ms
-	BeginReloadAssembly (198ms)
+- Finished resetting the current domain, in  0.564 seconds
+Domain Reload Profiling: 1370ms
+	BeginReloadAssembly (209ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (20ms)
-	RebuildCommonClasses (35ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (36ms)
 	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (65ms)
-	LoadAllAssembliesAndSetupDomain (463ms)
-		LoadAssemblies (486ms)
+	initialDomainReloadingComplete (72ms)
+	LoadAllAssembliesAndSetupDomain (477ms)
+		LoadAssemblies (511ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (114ms)
+		AnalyzeDomain (113ms)
 			TypeCache.Refresh (93ms)
-				TypeCache.ScanAssembly (82ms)
+				TypeCache.ScanAssembly (80ms)
 			ScanForSourceGeneratedMonoScriptInfo (11ms)
 			ResolveRequiredComponents (8ms)
-	FinalizeReload (572ms)
+	FinalizeReload (565ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (432ms)
+		SetupLoadedEditorAssemblies (431ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (12ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (80ms)
-			ProcessInitializeOnLoadAttributes (290ms)
-			ProcessInitializeOnLoadMethodAttributes (22ms)
-			AfterProcessingInitializeOnLoad (23ms)
+			BeforeProcessingInitializeOnLoad (85ms)
+			ProcessInitializeOnLoadAttributes (281ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (29ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Failed to load shader (instanceID 440, GUID abc00000000001058320515018266836)
+Failed to load shader (instanceID 442, GUID abc00000000001442609918572736659)
+Failed to load shader (instanceID 444, GUID abc00000000012281009583634745518)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
+Refreshing native plugins compatible for Editor in 30.02 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2942 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (140.9 KB). Loaded Objects now: 3426.
+Memory consumption went from 132.0 MB to 131.8 MB.
+Total: 3.505300 ms (FindLiveObjects: 0.290000 ms CreateObjectMapping: 0.074600 ms MarkObjects: 2.942100 ms  DeleteObjects: 0.197500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:Fusion.PrefabsDependency: 6f3e8aecb79afdcd5a6331219599cdc6 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:FusionILWeaverTriggerImporter/ConfigHash: b0b173a93bb19085723cb3d421b3a13b -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1588.437039 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a4fe85251aa2e89732c359432baa2c3') in 0.002490 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
+Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
+Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
+Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
+Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
+Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
+Refreshing native plugins compatible for Editor in 34.88 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 10 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 5 unused Assets / (1.3 MB). Loaded Objects now: 3432.
+Memory consumption went from 83.6 MB to 82.4 MB.
+Total: 4.347800 ms (FindLiveObjects: 0.352800 ms CreateObjectMapping: 0.081400 ms MarkObjects: 3.399900 ms  DeleteObjects: 0.512900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:Fusion.ScriptOrderDependency: 29ad7ce3e3d14d44fbfea38402f2dde5 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:Fusion.PrefabsDependency: 6f3e8aecb79afdcd5a6331219599cdc6 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:FusionILWeaverTriggerImporter/ConfigHash: b0b173a93bb19085723cb3d421b3a13b -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 86.223845 seconds.
+  path: Assets/EJ/Assets_EJ/NewBrush 1.brush
+  artifactKey: Guid(85b0ad6571a8b0a4d8c67544e019b568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/EJ/Assets_EJ/NewBrush 1.brush using Guid(85b0ad6571a8b0a4d8c67544e019b568) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '194d90c86b2761f95d1ab15cfb097582') in 0.082423 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.748 seconds
+Refreshing native plugins compatible for Editor in 22.73 ms, found 2 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.987 seconds
+Domain Reload Profiling: 1720ms
+	BeginReloadAssembly (222ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (27ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (63ms)
+	LoadAllAssembliesAndSetupDomain (399ms)
+		LoadAssemblies (533ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (987ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (381ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (81ms)
+			ProcessInitializeOnLoadAttributes (237ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (28ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (7ms)
@@ -159,14 +276,14 @@ Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError'
 Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
 Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
 Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 30.81 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 28.77 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2951 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 73 unused Assets / (1.3 MB). Loaded Objects now: 3414.
-Memory consumption went from 124.5 MB to 123.2 MB.
-Total: 4.364400 ms (FindLiveObjects: 0.470900 ms CreateObjectMapping: 0.104100 ms MarkObjects: 3.190600 ms  DeleteObjects: 0.597400 ms)
+Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 48 unused Assets / (1.3 MB). Loaded Objects now: 3453.
+Memory consumption went from 135.7 MB to 134.4 MB.
+Total: 3.515400 ms (FindLiveObjects: 0.340100 ms CreateObjectMapping: 0.082900 ms MarkObjects: 2.647400 ms  DeleteObjects: 0.443900 ms)
 
+Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
@@ -177,380 +294,66 @@ AssetImportParameters requested are different than current active one (requested
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:Fusion.ScriptOrderDependency: 29ad7ce3e3d14d44fbfea38402f2dde5 -> 
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:Fusion.PrefabsDependency: 6f3e8aecb79afdcd5a6331219599cdc6 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:FusionILWeaverTriggerImporter/ConfigHash: b0b173a93bb19085723cb3d421b3a13b -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-========================================================================
-Received Import Request.
-  Time since last request: 5222.679069 seconds.
-  path: Assets/_JS/Prefabs/Player_Fin.prefab
-  artifactKey: Guid(50a707e3bd15b3349958f7f6d6a50aca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_JS/Prefabs/Player_Fin.prefab using Guid(50a707e3bd15b3349958f7f6d6a50aca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Refreshing native plugins compatible for Editor in 20.20 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Refreshing native plugins compatible for Editor in 19.12 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
- -> (artifact id: 'e4143d4e88c1e6a90c6b85f6a4d7226b') in 0.629852 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1122
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/_JS/Prefabs/Player2.prefab
-  artifactKey: Guid(9542393be4178e34b8d1cb17db98586a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_JS/Prefabs/Player2.prefab using Guid(9542393be4178e34b8d1cb17db98586a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Refreshing native plugins compatible for Editor in 20.60 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Refreshing native plugins compatible for Editor in 20.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
- -> (artifact id: '0a2d67205635929dc1d2e49832f9c91c') in 0.541266 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1124
-========================================================================
-Received Import Request.
-  Time since last request: 22.480921 seconds.
-  path: Assets/_JS/Prefabs/Player2.prefab
-  artifactKey: Guid(9542393be4178e34b8d1cb17db98586a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_JS/Prefabs/Player2.prefab using Guid(9542393be4178e34b8d1cb17db98586a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Refreshing native plugins compatible for Editor in 25.14 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Refreshing native plugins compatible for Editor in 22.44 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
- -> (artifact id: '34575a27c5252a8e9523225089149a99') in 0.597711 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1124
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/_JS/Prefabs/TestTeamPlayer.prefab
-  artifactKey: Guid(3ea25091c0c260b48b7873a5aab54297) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_JS/Prefabs/TestTeamPlayer.prefab using Guid(3ea25091c0c260b48b7873a5aab54297) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Refreshing native plugins compatible for Editor in 21.31 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Refreshing native plugins compatible for Editor in 24.40 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
- -> (artifact id: 'c2698e1781e48a7a72d8f5810f6291fb') in 0.528589 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1124
-========================================================================
-Received Import Request.
-  Time since last request: 70.144744 seconds.
-  path: Assets/Prefabs/Sparks.prefab
-  artifactKey: Guid(b16130b89bde05d449c9c6a8135b45f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Sparks.prefab using Guid(b16130b89bde05d449c9c6a8135b45f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ddc0ec0e6bdc2db17946a752da1f016') in 0.018930 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
 - Loaded All Assemblies, in  0.679 seconds
-Refreshing native plugins compatible for Editor in 26.94 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 24.53 ms, found 2 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.159 seconds
-Domain Reload Profiling: 1825ms
-	BeginReloadAssembly (196ms)
+- Finished resetting the current domain, in  1.171 seconds
+Domain Reload Profiling: 1838ms
+	BeginReloadAssembly (206ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (26ms)
-	RebuildCommonClasses (38ms)
+	RebuildCommonClasses (34ms)
 	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (58ms)
-	LoadAllAssembliesAndSetupDomain (362ms)
-		LoadAssemblies (472ms)
+	initialDomainReloadingComplete (62ms)
+	LoadAllAssembliesAndSetupDomain (353ms)
+		LoadAssemblies (470ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (16ms)
-			TypeCache.Refresh (5ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (1159ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (467ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (17ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (94ms)
-			ProcessInitializeOnLoadAttributes (292ms)
-			ProcessInitializeOnLoadMethodAttributes (31ms)
-			AfterProcessingInitializeOnLoad (30ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Refreshing native plugins compatible for Editor in 28.70 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 51 unused Assets / (1.3 MB). Loaded Objects now: 3438.
-Memory consumption went from 125.8 MB to 124.5 MB.
-Total: 4.024200 ms (FindLiveObjects: 0.283700 ms CreateObjectMapping: 0.075200 ms MarkObjects: 3.061300 ms  DeleteObjects: 0.603100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.725 seconds
-Refreshing native plugins compatible for Editor in 26.41 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.280 seconds
-Domain Reload Profiling: 1991ms
-	BeginReloadAssembly (212ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (26ms)
-	RebuildCommonClasses (36ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (58ms)
-	LoadAllAssembliesAndSetupDomain (393ms)
-		LoadAssemblies (517ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (16ms)
-			TypeCache.Refresh (5ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (1281ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (523ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (17ms)
-			SetLoadedEditorAssemblies (5ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (108ms)
-			ProcessInitializeOnLoadAttributes (331ms)
-			ProcessInitializeOnLoadMethodAttributes (29ms)
-			AfterProcessingInitializeOnLoad (33ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Refreshing native plugins compatible for Editor in 31.82 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 48 unused Assets / (1.3 MB). Loaded Objects now: 3453.
-Memory consumption went from 128.0 MB to 126.7 MB.
-Total: 5.111100 ms (FindLiveObjects: 0.283600 ms CreateObjectMapping: 0.074200 ms MarkObjects: 4.233000 ms  DeleteObjects: 0.519100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.870 seconds
-Refreshing native plugins compatible for Editor in 27.22 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.298 seconds
-Domain Reload Profiling: 2155ms
-	BeginReloadAssembly (275ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (28ms)
-	RebuildCommonClasses (50ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (75ms)
-	LoadAllAssembliesAndSetupDomain (442ms)
-		LoadAssemblies (614ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (18ms)
-			TypeCache.Refresh (5ms)
+		AnalyzeDomain (17ms)
+			TypeCache.Refresh (4ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (11ms)
-	FinalizeReload (1298ms)
+	FinalizeReload (1172ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (525ms)
+		SetupLoadedEditorAssemblies (462ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (16ms)
+			InitializePlatformSupportModulesInManaged (15ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (114ms)
-			ProcessInitializeOnLoadAttributes (325ms)
-			ProcessInitializeOnLoadMethodAttributes (27ms)
-			AfterProcessingInitializeOnLoad (39ms)
+			BeforeProcessingInitializeOnLoad (99ms)
+			ProcessInitializeOnLoadAttributes (286ms)
+			ProcessInitializeOnLoadMethodAttributes (25ms)
+			AfterProcessingInitializeOnLoad (34ms)
 			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Refreshing native plugins compatible for Editor in 33.62 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 48 unused Assets / (1.3 MB). Loaded Objects now: 3468.
-Memory consumption went from 129.9 MB to 128.6 MB.
-Total: 4.189900 ms (FindLiveObjects: 0.363400 ms CreateObjectMapping: 0.079200 ms MarkObjects: 3.220600 ms  DeleteObjects: 0.525800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-========================================================================
-Received Prepare
-Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Refreshing native plugins compatible for Editor in 27.76 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 5 unused Assets / (1.3 MB). Loaded Objects now: 3468.
-Memory consumption went from 84.3 MB to 83.0 MB.
-Total: 3.503000 ms (FindLiveObjects: 0.307200 ms CreateObjectMapping: 0.073700 ms MarkObjects: 2.715700 ms  DeleteObjects: 0.405800 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-========================================================================
-Received Import Request.
-  Time since last request: 492.124892 seconds.
-  path: Assets/_JS/Prefabs/Player2.prefab
-  artifactKey: Guid(9542393be4178e34b8d1cb17db98586a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_JS/Prefabs/Player2.prefab using Guid(9542393be4178e34b8d1cb17db98586a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Refreshing native plugins compatible for Editor in 20.42 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Refreshing native plugins compatible for Editor in 22.12 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
- -> (artifact id: '7c53c425497cbfa2637fd8d66a728487') in 0.598068 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1124
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/_JS/Prefabs/TestEnemy.prefab
-  artifactKey: Guid(5c0af5659b2e69d47a3f7795f7cfe6bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_JS/Prefabs/TestEnemy.prefab using Guid(5c0af5659b2e69d47a3f7795f7cfe6bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Refreshing native plugins compatible for Editor in 23.88 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Refreshing native plugins compatible for Editor in 23.89 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
- -> (artifact id: '31be87a79469cec909dfe03c9790e62e') in 0.536340 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1125
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.760 seconds
-Refreshing native plugins compatible for Editor in 33.68 ms, found 2 plugins.
-Native extension for WindowsStandalone target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.197 seconds
-Domain Reload Profiling: 1940ms
-	BeginReloadAssembly (220ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (30ms)
-	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (63ms)
-	LoadAllAssembliesAndSetupDomain (416ms)
-		LoadAssemblies (542ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (18ms)
-			TypeCache.Refresh (5ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (1197ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (492ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (18ms)
-			SetLoadedEditorAssemblies (5ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (110ms)
-			ProcessInitializeOnLoadAttributes (301ms)
-			ProcessInitializeOnLoadMethodAttributes (27ms)
-			AfterProcessingInitializeOnLoad (33ms)
-			EditorAssembliesLoaded (1ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (10ms)
 Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
 Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
 Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
 Shader 'Unreal/PBR_Alpha': fallback shader 'Hidden/Shader Graph/FallbackError' not found
-Refreshing native plugins compatible for Editor in 28.33 ms, found 2 plugins.
+Shader 'Unreal/PBR_Shaders': fallback shader 'Hidden/Shader Graph/FallbackError' not found
+Shader 'Unreal/PBR_Roof': fallback shader 'Hidden/Shader Graph/FallbackError' not found
+Refreshing native plugins compatible for Editor in 31.92 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2929 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 51 unused Assets / (1.3 MB). Loaded Objects now: 3483.
-Memory consumption went from 131.9 MB to 130.6 MB.
-Total: 3.444200 ms (FindLiveObjects: 0.290800 ms CreateObjectMapping: 0.073300 ms MarkObjects: 2.574500 ms  DeleteObjects: 0.504500 ms)
+Unloading 2930 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 48 unused Assets / (1.3 MB). Loaded Objects now: 3468.
+Memory consumption went from 137.9 MB to 136.6 MB.
+Total: 4.463900 ms (FindLiveObjects: 0.355700 ms CreateObjectMapping: 0.076500 ms MarkObjects: 3.501600 ms  DeleteObjects: 0.528800 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -563,31 +366,10 @@ AssetImportParameters requested are different than current active one (requested
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:Fusion.ScriptOrderDependency: 29ad7ce3e3d14d44fbfea38402f2dde5 -> 
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:Fusion.PrefabsDependency: 6f3e8aecb79afdcd5a6331219599cdc6 -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:FusionILWeaverTriggerImporter/ConfigHash: b0b173a93bb19085723cb3d421b3a13b -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-========================================================================
-Received Import Request.
-  Time since last request: 195.786297 seconds.
-  path: Assets/_JS/Prefabs/Player2.prefab
-  artifactKey: Guid(9542393be4178e34b8d1cb17db98586a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_JS/Prefabs/Player2.prefab using Guid(9542393be4178e34b8d1cb17db98586a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Refreshing native plugins compatible for Editor in 22.18 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Refreshing native plugins compatible for Editor in 23.22 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
- -> (artifact id: '6ae4b03fe3f6a8ac3d534f557f299b6c') in 0.603153 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1124
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/_JS/Prefabs/TestEnemy.prefab
-  artifactKey: Guid(5c0af5659b2e69d47a3f7795f7cfe6bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/_JS/Prefabs/TestEnemy.prefab using Guid(5c0af5659b2e69d47a3f7795f7cfe6bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Refreshing native plugins compatible for Editor in 27.83 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Refreshing native plugins compatible for Editor in 26.36 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
- -> (artifact id: '03ca87e4d697666c782ea8f0efac4cc9') in 0.558650 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1125
