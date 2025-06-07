@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1249,6 +1249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Fin
       objectReference: {fileID: 0}
+    - target: {fileID: 1947635060454926327, guid: 50a707e3bd15b3349958f7f6d6a50aca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 889be3f32ad38c34598bdba79c26ef28, type: 2}
     - target: {fileID: 2230898481849851090, guid: 50a707e3bd15b3349958f7f6d6a50aca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.99
@@ -1289,10 +1293,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992654285440458693, guid: 50a707e3bd15b3349958f7f6d6a50aca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 889be3f32ad38c34598bdba79c26ef28, type: 2}
+    - target: {fileID: 2992654285440458693, guid: 50a707e3bd15b3349958f7f6d6a50aca, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 889be3f32ad38c34598bdba79c26ef28, type: 2}
     - target: {fileID: 4119638444417282273, guid: 50a707e3bd15b3349958f7f6d6a50aca, type: 3}
       propertyPath: m_TagString
       value: ShootBow
       objectReference: {fileID: 0}
+    - target: {fileID: 4250887196151561701, guid: 50a707e3bd15b3349958f7f6d6a50aca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 889be3f32ad38c34598bdba79c26ef28, type: 2}
+    - target: {fileID: 4250887196151561701, guid: 50a707e3bd15b3349958f7f6d6a50aca, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 889be3f32ad38c34598bdba79c26ef28, type: 2}
+    - target: {fileID: 5636494722704649454, guid: 50a707e3bd15b3349958f7f6d6a50aca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 889be3f32ad38c34598bdba79c26ef28, type: 2}
+    - target: {fileID: 6957801251444667294, guid: 50a707e3bd15b3349958f7f6d6a50aca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 889be3f32ad38c34598bdba79c26ef28, type: 2}
+    - target: {fileID: 6957801251444667294, guid: 50a707e3bd15b3349958f7f6d6a50aca, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 889be3f32ad38c34598bdba79c26ef28, type: 2}
+    - target: {fileID: 8415018351322098760, guid: 50a707e3bd15b3349958f7f6d6a50aca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 889be3f32ad38c34598bdba79c26ef28, type: 2}
     - target: {fileID: 8912247451607449464, guid: 50a707e3bd15b3349958f7f6d6a50aca, type: 3}
       propertyPath: m_Name
       value: OrbitCenter
