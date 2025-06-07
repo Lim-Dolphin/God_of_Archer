@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ShootBow : MonoBehaviour {
 
+    [SerializeField] private ArrowSelector arrowSelector; // Inspector에서 할당!
+
     [SerializeField] GameObject arrowPrefab = null;
     [SerializeField] GameObject bow = null; 
     [SerializeField] public int arrowsRemaining = 10; 
@@ -16,7 +18,7 @@ public class ShootBow : MonoBehaviour {
 
     private bool knockedArrow = false;
     private float drawDistance = 0;
-
+   
     private Quaternion originalRot;
     private Vector3 originalPos;
 
@@ -100,6 +102,7 @@ public class ShootBow : MonoBehaviour {
 
             Rigidbody arrowRB = arrow.transform.GetComponent<Rigidbody>(); //get the rigid body
             ArrowForce af = arrow.transform.GetComponent<ArrowForce>(); //get the arrowforce object
+            af.SetSelector(arrowSelector);
 
             if (Input.GetMouseButton(0) && !stopDraw) {
                 if (Input.GetKeyDown(KeyCode.R)) { stopDraw = true; drawDistance = 0; ResetBow(); }

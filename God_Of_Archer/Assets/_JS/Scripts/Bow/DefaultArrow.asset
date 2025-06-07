@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowName: Default Arrow
   arrowDamage: 10
+  isGravity: 1
   isDotDamage: 0
-  prefab: {fileID: 0}
-  hitSound: {fileID: 0}

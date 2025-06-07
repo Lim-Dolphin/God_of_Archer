@@ -6,10 +6,14 @@ using UnityEngine;
 
 public class ArrowData : ScriptableObject
 {
-    public string arrowName = "Default Arrow";
-    public float arrowDamage = 10f;
-    public bool isDotDamage = false;
-    public GameObject prefab; // 화살 프리팹 (옵션)
-    public AudioClip hitSound; // 피격 사운드 (옵션)
+    [SerializeField] private string arrowName = "Default Arrow";
+    [SerializeField] private float arrowDamage = 10f;
+    [SerializeField] private bool isGravity = false;
+    [SerializeField] private bool isDotDamage = false;
     // 추후 추가: 속도 보정, 이펙트, 상태이상 등
+
+    public string ArrowName => arrowName;
+    public float ArrowDamage => arrowDamage;
+    public bool IsGravity => isGravity;
+    public bool IsDotDamage => isDotDamage;
 }
