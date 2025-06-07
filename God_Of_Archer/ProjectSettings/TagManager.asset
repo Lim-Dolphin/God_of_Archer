@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ArrowContainer
+  - Body
+  - Leg
+  - Arrow
+  - Arm
+  - Head
+  - ShootBow
+  - UI
   layers:
   - Default
   - TransparentFX

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 114254992456808562}
   - component: {fileID: 114281167723465730}
   - component: {fileID: 96861578517836568}
+  - component: {fileID: -8234469470061815037}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Arrow
@@ -192,8 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa9bc112eea10d9438ca5d9f320a0418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sparksPrefab: {fileID: 1807230624472054, guid: b16130b89bde05d449c9c6a8135b45f4,
-    type: 3}
+  sparksPrefab: {fileID: 1807230624472054, guid: b16130b89bde05d449c9c6a8135b45f4, type: 3}
 --- !u!96 &96861578517836568
 TrailRenderer:
   serializedVersion: 3
@@ -298,3 +298,15 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 0
+--- !u!114 &-8234469470061815037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958253797181148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c22d1ef5f71034286d09c1d942c0b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

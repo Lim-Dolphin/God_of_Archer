@@ -1122,6 +1122,7 @@ GameObject:
   - component: {fileID: 2721381906897642402}
   - component: {fileID: 888059661448440569}
   - component: {fileID: 1507665502812876485}
+  - component: {fileID: 2646702995826105214}
   m_Layer: 0
   m_Name: Player_Fin
   m_TagString: Player
@@ -1501,6 +1502,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &2646702995826105214
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599959965946074177}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: -0.1, z: 0}
 --- !u!1 &1609827108452857053
 GameObject:
   m_ObjectHideFlags: 0
@@ -16237,7 +16259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8756591257657279273}
   m_Layer: 0
-  m_Name: Pivot
+  m_Name: OrbitCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
