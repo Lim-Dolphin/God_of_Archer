@@ -94,8 +94,8 @@ namespace GodOfArcher
 
 		private void ShowPlayerData(PlayerData playerData)
 		{
-			Position.text = _gameUI.Gameplay.josen_win.ToString() + " / " + _gameUI.Gameplay.all_round.ToString();
-			Kills.text = _gameUI.Gameplay.chung_win.ToString() + " / " + _gameUI.Gameplay.all_round.ToString();
+			Position.text = _gameUI.Gameplay.josen_win.ToString() + " / " + ((_gameUI.Gameplay.all_round)/2+1).ToString();
+			Kills.text = _gameUI.Gameplay.chung_win.ToString() + " / " + ((_gameUI.Gameplay.all_round)/2+1).ToString();
 
 			if (playerData.StatisticPosition == _lastPosition)
 				return;

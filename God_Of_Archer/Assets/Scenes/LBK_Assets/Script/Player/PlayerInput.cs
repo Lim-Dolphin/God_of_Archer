@@ -17,6 +17,7 @@ namespace GodOfArcher
         Sprint,
         Draw,
         Shoot,
+        interaction,
     }
 
     /// <summary>
@@ -122,6 +123,8 @@ namespace GodOfArcher
                 _accumulatedInput.MoveDirection = moveDirection.normalized;
                 _accumulatedInput.IsRun = keyboard.leftShiftKey.isPressed;
                 _accumulatedInput.Buttons.Set(EInputButton.Jump, keyboard.spaceKey.isPressed);
+                _accumulatedInput.Buttons.Set(EInputButton.interaction, keyboard.eKey.isPressed);
+
                 _accumulatedInput.Buttons.Set(EInputButton.Reload, keyboard.rKey.isPressed);
                 _accumulatedInput.Buttons.Set(EInputButton.Pistol, keyboard.digit1Key.isPressed || keyboard.numpad1Key.isPressed);
                 _accumulatedInput.Buttons.Set(EInputButton.Rifle, keyboard.digit2Key.isPressed || keyboard.numpad2Key.isPressed);

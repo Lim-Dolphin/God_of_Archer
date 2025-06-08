@@ -177,3 +177,6 @@
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"CopyFiles C:/Users/imbq8/Desktop/Test_Build/MonoBleedingEdge/etc/mono/mconfig/config.xml","enqueuedNodeIndex":175,"enqueueingNodeAnnotation":"Player","enqueueingNodeIndex":178}
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"CopyFiles C:/Users/imbq8/Desktop/Test_Build/UnityCrashHandler64.exe","enqueuedNodeIndex":176,"enqueueingNodeAnnotation":"Player","enqueueingNodeIndex":178}
 {"msg":"enqueueNode","enqueuedNodeAnnotation":"CopyFiles C:/Users/imbq8/Desktop/Test_Build/UnityPlayer.dll","enqueuedNodeIndex":177,"enqueueingNodeAnnotation":"Player","enqueueingNodeIndex":178}
+{"msg":"newNode","annotation":"CopyFiles C:/Users/imbq8/Desktop/Test_Build/God_Of_Archer_Data/Plugins/x86_64/lib_burst_generated.dll","index":151}
+{"msg":"runNodeAction","annotation":"CopyFiles C:/Users/imbq8/Desktop/Test_Build/God_Of_Archer_Data/Plugins/x86_64/lib_burst_generated.dll","displayName":"Copying lib_burst_generated.dll","index":151}
+{"msg":"noderesult","processed_node_count":176,"number_of_nodes_ever_queued":178,"annotation":"CopyFiles C:/Users/imbq8/Desktop/Test_Build/God_Of_Archer_Data/Plugins/x86_64/lib_burst_generated.dll","index":151,"exitcode":0,"outputfile":"C:\\Users\\imbq8\\Desktop\\Test_Build\\God_Of_Archer_Data\\Plugins\\x86_64\\lib_burst_generated.dll"}

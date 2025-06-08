@@ -48,6 +48,9 @@ namespace GodOfArcher
         public GameUI GameUI;
         public Player josen_playerPrefab;
         public Player chung_playerPrefab;
+        public Signal_Fire Signal_A;
+        public Signal_Fire Signal_B;
+
         public float GameDuration = 180f;
         public float PlayerRespawnTime = 5f;
         public float DoubleDamageDuration = 30f;
@@ -65,18 +68,26 @@ namespace GodOfArcher
         [HideInInspector]
         public EGameplayState State { get; set; }
 
+        [Networked]
+        public int josen_cnt { get; set; } = 0;
+        [Networked]
+        public int chung_cnt { get; set; } = 0;
+        [Networked]
+        public int josen_win { get; set; } = 0;
+        [Networked]
+        public int chung_win { get; set; } = 0;
+        [Networked]
+        public int Fire_A { get; set; } = 0;
+        [Networked]
+        public int Fire_B { get; set; } = 0;
         public bool DoubleDamageActive => State == EGameplayState.Running && RemainingTime.RemainingTime(Runner).GetValueOrDefault() < DoubleDamageDuration;
 
         private bool _isNicknameSent;
         private float _runningStateTime;
-        private int josen_cnt = 0;
-        private int chung_cnt = 0;
-        public int josen_win = 0;
-        public int chung_win = 0;
         private List<Player> _spawnedPlayers = new(16);
         private List<PlayerRef> _pendingPlayers = new(16);
         private List<PlayerData> _tempPlayerData = new(16);
-        private List<Transform> _recentSpawnPoints = new(1);
+        private List<Transform> _recentSpawnPoints = new(10);
 
         public void PlayerKilled(PlayerRef killerPlayerRef, PlayerRef victimPlayerRef, EWeaponType weaponType, bool isCriticalKill)
         {
@@ -157,9 +168,14 @@ namespace GodOfArcher
 
                 if (josen_cnt == 0) ChungRoundWinGameplay();
                 if (chung_cnt == 0) JosenRoundWinGameplay();
-                if (RemainingTime.Expired(Runner))
+                if (Fire_A == 3 || Fire_B == 3) JosenRoundWinGameplay();
+                if (RemainingTime.Expired(Runner) && (Fire_A + Fire_B) == 0 )
                 {
                     JosenRoundWinGameplay();
+                }
+                else if(RemainingTime.Expired(Runner) && (Fire_A + Fire_B) != 0)
+                {
+                    ChungRoundWinGameplay();
                 }
             }
         }
@@ -177,6 +193,26 @@ namespace GodOfArcher
             }
         }
 
+        public void SetRemainingTime(float time, string name)
+        {
+            RemainingTime = TickTimer.CreateFromSeconds(Runner, time);
+            if(name == "A")
+            {
+                Signal_B.SetInactive();
+                Fire_A = 1;
+            }
+            if(name == "B")
+            {
+                Signal_A.SetInactive();
+                Fire_B = 1;
+            }
+        }
+
+        public void Fire_Extinguished()
+        {
+            Fire_A = 2;
+            Fire_B = 2;
+        }
         private void SpawnPlayer(PlayerRef playerRef)
         {
             if (PlayerData.TryGet(playerRef, out var playerData) == false)
@@ -285,10 +321,16 @@ namespace GodOfArcher
             {
                 PlayerPrefab = chung_playerPrefab;
             }
+            
             var player = Runner.Spawn(PlayerPrefab, spawnPoint.position, spawnPoint.rotation, playerRef);
 
             // Set player instance as PlayerObject so we can easily get it from other locations.
             Runner.SetPlayerObject(playerRef, player.Object);
+
+            /*Signal_A.SetActive();
+            Signal_B.SetActive();
+            Fire_A = 0;
+            Fire_B = 0;*/
         }
 
         private Transform GetSpawnPoint(PlayerData playerData)
@@ -327,7 +369,7 @@ namespace GodOfArcher
 
             State = EGameplayState.Running;
             RemainingTime = TickTimer.CreateFromSeconds(Runner, GameDuration);
-
+            _recentSpawnPoints.Clear();
             // Reset player data after skirmish and respawn players.
             foreach (var playerPair in PlayerData)
             {
@@ -357,6 +399,7 @@ namespace GodOfArcher
             Debug.Log("Josen Win!");
             josen_win++;
             chung_cnt = start_player_cnt / 2;
+            josen_cnt = start_player_cnt / 2;
             if (josen_win > all_round/2) StopGameplay();
             if(State != EGameplayState.Finished)StartGameplay();
         }
@@ -367,6 +410,7 @@ namespace GodOfArcher
             Debug.Log("Chung Win!");
             chung_win++;
             josen_cnt = start_player_cnt / 2;
+            chung_cnt = start_player_cnt / 2;
             if (chung_win > all_round / 2) StopGameplay();
             if (State != EGameplayState.Finished) StartGameplay();
         }

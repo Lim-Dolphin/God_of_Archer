@@ -3,6 +3,7 @@ using Fusion;
 using Fusion.Addons.SimpleKCC;
 using Cinemachine;
 using static UnityEngine.EventSystems.PointerEventData;
+using Unity.VisualScripting;
 
 namespace GodOfArcher
 {
@@ -29,6 +30,7 @@ namespace GodOfArcher
         public GameObject FirstPersonRoot;
         public GameObject ThirdPersonRoot;
         public NetworkObject SprayPrefab;
+        public LayerMask LayerMask;
 
         [Header("Movement")]
         public float UpGravity = 15f;
@@ -43,6 +45,8 @@ namespace GodOfArcher
         // Draw 중 당기는 속도 (1초에 drawAmount가 얼마나 올라갈지)
         [SerializeField] private float pullSpeed = 1f;
 
+        public float Radius = 1f;
+        private static Collider[] _colliders = new Collider[8];
         // 현재 drawAmount 값
         private float currentDraw = 0f;
 
@@ -52,6 +56,8 @@ namespace GodOfArcher
         private int _jumpCount { get; set; }
         [Networked]
         private Vector3 _moveVelocity { get; set; }
+        [Networked]
+        private TickTimer _activationTimer { get; set; }
 
         private int _visibleJumpCount;
 
@@ -70,7 +76,7 @@ namespace GodOfArcher
         public override void Spawned()
         {
             name = $"{Object.InputAuthority} ({(HasInputAuthority ? "Input Authority" : (HasStateAuthority ? "State Authority" : "Proxy"))})";
-
+            
             // Enable first person visual for local player, third person visual for proxies.
             SetFirstPersonVisuals(HasInputAuthority);
 
@@ -205,7 +211,7 @@ namespace GodOfArcher
 
             if (inputDirection.x != 0 || inputDirection.z != 0)
             {
-                if (hasStamina && (input.IsRun && input.MoveDirection == Vector2.up))
+                if ((!Status.isAttacking&& hasStamina) && (input.IsRun && input.MoveDirection == Vector2.up))
                 {
                     MoveSpeed = Status.RunSpeed;
                     Status.setRunning(true);
@@ -230,22 +236,73 @@ namespace GodOfArcher
                 _jumpCount++;
             }
 
-            if(MoveSpeed > 0.5f || !hasStamina)
+            if(MoveSpeed > Status.RunSpeed || !hasStamina)
             {
+                Status.setAttacking(false);
                 Weapons.Stop();
             }
             else
             {
                 if (input.Buttons.IsSet(EInputButton.Draw))
                 {
+                    Status.setAttacking(true);
                     bool justPressed = input.Buttons.WasPressed(_previousButtons, EInputButton.Draw);
                     Weapons.Draw(justPressed);
                 }
 
                 if (input.Buttons.IsSet(EInputButton.Shoot))
                 {
+                    Status.setAttacking(false);
                     bool jusReleased = input.Buttons.WasPressed(_previousButtons, EInputButton.Shoot);
                     Weapons.Shoot(jusReleased);
+                }
+            }
+
+            if(input.Buttons.IsSet(EInputButton.interaction))
+            {
+                bool justPressed = input.Buttons.WasPressed(_previousButtons, EInputButton.interaction);
+                if (justPressed)
+                {
+                    int collisions = Runner.GetPhysicsScene().OverlapSphere(transform.position + Vector3.up, Radius, _colliders, LayerMask, QueryTriggerInteraction.Ignore);
+                    for (int i = 0; i < collisions; i++)
+                    {
+                        var fire = _colliders[i].GetComponentInParent<Signal_Fire>();
+
+                        if (fire != null && fire.State == BeaconState.Active)
+                        {
+                            // Pickup was successful, activating timer.
+                            _activationTimer = TickTimer.CreateFromSeconds(Runner, 3.0f);
+                        }
+
+                        if (fire != null && _activationTimer.Expired(Runner))
+                        {
+                            fire.Ignite();
+                        }
+
+                        if (fire != null && fire.State == BeaconState.Ignited)
+                        {
+                            // Pickup was successful, activating timer.
+                            _activationTimer = TickTimer.CreateFromSeconds(Runner, 7.0f);
+                        }
+
+                        if (fire != null && _activationTimer.Expired(Runner))
+                        {
+                            fire.Extinguish();
+                        }
+                    }
+                }
+                else
+                {
+                    int collisions = Runner.GetPhysicsScene().OverlapSphere(transform.position + Vector3.up, Radius, _colliders, LayerMask, QueryTriggerInteraction.Ignore);
+                    for (int i = 0; i < collisions; i++)
+                    {
+                        var fire = _colliders[i].GetComponentInParent<Signal_Fire>();
+                        if (fire != null && fire.State == BeaconState.Active)
+                        {
+                            // Pickup was successful, activating timer.
+                            _activationTimer = TickTimer.None;
+                        }
+                    }
                 }
             }
             

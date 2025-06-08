@@ -18,6 +18,10 @@ namespace GodOfArcher
         [SerializeField]
         private float runDuration = 7f;
         //[Tooltip("활을 당길 수 있는 최대 시간 (초 단위)")]
+        [SerializeField]
+        private float attackDuration = 5f;
+
+        public int team = 0;
 
         public float WalkSpeed => walkSpeed;
         public float RunSpeed => runSpeed;
@@ -31,9 +35,10 @@ namespace GodOfArcher
         public float RunDuration => runDuration;
 
         public float runCost => maxStamina / runDuration;
+        public float attackCost => maxStamina / attackDuration;
 
         private bool isRunning = false;
-        private bool isAttacking = false;
+        public bool isAttacking = false;
         private bool attacking = false;
 
         public override void Spawned()
@@ -52,7 +57,11 @@ namespace GodOfArcher
             {
                 RecoverStamina();
             }
-            else
+            else if(isAttacking)
+            {
+                UseStamina(attackCost);
+            }
+            else if(isRunning)
             {
                 UseStamina(runCost);
             }
