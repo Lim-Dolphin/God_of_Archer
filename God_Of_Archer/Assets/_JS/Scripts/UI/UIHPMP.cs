@@ -14,16 +14,7 @@ namespace GodOfArcher
         [SerializeField] private Slider HPSlider;
         [SerializeField] private Slider SPSlider;
         [SerializeField] private PlayerStatus status;
-        [SerializeField] private ShootBow Shoot;
         [SerializeField] private TextMeshProUGUI ArrowCount;
-
-        private int AC;
-
-        private void Start()
-        {
-            if (Shoot != null)
-                AC = Shoot.arrowsRemaining;
-        }
 
         public void UpdateStatus(Player player)
         {
@@ -32,7 +23,7 @@ namespace GodOfArcher
 
             if (SPSlider != null) SPSlider.value = Utils.Par(player.Status.currentStamina, player.Status.MaxStamina);
             if (SPText != null) SPText.text = $"{player.Status.currentStamina:F0} / {player.Status.MaxStamina:F0}";
-            if (Shoot != null) ArrowCount.text = $"{Shoot.arrowsRemaining:F0} / {AC:F0}";
+            ArrowCount.text = $"{player.Weapons.CurrentWeapon.ClipAmmo:F0} / {player.Weapons.CurrentWeapon.MaxClipAmmo:F0}";
         }
     }
 }

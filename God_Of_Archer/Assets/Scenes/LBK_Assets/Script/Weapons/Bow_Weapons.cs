@@ -32,8 +32,18 @@ namespace GodOfArcher
         public AudioSource DrawSound;
         public AudioSource ShootSound;
 
+        [Header("Ammo")]
+        public int MaxClipAmmo = 10;
+        public int StartAmmo = 10;
+
         [Header("Fire Setup")]
         public float Damage = 10f;
+
+        [Networked]
+        public int ClipAmmo { get; set; }
+
+        [Networked]
+        public int RemainingAmmo { get; set; }
 
         [Networked]
         private int _fireCount { get; set; }
@@ -75,18 +85,21 @@ namespace GodOfArcher
                 Drawing = false;
                 DrawSound.Stop();
                 ShootSound.Play();
-                _FireRayPosition = firePosition;
-                _FireRayEndPosition = fireDirection;
-                _projectileData.Set(_fireCount % _projectileData.Length, new ProjectileData()
+                if (ClipAmmo > 0)
                 {
-                    FireTick = Runner.Tick,
-                    FirePosition = firePosition,
-                    FireVelocity = fireDirection * _speed,
-                    FinishTick = Runner.Tick + Mathf.RoundToInt(_lifeTime / Runner.DeltaTime),
-                });
+                    _FireRayPosition = firePosition;
+                    _FireRayEndPosition = fireDirection;
+                    _projectileData.Set(_fireCount % _projectileData.Length, new ProjectileData()
+                    {
+                        FireTick = Runner.Tick,
+                        FirePosition = firePosition,
+                        FireVelocity = fireDirection * _speed,
+                        FinishTick = Runner.Tick + Mathf.RoundToInt(_lifeTime / Runner.DeltaTime),
+                    });
 
-                _fireCount++;
-
+                    _fireCount++;
+                    ClipAmmo--;
+                }
                 return;
             }
         }
@@ -101,6 +114,7 @@ namespace GodOfArcher
         {
             _visibleFireCount = _fireCount;
             _sceneObjects = Runner.GetSingleton<SceneObjects>();
+            ClipAmmo = StartAmmo;
         }
 
         public override void FixedUpdateNetwork()

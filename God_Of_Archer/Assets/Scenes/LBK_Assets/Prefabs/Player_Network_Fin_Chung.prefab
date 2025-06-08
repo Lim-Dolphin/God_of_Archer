@@ -2366,6 +2366,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bow2_Model
       objectReference: {fileID: 0}
+    - target: {fileID: 8795795069144808442, guid: 803ad8c91ac10104abc3468a4cf02865, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838598185878296086, guid: 803ad8c91ac10104abc3468a4cf02865, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
