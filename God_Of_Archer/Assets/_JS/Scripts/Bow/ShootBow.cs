@@ -5,7 +5,7 @@ public class ShootBow : MonoBehaviour {
 
     [SerializeField] GameObject arrowPrefab = null;
     [SerializeField] GameObject bow = null; 
-    [SerializeField] int arrowsRemaining = 10; 
+    [SerializeField] public int arrowsRemaining = 10; 
     [SerializeField] int pullSpeed = 10; 
 
     private GameObject arrow; 
@@ -84,6 +84,15 @@ public class ShootBow : MonoBehaviour {
     }
 
     private void ShootArrow() {
+        
+            if (arrow == null)
+            {
+                if (arrowsRemaining > 0)
+                {
+                    SpawnArrow();
+                }
+                return;
+            }
         if (arrowsRemaining > 0) { //if they have arrows left          
 
             SkinnedMeshRenderer bowSkin = bow.transform.GetComponent<SkinnedMeshRenderer>();

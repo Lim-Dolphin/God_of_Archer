@@ -11,6 +11,14 @@ TagManager:
   - Head
   - Josen_spawn
   - Chung_spawn
+  - ArrowContainer
+  - Body
+  - Leg
+  - Arrow
+  - Arm
+  - Head
+  - ShootBow
+  - UI
   layers:
   - Default
   - TransparentFX

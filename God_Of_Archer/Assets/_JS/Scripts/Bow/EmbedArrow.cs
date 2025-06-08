@@ -4,8 +4,12 @@ public class EmbedArrow : MonoBehaviour {
     [SerializeField] GameObject sparksPrefab = null;
     private GameObject sparks;
     private Rigidbody rb;
+    private Collider Collder;
     private bool sparkExists = false;
-    private void Start() { rb = GetComponent<Rigidbody>(); }
+    private void Start() { 
+        rb = GetComponent<Rigidbody>();
+        Collder = GetComponent<Collider>();
+    }
 
     private void Update() {
         if (sparkExists && !sparks.GetComponent<ParticleSystem>().isEmitting) {
@@ -19,7 +23,7 @@ public class EmbedArrow : MonoBehaviour {
         if (col.gameObject.tag == "Arrow" || col.gameObject.tag == "Player") return; 
 
         transform.GetComponent<ArrowForce>().enabled = false; 
-        rb.isKinematic = true; 
+        rb.isKinematic = true;
 
         sparks = Instantiate(sparksPrefab, transform) as GameObject; 
         sparksPrefab.transform.rotation = transform.rotation; 
@@ -28,5 +32,7 @@ public class EmbedArrow : MonoBehaviour {
         transform.localScale += new Vector3(3, 3, 3); 
 
         transform.SetParent(GameObject.FindGameObjectWithTag("ArrowContainer").transform, true);
+        Collder.isTrigger = true;
+        
     }
 }
