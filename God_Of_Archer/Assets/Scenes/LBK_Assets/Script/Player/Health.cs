@@ -32,7 +32,7 @@ namespace GodOfArcher
         private int _visibleHitCount;
         private SceneObjects _sceneObjects;
 
-        public bool ApplyDamage(PlayerRef instigator, float damage, Vector3 position, Vector3 direction, EWeaponType weaponType, bool isCritical)
+        public bool ApplyDamage(PlayerRef instigator, float damage, Vector3 position, Vector3 direction, bool isCritical)
         {
             if (CurrentHealth <= 0f)
                 return false;
@@ -46,7 +46,8 @@ namespace GodOfArcher
             {
                 CurrentHealth = 0f;
 
-                _sceneObjects.Gameplay.PlayerKilled(instigator, Object.InputAuthority, weaponType, isCritical);
+                _sceneObjects.Gameplay.PlayerKilled(instigator, Object.InputAuthority, EWeaponType.None, isCritical);
+
             }
 
             // Store relative hit position.

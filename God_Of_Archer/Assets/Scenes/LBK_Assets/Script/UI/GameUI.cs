@@ -16,7 +16,8 @@ namespace GodOfArcher
         public NetworkRunner Runner;
 
         public UIPlayerView PlayerView;
-        //public UIGameplayView GameplayView;
+        public UIGameplayView GameplayView;
+        public UIConnectView ConnectView;
         //public UIGameOverView GameOverView;
         //public GameObject ScoreboardView;
         //public GameObject MenuView;
@@ -72,6 +73,7 @@ namespace GodOfArcher
 
             var keyboard = Keyboard.current;
             bool gameplayActive = Gameplay.State < EGameplayState.Finished;
+            bool connect = Gameplay.State == EGameplayState.Skirmish;
 
             /*ScoreboardView.SetActive(gameplayActive && keyboard != null && keyboard.tabKey.isPressed);
 
@@ -79,18 +81,23 @@ namespace GodOfArcher
             {
                 MenuView.SetActive(!MenuView.activeSelf);
             }
-
-            GameplayView.gameObject.SetActive(gameplayActive);
-            GameOverView.gameObject.SetActive(gameplayActive == false);*/
+            */
+            if (!connect) GameplayView.gameObject.SetActive(gameplayActive);
+            //GameOverView.gameObject.SetActive(gameplayActive == false);
 
             var playerObject = Runner.GetPlayerObject(Runner.LocalPlayer);
             if (playerObject != null)
             {
                 var player = playerObject.GetComponent<Player>();
                 var playerData = Gameplay.PlayerData.Get(Runner.LocalPlayer);
+                if(!connect)
+                {
+                    PlayerView.UpdatePlayer(player, playerData);
+                    PlayerView.gameObject.SetActive(gameplayActive);
+                }
+                ConnectView.UpdatePlayer(player, playerData);
+                ConnectView.gameObject.SetActive(connect);
 
-                PlayerView.UpdatePlayer(player, playerData);
-                PlayerView.gameObject.SetActive(gameplayActive);
             }
             else
             {

@@ -369,7 +369,7 @@ namespace GodOfArcher
                 damage *= 2f;
             }
 
-            if (enemyHealth.ApplyDamage(Object.InputAuthority, damage, position, direction, Type, isCriticalHit) == false)
+            if (enemyHealth.ApplyDamage(Object.InputAuthority, damage, position, direction, isCriticalHit) == false)
                 return;
 
             if (HasInputAuthority && Runner.IsForward)

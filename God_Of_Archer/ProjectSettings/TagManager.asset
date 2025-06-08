@@ -9,6 +9,8 @@ TagManager:
   - Body
   - Arm
   - Head
+  - Josen_spawn
+  - Chung_spawn
   layers:
   - Default
   - TransparentFX

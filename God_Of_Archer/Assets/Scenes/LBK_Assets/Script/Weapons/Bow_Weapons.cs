@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Fusion;
+using UnityEngine.Serialization;
+using System.IO.Pipes;
 
 namespace GodOfArcher
 {
-    public class My_Weapons : WeaponBase
+    public class Bow_Weapons : WeaponBase
     {
         // PRIVATE MEMBERS
 
@@ -22,6 +24,17 @@ namespace GodOfArcher
         [SerializeField]
         private DummyProjectile _dummyProjectilePrefab;
 
+        [FormerlySerializedAs("WeaponVisual")]
+        public GameObject FirstPersonVisual;
+        public GameObject ThirdPersonVisual;
+
+        [Header("Sounds")]
+        public AudioSource DrawSound;
+        public AudioSource ShootSound;
+
+        [Header("Fire Setup")]
+        public float Damage = 10f;
+
         [Networked]
         private int _fireCount { get; set; }
         [Networked, Capacity(64)]
@@ -30,25 +43,64 @@ namespace GodOfArcher
         private DummyProjectile[] _projectiles = new DummyProjectile[64];
 
         private int _visibleFireCount;
+        private SceneObjects _sceneObjects;
 
+        public bool Drawing = false;
         // WeaponBase INTERFACE
 
-        public override void Fire(bool justPressed)
+        public void Draw(Vector3 firePosition, Vector3 fireDirection, bool justPressed)
         {
-            _projectileData.Set(_fireCount % _projectileData.Length, new ProjectileData()
+            if (justPressed == true && Drawing == false)
             {
-                FireTick = Runner.Tick,
-                FirePosition = FireTransform.position,
-                FireVelocity = FireTransform.forward * _speed,
-                FinishTick = Runner.Tick + Mathf.RoundToInt(_lifeTime / Runner.DeltaTime),
-            });
+                Debug.Log("Pressed");
+                Drawing = true;
+                ShootSound.Stop();
+                //DrawSound.Stop();
+                DrawSound.Play();
+            }
+        }
 
-            _fireCount++;
+        private Vector3 _FireRayPosition = Vector3.zero;
+        private Vector3 _FireRayEndPosition = Vector3.zero;
+        public void Update() 
+        {
+            Debug.DrawRay(_FireRayPosition, _FireRayPosition + (_FireRayEndPosition * _speed), Color.red);
+        }
+        public void Shoot(Vector3 firePosition, Vector3 fireDirection, bool justReleased)
+        {
+
+            if (justReleased == true && Drawing == true)
+            {
+                Debug.Log("Released");
+                Drawing = false;
+                DrawSound.Stop();
+                ShootSound.Play();
+                _FireRayPosition = firePosition;
+                _FireRayEndPosition = fireDirection;
+                _projectileData.Set(_fireCount % _projectileData.Length, new ProjectileData()
+                {
+                    FireTick = Runner.Tick,
+                    FirePosition = firePosition,
+                    FireVelocity = fireDirection * _speed,
+                    FinishTick = Runner.Tick + Mathf.RoundToInt(_lifeTime / Runner.DeltaTime),
+                });
+
+                _fireCount++;
+
+                return;
+            }
+        }
+        public void Stop()
+        {
+            Drawing = false;
+            ShootSound.Stop();
+            DrawSound.Stop();
         }
 
         public override void Spawned()
         {
             _visibleFireCount = _fireCount;
+            _sceneObjects = Runner.GetSingleton<SceneObjects>();
         }
 
         public override void FixedUpdateNetwork()
@@ -163,9 +215,15 @@ namespace GodOfArcher
                 projectileData.HitPosition = hit.Point;
                 projectileData.FinishTick = tick + Mathf.RoundToInt(_lifeTimeAfterHit / Runner.DeltaTime);
 
-                if (hit.Collider != null && hit.Collider.attachedRigidbody != null)
+                /*if (hit.Collider != null && hit.Collider.attachedRigidbody != null)
                 {
                     hit.Collider.attachedRigidbody.AddForce(direction * _hitImpulse, ForceMode.Impulse);
+                }*/
+
+                if (hit.Hitbox != null)
+                {
+                    Debug.Log("Hit!");
+                    ApplyDamage(hit.Hitbox, hit.Point, direction);
                 }
             }
         }
@@ -176,12 +234,48 @@ namespace GodOfArcher
 
             if (time <= 0f)
                 return data.FirePosition;
-
+            //Debug.Log(data.FireVelocity);
             return data.FirePosition + data.FireVelocity * time;
         }
 
-        // DATA STRUCTURES
+        private void ApplyDamage(Hitbox enemyHitbox, Vector3 position, Vector3 direction)
+        {
+            var enemyHealth = enemyHitbox.Root.GetComponent<Health>();
+            if (enemyHealth == null || enemyHealth.IsAlive == false)
+                return;
 
+            float damageMultiplier = enemyHitbox is BodyHitbox bodyHitbox ? bodyHitbox.DamageMultiplier : 1f;
+            bool isCriticalHit = damageMultiplier > 1f;
+
+            float damage = Damage * damageMultiplier;
+            if (_sceneObjects.Gameplay.DoubleDamageActive)
+            {
+                damage *= 2f;
+            }
+
+            if (enemyHealth.ApplyDamage(Object.InputAuthority, damage, position, direction, isCriticalHit) == false)
+                return;
+
+            if (HasInputAuthority && Runner.IsForward)
+            {
+                // For local player show UI hit effect.
+                //_sceneObjects.GameUI.PlayerView.Crosshair.ShowHit(enemyHealth.IsAlive == false, isCriticalHit);
+            }
+        }
+
+        public void ToggleVisibility(bool isVisible)
+        {
+            FirstPersonVisual.SetActive(isVisible);
+            ThirdPersonVisual.SetActive(isVisible);
+
+            /*if (_muzzleEffectInstance != null)
+            {
+                _muzzleEffectInstance.SetActive(false);
+            }*/
+        }
+
+        // DATA STRUCTURES
+        
         private struct ProjectileData : INetworkStruct
         {
             public bool IsActive => FireTick > 0;

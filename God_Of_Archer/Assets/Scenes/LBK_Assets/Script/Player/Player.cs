@@ -14,11 +14,11 @@ namespace GodOfArcher
     {
         [Header("Components")]
         public SimpleKCC KCC;
-        public Weapons Weapons;
+        public WeaponBase Weapons;
         public Health Health;
         public PlayerStatus Status;
         public PlayerAnimatorController Animator;
-        //public HitboxRoot HitboxRoot;
+        public HitboxRoot HitboxRoot;
 
         [Header("Setup")]
         public float MoveSpeed = 6f;
@@ -98,7 +98,7 @@ namespace GodOfArcher
                 return;
             }
 
-            /*if (Health.IsAlive == false)
+            if (Health.IsAlive == false)
             {
                 // We want dead body to finish movement - fall to ground etc.
                 MovePlayer();
@@ -112,7 +112,7 @@ namespace GodOfArcher
                 // Force enable third person visual for local player.
                 SetFirstPersonVisuals(false);
                 return;
-            }*/
+            }
 
             if (GetInput(out NetworkedInput input))
             {

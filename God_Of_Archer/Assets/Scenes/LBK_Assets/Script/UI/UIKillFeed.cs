@@ -10,11 +10,12 @@ namespace GodOfArcher
 
 		public void ShowKill(string killer, string victim, EWeaponType weaponType, bool isCriticalKill)
 		{
+			Debug.Log("ShowKill");
 			var item = Instantiate(KillFeedItemPrefab, transform);
 
 			item.Killer.text = killer;
 			item.Victim.text = victim;
-			item.WeaponIcon.sprite = WeaponIcons[(int)weaponType];
+			item.WeaponIcon.sprite = WeaponIcons[0];
 			item.CriticalKillGroup.SetActive(isCriticalKill);
 
 

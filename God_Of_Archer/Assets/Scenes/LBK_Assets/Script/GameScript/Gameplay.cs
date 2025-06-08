@@ -24,6 +24,13 @@ namespace GodOfArcher
         public int StatisticPosition;
         public bool IsAlive;
         public bool IsConnected;
+        public Team team;
+    }
+
+    public enum Team
+    {
+        Josen = 0,
+        Chung = 1,
     }
 
     public enum EGameplayState
@@ -39,10 +46,13 @@ namespace GodOfArcher
     public class Gameplay : NetworkBehaviour
     {
         public GameUI GameUI;
-        public Player PlayerPrefab;
+        public Player josen_playerPrefab;
+        public Player chung_playerPrefab;
         public float GameDuration = 180f;
         public float PlayerRespawnTime = 5f;
         public float DoubleDamageDuration = 30f;
+        public int start_player_cnt = 2;
+        public int all_round = 5;
 
         [Networked]
         [Capacity(32)]
@@ -59,6 +69,10 @@ namespace GodOfArcher
 
         private bool _isNicknameSent;
         private float _runningStateTime;
+        private int josen_cnt = 0;
+        private int chung_cnt = 0;
+        public int josen_win = 0;
+        public int chung_win = 0;
         private List<Player> _spawnedPlayers = new(16);
         private List<PlayerRef> _pendingPlayers = new(16);
         private List<PlayerData> _tempPlayerData = new(16);
@@ -68,6 +82,9 @@ namespace GodOfArcher
         {
             if (HasStateAuthority == false)
                 return;
+
+            Debug.Log("pre_Josen : " + josen_cnt);
+            Debug.Log("pre_chung : " + chung_cnt);
 
             // Update statistics of the killer player.
             if (PlayerData.TryGet(killerPlayerRef, out PlayerData killerData))
@@ -86,9 +103,16 @@ namespace GodOfArcher
             // Inform all clients about the kill via RPC.
             RPC_PlayerKilled(killerPlayerRef, victimPlayerRef, weaponType, isCriticalKill);
 
-            StartCoroutine(RespawnPlayer(victimPlayerRef, PlayerRespawnTime));
+            if (playerData.team == Team.Josen) josen_cnt--;
+            if (playerData.team == Team.Chung) chung_cnt--;
 
-            RecalculateStatisticPositions();
+            Debug.Log("post_Josen : " + josen_cnt);
+            Debug.Log("post_chung : " + chung_cnt);
+
+
+            //StartCoroutine(RespawnPlayer(victimPlayerRef, PlayerRespawnTime));
+
+            //RecalculateStatisticPositions();
         }
 
         /*public override void Spawned()
@@ -113,7 +137,7 @@ namespace GodOfArcher
             PlayerManager.UpdatePlayerConnections(Runner, SpawnPlayer, DespawnPlayer);
 
             // Start gameplay when there are enough players connected.
-            if (State == EGameplayState.Skirmish && PlayerData.Count > 1)
+            if (State == EGameplayState.Skirmish && PlayerData.Count >= start_player_cnt)
             {
                 StartGameplay();
             }
@@ -131,14 +155,16 @@ namespace GodOfArcher
                     sessionInfo.IsVisible = false;
                 }
 
+                if (josen_cnt == 0) ChungRoundWinGameplay();
+                if (chung_cnt == 0) JosenRoundWinGameplay();
                 if (RemainingTime.Expired(Runner))
                 {
-                    StopGameplay();
+                    JosenRoundWinGameplay();
                 }
             }
         }
 
-        /*public override void Render()
+        public override void Render()
         {
             if (Runner.Mode == SimulationModes.Server)
                 return;
@@ -149,7 +175,7 @@ namespace GodOfArcher
                 RPC_SetPlayerNickname(Runner.LocalPlayer, PlayerPrefs.GetString("Photon.Menu.Username"));
                 _isNicknameSent = true;
             }
-        }*/
+        }
 
         private void SpawnPlayer(PlayerRef playerRef)
         {
@@ -161,6 +187,19 @@ namespace GodOfArcher
                 playerData.StatisticPosition = int.MaxValue;
                 playerData.IsAlive = false;
                 playerData.IsConnected = false;
+                var randTeam = Random.Range(0,2);
+
+                if (josen_cnt >= start_player_cnt / 2)
+                {
+                    randTeam = 1;
+                }
+
+                if (chung_cnt >= start_player_cnt / 2)
+                {
+                    randTeam = 0;
+                }
+
+                playerData.team = (Team)randTeam;
             }
 
             if (playerData.IsConnected == true)
@@ -173,13 +212,25 @@ namespace GodOfArcher
 
             PlayerData.Set(playerRef, playerData);
 
-            var spawnPoint = GetSpawnPoint();
+            var spawnPoint = GetSpawnPoint(playerData);
+
+            Player PlayerPrefab = null;
+            if(playerData.team == Team.Josen)
+            {
+                josen_cnt++;
+                PlayerPrefab = josen_playerPrefab;
+            }
+            if(playerData.team == Team.Chung)
+            {
+                chung_cnt++;
+                PlayerPrefab = chung_playerPrefab;
+            }
             var player = Runner.Spawn(PlayerPrefab, spawnPoint.position, spawnPoint.rotation, playerRef);
 
             // Set player instance as PlayerObject so we can easily get it from other locations.
             Runner.SetPlayerObject(playerRef, player.Object);
 
-            RecalculateStatisticPositions();
+            //RecalculateStatisticPositions();
         }
 
         private void DespawnPlayer(PlayerRef playerRef, Player player)
@@ -224,14 +275,23 @@ namespace GodOfArcher
             playerData.IsAlive = true;
             PlayerData.Set(playerRef, playerData);
 
-            var spawnPoint = GetSpawnPoint();
+            var spawnPoint = GetSpawnPoint(playerData);
+            Player PlayerPrefab = null;
+            if (playerData.team == Team.Josen)
+            {
+                PlayerPrefab = josen_playerPrefab;
+            }
+            if (playerData.team == Team.Chung)
+            {
+                PlayerPrefab = chung_playerPrefab;
+            }
             var player = Runner.Spawn(PlayerPrefab, spawnPoint.position, spawnPoint.rotation, playerRef);
 
             // Set player instance as PlayerObject so we can easily get it from other locations.
             Runner.SetPlayerObject(playerRef, player.Object);
         }
 
-        private Transform GetSpawnPoint()
+        private Transform GetSpawnPoint(PlayerData playerData)
         {
             Transform spawnPoint = default;
 
@@ -239,7 +299,10 @@ namespace GodOfArcher
             var spawnPoints = Runner.SimulationUnityScene.GetComponents<SpawnPoint>(false);
             for (int i = 0, offset = Random.Range(0, spawnPoints.Length); i < spawnPoints.Length; i++)
             {
-                spawnPoint = spawnPoints[(offset + i) % spawnPoints.Length].transform;
+                spawnPoint = default;
+                if (playerData.team == Team.Josen && spawnPoints[(offset + i) % spawnPoints.Length].tag == "Josen_spawn") spawnPoint = spawnPoints[(offset + i) % spawnPoints.Length].transform;
+                if (playerData.team == Team.Chung && spawnPoints[(offset + i) % spawnPoints.Length].tag == "Chung_spawn") spawnPoint = spawnPoints[(offset + i) % spawnPoints.Length].transform;
+                if (spawnPoint == default) continue;
 
                 if (_recentSpawnPoints.Contains(spawnPoint) == false)
                     break;
@@ -248,11 +311,11 @@ namespace GodOfArcher
             // Add spawn point to list of recently used spawn points.
             _recentSpawnPoints.Add(spawnPoint);
 
-            // Ignore only last 3 spawn points.
+            /*// Ignore only last 3 spawn points.
             if (_recentSpawnPoints.Count > 1)
             {
                 _recentSpawnPoints.RemoveAt(0);
-            }
+            }*/
 
             return spawnPoint;
         }
@@ -283,10 +346,32 @@ namespace GodOfArcher
 
         private void StopGameplay()
         {
-            RecalculateStatisticPositions();
+            //RecalculateStatisticPositions();
 
             State = EGameplayState.Finished;
         }
+
+        private void JosenRoundWinGameplay()
+        {
+            //RecalculateStatisticPositions();
+            Debug.Log("Josen Win!");
+            josen_win++;
+            chung_cnt = start_player_cnt / 2;
+            if (josen_win > all_round/2) StopGameplay();
+            if(State != EGameplayState.Finished)StartGameplay();
+        }
+
+        private void ChungRoundWinGameplay()
+        {
+            //RecalculateStatisticPositions();
+            Debug.Log("Chung Win!");
+            chung_win++;
+            josen_cnt = start_player_cnt / 2;
+            if (chung_win > all_round / 2) StopGameplay();
+            if (State != EGameplayState.Finished) StartGameplay();
+        }
+
+
 
         private void RecalculateStatisticPositions()
         {
@@ -333,7 +418,7 @@ namespace GodOfArcher
                 victimNickname = victimData.Nickname;
             }
 
-            //GameUI.GameplayView.KillFeed.ShowKill(killerNickname, victimNickname, weaponType, isCriticalKill);
+            GameUI.GameplayView.KillFeed.ShowKill(killerNickname, victimNickname, weaponType, isCriticalKill);
         }
 
         [Rpc(RpcSources.All, RpcTargets.StateAuthority, Channel = RpcChannel.Reliable)]

@@ -17,6 +17,7 @@ namespace GodOfArcher
 
         public void ShowHitEffect()
         {
+            Debug.Log("Show Hit Effect");
             if (_hitEffectVisible == true)
                 return;
 
