@@ -1,4 +1,5 @@
 using Fusion;
+using Fusion.Menu;
 using GodOfArcher;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -18,7 +19,7 @@ namespace GodOfArcher
         public UIPlayerView PlayerView;
         public UIGameplayView GameplayView;
         public UIConnectView ConnectView;
-        //public UIGameOverView GameOverView;
+        public UIEndGameView EndGameView;
         //public GameObject ScoreboardView;
         //public GameObject MenuView;
         //public UISettingsView SettingsView;
@@ -44,7 +45,7 @@ namespace GodOfArcher
                 Runner.Shutdown();
             }
 
-            SceneManager.LoadScene("Startup");
+            SceneManager.LoadScene("Network_lab");
         }
 
         private void Awake()
@@ -83,7 +84,7 @@ namespace GodOfArcher
             }
             */
             if (!connect) GameplayView.gameObject.SetActive(gameplayActive);
-            //GameOverView.gameObject.SetActive(gameplayActive == false);
+            EndGameView.gameObject.SetActive(gameplayActive == false);
 
             var playerObject = Runner.GetPlayerObject(Runner.LocalPlayer);
             if (playerObject != null)

@@ -17,7 +17,7 @@ namespace Fusion.Menu {
     /// <summary>
     /// The session code label.
     /// </summary>
-    [InlineHelp, SerializeField] protected Text _codeText;
+    /*[InlineHelp, SerializeField] protected Text _codeText;*/
     /// <summary>
     /// The list of players.
     /// </summary>
@@ -25,7 +25,7 @@ namespace Fusion.Menu {
     /// <summary>
     /// The current player count.
     /// </summary>
-    [InlineHelp, SerializeField] protected Text _playersCountText;
+    /*[InlineHelp, SerializeField] protected Text _playersCountText;*/
     /// <summary>
     /// The max player count.
     /// </summary>
@@ -105,7 +105,7 @@ namespace Fusion.Menu {
             {
                 _menuCamera.enabled = false;
             }*/
-
+/*
             if (Config.CodeGenerator != null && Config.CodeGenerator.IsValid(Connection.SessionName))
             {
                 // Only show the session UI if it is a party code
@@ -118,7 +118,7 @@ namespace Fusion.Menu {
                 //_sessionGameObject.SetActive(false);
             }
 
-            UpdateUsernames();
+            UpdateUsernames();*/
 
       /*if (UpdateUsernameRateInSeconds > 0) {
         _updateUsernamesCoroutine = StartCoroutine(UpdateUsernamesCoroutine());
@@ -181,7 +181,7 @@ namespace Fusion.Menu {
           playerCount += string.IsNullOrEmpty(username) ? 0 : 1;
         }
         //_playersText.text = sBuilder.ToString();
-        _playersCountText.text = $"{playerCount}";
+        //_playersCountText.text = $"{playerCount}";
         //_playersMaxCountText.text = $"/{Connection.MaxPlayerCount}";
       } else {
         //_playersGameObject.SetActive(false);

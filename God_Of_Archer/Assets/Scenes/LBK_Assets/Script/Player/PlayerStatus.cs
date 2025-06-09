@@ -19,7 +19,7 @@ namespace GodOfArcher
         private float runDuration = 7f;
         //[Tooltip("활을 당길 수 있는 최대 시간 (초 단위)")]
         [SerializeField]
-        private float attackDuration = 5f;
+        private float attackDuration = 20f;
 
         public int team = 0;
 
@@ -96,8 +96,8 @@ namespace GodOfArcher
                 }
 
                 currentStamina = Mathf.Max(0f, currentStamina);// 항상 최소 0으로 맞추기
-                //Debug.Log("소모 스테미나: " + amountPerSecond);
-                //Debug.Log("현재 스테미나: " + currentStamina);
+                Debug.Log("소모 스테미나: " + cost);
+                Debug.Log("현재 스테미나: " + currentStamina);
             }
         }
 

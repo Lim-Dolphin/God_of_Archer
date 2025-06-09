@@ -35,34 +35,11 @@ namespace GodOfArcher
 
         private Bow_Weapons _visibleWeapon;
 
-
         // PROTECTED METHODS
 
         protected void PlayFireEffect()
         {
-            /*// In multipeer mode fire sounds are played only for visible runner
-            if (Runner.GetVisible() == false)
-                return;
 
-            if (_fireSoundSources == null)
-            {
-                _fireSoundSources = _fireSoundSourcesRoot.GetComponentsInChildren<AudioSource>();
-            }
-
-            // Find free audio source and play fire sound
-            for (int i = 0; i < _fireSoundSources.Length; i++)
-            {
-                var source = _fireSoundSources[i];
-
-                if (source.isPlaying == true)
-                    continue;
-
-                source.clip = _fireClip;
-                source.Play();
-                return;
-            }
-
-            Debug.LogWarning("No free fire sound source", gameObject);*/
         }
 
         public void Draw(bool justPressed)
@@ -93,72 +70,16 @@ namespace GodOfArcher
             if (CurrentWeapon == null || IsSwitching)
                 return;
 
-            CurrentWeapon.Stop();
+            CurrentWeapon.WeaponeStop();
         }
 
-        /*public void SwitchWeapon(EWeaponType weaponType)
+        public bool Add_Arrow()
         {
-            var newWeapon = GetWeapon(weaponType);
-
-            if (newWeapon == null || newWeapon.IsCollected == false)
-                return;
-            if (newWeapon == CurrentWeapon && _pendingWeapon == null)
-                return;
-            if (newWeapon == _pendingWeapon)
-                return;
-
-            if (CurrentWeapon.IsReloading)
-                return;
-
-            _pendingWeapon = newWeapon;
-            _switchTimer = TickTimer.CreateFromSeconds(Runner, WeaponSwitchTime);
-
-            // For local player start with switch animation but only
-            // in forward tick as starting animation multiple times
-            // during resimulations is not desired.
-            if (HasInputAuthority && Runner.IsForward)
-            {
-                CurrentWeapon.Animator.SetTrigger("Hide");
-                SwitchSound.Play();
-            }
-        }
-
-        public bool PickupWeapon(EWeaponType weaponType)
-        {
-            if (CurrentWeapon.IsReloading)
+            if (CurrentWeapon == null || IsSwitching)
                 return false;
 
-            var weapon = GetWeapon(weaponType);
-            if (weapon == null)
-                return false;
-
-            if (weapon.IsCollected)
-            {
-                // If the weapon is already collected at least refill the ammo.
-                weapon.AddAmmo(weapon.StartAmmo - weapon.RemainingAmmo);
-            }
-            else
-            {
-                // Weapon is already present inside Player prefab,
-                // marking it as IsCollected is all that is needed.
-                weapon.IsCollected = true;
-            }
-
-            SwitchWeapon(weaponType);
-
-            return true;
+            return CurrentWeapon.Add_Arrow_one();
         }
-
-        public Weapon GetWeapon(EWeaponType weaponType)
-        {
-            for (int i = 0; i < AllWeapons.Length; ++i)
-            {
-                if (AllWeapons[i].Type == weaponType)
-                    return AllWeapons[i];
-            }
-
-            return default;
-        }*/
 
         public override void Spawned()
         {

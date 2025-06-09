@@ -23,6 +23,11 @@ namespace GodOfArcher
         private float _lifeTimeAfterHit = 2f;
         [SerializeField]
         private DummyProjectile _dummyProjectilePrefab;
+        [SerializeField] 
+        private int pullSpeed = 100;
+
+        public SkinnedMeshRenderer bowSkin;
+        public SkinnedMeshRenderer arrowSkin;
 
         [FormerlySerializedAs("WeaponVisual")]
         public GameObject FirstPersonVisual;
@@ -33,17 +38,19 @@ namespace GodOfArcher
         public AudioSource ShootSound;
 
         [Header("Ammo")]
+        public GameObject Arrow;
         public int MaxClipAmmo = 10;
         public int StartAmmo = 10;
 
         [Header("Fire Setup")]
-        public float Damage = 10f;
+        public float Damage = 50f;
+        public float gravity = 0.05f;
 
         [Networked]
         public int ClipAmmo { get; set; }
 
         [Networked]
-        public int RemainingAmmo { get; set; }
+        public float drawDistance { get; set; } = 0;
 
         [Networked]
         private int _fireCount { get; set; }
@@ -51,6 +58,8 @@ namespace GodOfArcher
         private NetworkArray<ProjectileData> _projectileData { get; }
 
         private DummyProjectile[] _projectiles = new DummyProjectile[64];
+
+
 
         private int _visibleFireCount;
         private SceneObjects _sceneObjects;
@@ -62,6 +71,7 @@ namespace GodOfArcher
         {
             if (justPressed == true && Drawing == false)
             {
+                if(ClipAmmo > 0) { Arrow.SetActive(true); }
                 Debug.Log("Pressed");
                 Drawing = true;
                 ShootSound.Stop();
@@ -85,27 +95,41 @@ namespace GodOfArcher
                 Drawing = false;
                 DrawSound.Stop();
                 ShootSound.Play();
-                if (ClipAmmo > 0)
+                if (ClipAmmo > 0 && drawDistance >= 10)
                 {
                     _FireRayPosition = firePosition;
                     _FireRayEndPosition = fireDirection;
                     _projectileData.Set(_fireCount % _projectileData.Length, new ProjectileData()
                     {
+                        IsActive = true,
                         FireTick = Runner.Tick,
                         FirePosition = firePosition,
-                        FireVelocity = fireDirection * _speed,
+                        FireVelocity = fireDirection * drawDistance,
+                        FireRotation = Quaternion.LookRotation(fireDirection),
+                        UpVelocity = (new Vector3(0, fireDirection.y, 0)) * drawDistance,
                         FinishTick = Runner.Tick + Mathf.RoundToInt(_lifeTime / Runner.DeltaTime),
-                    });
+                    }); ;
 
+                    drawDistance = 0;
                     _fireCount++;
                     ClipAmmo--;
+                    Arrow.SetActive(false);
                 }
                 return;
             }
         }
-        public void Stop()
+
+        public bool Add_Arrow_one()
+        {
+            if(ClipAmmo >= 10) return false;
+            ClipAmmo++;
+            if (ClipAmmo > 10) ClipAmmo = 10;
+            return true;
+        }
+        public void WeaponeStop()
         {
             Drawing = false;
+            drawDistance = 0;
             ShootSound.Stop();
             DrawSound.Stop();
         }
@@ -114,12 +138,27 @@ namespace GodOfArcher
         {
             _visibleFireCount = _fireCount;
             _sceneObjects = Runner.GetSingleton<SceneObjects>();
+            Arrow.SetActive(false);
             ClipAmmo = StartAmmo;
+
+            for (int i = 0; i < _projectiles.Length; i++)
+            {
+                var data = _projectiles[i];
+                if(data != null) Destroy(data.gameObject);
+            }
+            _projectileData.Clear();
+
         }
 
         public override void FixedUpdateNetwork()
         {
             int tick = Runner.Tick;
+
+            if(Drawing) {
+                drawDistance += Runner.DeltaTime * pullSpeed;
+                if (drawDistance > 100) drawDistance = 100;
+                Debug.Log($"{drawDistance}");
+            }
 
             // Process projectile update
             for (int i = 0; i < _projectileData.Length; i++)
@@ -135,6 +174,7 @@ namespace GodOfArcher
                 // It might be more suitable to move this logic to projectile object itself in order
                 // to have different projectile behaviours without the need to alter the weapon.
                 // See Projectiles Advanced where such approach is used.
+                data.FireVelocity = new Vector3(data.FireVelocity.x, (data.FireVelocity.y - (data.UpVelocity.magnitude * gravity) * Runner.DeltaTime), data.FireVelocity.z);
                 UpdateProjectile(ref data, tick);
 
                 _projectileData.Set(i, data);
@@ -147,6 +187,9 @@ namespace GodOfArcher
             {
                 PlayFireEffect();
             }
+
+            bowSkin.SetBlendShapeWeight(0, drawDistance);
+            arrowSkin.SetBlendShapeWeight(0, drawDistance);
 
             // Instantiate missing projectile objects
             for (int i = _visibleFireCount; i < _fireCount; i++)
@@ -182,7 +225,7 @@ namespace GodOfArcher
                 var projectile = _projectileData[i];
                 var projectileObject = _projectiles[i];
 
-                if (projectile.IsActive == false || projectile.FinishTick < floatTick)
+                if (projectile.IsActive == false)
                 {
                     if (projectileObject != null)
                     {
@@ -200,6 +243,7 @@ namespace GodOfArcher
                 else
                 {
                     projectileObject.transform.position = GetMovePosition(ref projectile, floatTick);
+                    projectileObject.transform.rotation = Quaternion.LookRotation(GetMovePosition(ref projectile, floatTick-1f) - GetMovePosition(ref projectile, floatTick));
                 }
             }
 
@@ -229,13 +273,16 @@ namespace GodOfArcher
                 projectileData.HitPosition = hit.Point;
                 projectileData.FinishTick = tick + Mathf.RoundToInt(_lifeTimeAfterHit / Runner.DeltaTime);
 
-                /*if (hit.Collider != null && hit.Collider.attachedRigidbody != null)
+                if (hit.Collider != null)
                 {
-                    hit.Collider.attachedRigidbody.AddForce(direction * _hitImpulse, ForceMode.Impulse);
-                }*/
+                    projectileData.IsActive = false;
+                    Debug.Log("HitGround!");
+                    _sceneObjects.Gameplay._ArrowContainer.Make_Arrow(projectileData.HitPosition, projectileData.FireVelocity);
+                }
 
                 if (hit.Hitbox != null)
                 {
+                    projectileData.IsActive = false;
                     Debug.Log("Hit!");
                     ApplyDamage(hit.Hitbox, hit.Point, direction);
                 }
@@ -248,7 +295,7 @@ namespace GodOfArcher
 
             if (time <= 0f)
                 return data.FirePosition;
-            //Debug.Log(data.FireVelocity);
+            
             return data.FirePosition + data.FireVelocity * time;
         }
 
@@ -292,13 +339,15 @@ namespace GodOfArcher
         
         private struct ProjectileData : INetworkStruct
         {
-            public bool IsActive => FireTick > 0;
+            public bool IsActive;
 
             public int FireTick;
             public int FinishTick;
 
             public Vector3 FirePosition;
             public Vector3 FireVelocity;
+            public Vector3 UpVelocity;
+            public Quaternion FireRotation;
 
             public Vector3 HitPosition { get; set; }
         }

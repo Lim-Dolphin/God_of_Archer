@@ -57,6 +57,8 @@ namespace GodOfArcher
         public int start_player_cnt = 2;
         public int all_round = 5;
 
+        public Arrow_Containr _ArrowContainer;
+
         [Networked]
         [Capacity(32)]
         [HideInInspector]
@@ -366,7 +368,7 @@ namespace GodOfArcher
         {
             // Stop all respawn coroutines.
             StopAllCoroutines();
-
+            _ArrowContainer.Reset_Arrow_Container();
             State = EGameplayState.Running;
             RemainingTime = TickTimer.CreateFromSeconds(Runner, GameDuration);
             _recentSpawnPoints.Clear();

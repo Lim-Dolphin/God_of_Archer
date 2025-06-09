@@ -7,6 +7,13 @@ using Unity.VisualScripting;
 
 namespace GodOfArcher
 {
+    public enum playerActState
+    {
+        Idle,
+        Attack,
+        Run,
+        Interact,
+    }
     /// <summary>
     /// Main player script which handles input processing, visuals.
     /// </summary>
@@ -31,6 +38,8 @@ namespace GodOfArcher
         public GameObject ThirdPersonRoot;
         public NetworkObject SprayPrefab;
         public LayerMask LayerMask;
+        public playerActState actState;
+        public Team team;
 
         [Header("Movement")]
         public float UpGravity = 15f;
@@ -263,46 +272,12 @@ namespace GodOfArcher
                 bool justPressed = input.Buttons.WasPressed(_previousButtons, EInputButton.interaction);
                 if (justPressed)
                 {
-                    int collisions = Runner.GetPhysicsScene().OverlapSphere(transform.position + Vector3.up, Radius, _colliders, LayerMask, QueryTriggerInteraction.Ignore);
-                    for (int i = 0; i < collisions; i++)
-                    {
-                        var fire = _colliders[i].GetComponentInParent<Signal_Fire>();
-
-                        if (fire != null && fire.State == BeaconState.Active)
-                        {
-                            // Pickup was successful, activating timer.
-                            _activationTimer = TickTimer.CreateFromSeconds(Runner, 3.0f);
-                        }
-
-                        if (fire != null && _activationTimer.Expired(Runner))
-                        {
-                            fire.Ignite();
-                        }
-
-                        if (fire != null && fire.State == BeaconState.Ignited)
-                        {
-                            // Pickup was successful, activating timer.
-                            _activationTimer = TickTimer.CreateFromSeconds(Runner, 7.0f);
-                        }
-
-                        if (fire != null && _activationTimer.Expired(Runner))
-                        {
-                            fire.Extinguish();
-                        }
-                    }
+                    Debug.Log("Interact");
+                    actState = playerActState.Interact;
                 }
                 else
                 {
-                    int collisions = Runner.GetPhysicsScene().OverlapSphere(transform.position + Vector3.up, Radius, _colliders, LayerMask, QueryTriggerInteraction.Ignore);
-                    for (int i = 0; i < collisions; i++)
-                    {
-                        var fire = _colliders[i].GetComponentInParent<Signal_Fire>();
-                        if (fire != null && fire.State == BeaconState.Active)
-                        {
-                            // Pickup was successful, activating timer.
-                            _activationTimer = TickTimer.None;
-                        }
-                    }
+                    actState = playerActState.Idle;
                 }
             }
             

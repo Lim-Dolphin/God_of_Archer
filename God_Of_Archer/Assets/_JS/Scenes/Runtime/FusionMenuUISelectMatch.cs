@@ -20,57 +20,7 @@ namespace Fusion.Menu
     /// </summary>
     public partial class FusionMenuUISelectMatch : FusionMenuUIScreen
     {
-        /// <summary>
-        /// The ui app version dropdown.
-        /// </summary>
-        //[InlineHelp, SerializeField] protected Dropdown _uiAppVersion;
-        /// <summary>
-        /// The app version GameObject to disable this option.
-        /// </summary>
-        //[InlineHelp, SerializeField] protected GameObject _goAppVersion;
-        /// <summary>
-        /// The fullscreen toggle.
-        /// </summary>
-        //[InlineHelp, SerializeField] protected Toggle _uiFullscreen;
-        /// <summary>
-        /// The fullscreen GameObject to disable this option.
-        /// </summary>
-        //[InlineHelp, SerializeField] protected GameObject _goFullscreenn;
-        /// <summary>
-        /// The framerate dropdown.
-        /// </summary>
-        //[InlineHelp, SerializeField] protected Dropdown _uiFramerate;
-        /// <summary>
-        /// The graphics quality dropdown.
-        /// </summary>
-        //[InlineHelp, SerializeField] protected Dropdown _uiGraphicsQuality;
-        /// <summary>
-        /// The max player input field.
-        /// </summary>
-        //[InlineHelp, SerializeField] protected InputField _uiMaxPlayers;
-        /// <summary>
-        /// The region dropdown.
-        /// </summary>
-        //[InlineHelp, SerializeField] protected Dropdown _uiRegion;
-        /// <summary>
-        /// The region GameObject to disable this option.
-        /// </summary>
-        //[InlineHelp, SerializeField] protected GameObject _goRegion;
-        /// <summary>
-        /// The resolution dropdown.
-        /// </summary>
-        //[InlineHelp, SerializeField] protected Dropdown _uiResolution;
-        /// <summary>
-        /// The resoltion GameObject to disable this option.
-        /// </summary>
-        //[InlineHelp, SerializeField] protected GameObject _goResolution;
-        /// <summary>
-        /// The VSync toggle.
-        /// </summary>
-        //[InlineHelp, SerializeField] protected Toggle _uiVSyncCount;
-        /// <summary>
-        /// The 5 vs 5 Deathmatch button.
-        /// </summary>
+        
         [InlineHelp, SerializeField] protected Button _deathMatchButton;
         /// <summary>
         /// The 30 vs 30 Conquer button.
