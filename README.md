@@ -25,7 +25,7 @@
 <br>
 
 ## 💻 Tech Stack
-### Work Stack
+### | Work Stack
 <div align="left">
  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" width="40" height="40"/>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" width="40" height="40"/>
@@ -38,7 +38,7 @@
   <img alt="Static Badge" src="https://img.shields.io/badge/Photon-004480?style=flat-square&logo=Photon&logoColor=white">
 </div>
 
-### Version Control
+### | Version Control
 <div align="left">
   <!-- GitHub -->
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40" height="40"/>
@@ -50,7 +50,7 @@
  <img alt="Static Badge" src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white">
 </div>
 
-### Tools
+### | Tools
 <div align="left">
   <!-- Notion (공식 SVG) -->
   <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" width="40" height="40"/>
@@ -85,7 +85,7 @@
 <br>
 
 ## 🎮 Control & Play
-### Control
+### | Control
 |조작|버튼|
 |:---:|:---:|
 |움직임|W,A,S,D|
@@ -94,7 +94,7 @@
 |활 쏘기|마우스 좌클릭|
 |활 초기화|R|
 
-### Play Method
+### | Play Method
 ```
 1. 마스터 클라이언트가 서버를 연다.
 2. 나머지 플레이어가 참가한다.
