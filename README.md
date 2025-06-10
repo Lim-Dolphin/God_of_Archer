@@ -2,11 +2,11 @@
 
 <img alt="Static Badge" src="https://img.shields.io/badge/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B8%B0%EA%B0%84%3A-2025.05~2025.06-FAB040?style=flat-square&logoColor=white">
 
-|Screen #1|Screen #2|
+|시작 화면|플레이 화면|
 |:---:|:---:|
 |<img src="https://user-images.githubusercontent.com/80824750/208456048-acbf44a8-cd71-4132-b35a-500047adbe1c.gif" width="400"/>|<img src="https://user-images.githubusercontent.com/80824750/208456234-fb5fe434-aa65-4d7a-b955-89098d5bbe0b.gif" width="400"/>|
 
-> 조선의 국궁을 테마로 한 활 멀티 데스매치 FPS 게임.
+> 조선의 국궁을 테마로 한 멀티 활 데스매치 FPS 게임.
 <br>플레이어는 현실적인 물리가 적용된 활을 사용하여 적을 물리친다.
 >
 <br>
@@ -77,7 +77,7 @@
 └─ 
 ```
 
-## 💻 Build & Run
+## 🚩 Build & Run
 1. 빌드
 `[Build Setting] → add GotOfArcher.scene → Build`
 
