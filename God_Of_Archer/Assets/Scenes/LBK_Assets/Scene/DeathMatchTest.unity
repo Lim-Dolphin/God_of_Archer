@@ -419,7 +419,7 @@ MonoBehaviour:
   GameDuration: 180
   PlayerRespawnTime: 5
   DoubleDamageDuration: 30
-  start_player_cnt: 2
+  start_player_cnt: 4
   all_round: 5
   _ArrowContainer: {fileID: 576082419}
   _PlayerData:
