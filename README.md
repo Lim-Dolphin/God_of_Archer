@@ -1,10 +1,7 @@
+![신궁_타이틀](https://github.com/user-attachments/assets/5f52a3e2-c4f7-47f8-ad15-9ef03de20834)
 # 🏹신궁
 
 <img alt="Static Badge" src="https://img.shields.io/badge/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EA%B8%B0%EA%B0%84%3A-2025.05~2025.06-FAB040?style=flat-square&logoColor=white">
-
-|시작 화면|플레이 화면|
-|:---:|:---:|
-|<img src="https://user-images.githubusercontent.com/80824750/208456048-acbf44a8-cd71-4132-b35a-500047adbe1c.gif" width="400"/>|<img src="https://user-images.githubusercontent.com/80824750/208456234-fb5fe434-aa65-4d7a-b955-89098d5bbe0b.gif" width="400"/>|
 
 > 조선의 국궁을 테마로 한 멀티 활 데스매치 FPS 게임.
 <br>플레이어는 현실적인 물리가 적용된 활을 사용하여 적을 물리친다.
@@ -69,19 +66,51 @@
 ## 🗂 Directory
 ```
 📂 Assets
-    📂 Photon
-    📂 Scripts
-    📂 Prefabs
-    📂 Materials 
-├─
-└─ 
+  └─📂 Photon
+  ├─📂 Scripts
+  ├─📂 Prefabs
+  ├─📂 Materials
+  └─📂 Scenes  
+     ├─📂 LBK_Network
+       └─ Network_lab.scene (메인 Scene)
+     └─📂 LBK_Assets
+         ├─ 📂 Animation
+         ├─ 📂 AudioSource
+         ├─ 📂 Prefabs (게임에 필요한 Prefab)
+             ├─ NetworkRunner.prefab (게임에 사용되는 네트워크 러너)
+             ├─ Player_Network_Fin_chung.prefab (청나라 게임 플레이어 프리팹)
+             └─ Player_Network_Fin_Josen.prefab (조건 게임 플레이어 프리팹)
+         ├─ 📂 Scenen
+             ├─ Conquer Test.scene (미완 Scene)
+             ├─ Death Match Test.scene (데스메치 Scene)
+             └─ Practice Test.scene (미완 Scene)
+         ├─ 📂 Script
+             ├─📂 Beacon (봉화 조작 스크립트, 구현 실패)
+             ├─📂 GameScript (Game Mechanism 관련 스크립트)
+                └─ Gameplay.cs (게임 Manager)
+             ├─📂 Menu (Fusion Menu 관련 스크립트)
+             ├─📂 Player (Player 관련 스크립트)    
+             ├─📂 UI (UI 관련 스크립트)      
+             └─📂 Weapons (무기 관련 스크립트)
+         ├─ 📂 Settings
+         └─ 📂 Sprite
+     
 ```
 
 ## 🚩 Build & Run
-1. 빌드
+1. 빌드 세팅
+  Assets → Scenes → LBK_Assets → Scene → DeathMatch → Gameplay → Start_player_cnt 값 설정(반드시 2의 배수로 설정, 최소 2, 최대 10)
+2. 빌드
 `[Build Setting] → add GotOfArcher.scene → Build`
+ ※빌드시 Network_lab.scene, Conquer Test.scene, Death Match Test.scene, Practice Test.scene이 포함되어 있는지 확인
 
-2. 빌드된 파일 실행  `God_Of_Archer.exe`
+3. 빌드된 파일 실행  `God_Of_Archer.exe`
+<br>
+- 1 vs 1 빌드 파일 다운 : https://drive.google.com/file/d/1usnTQj-pA_s217_sGoul5Z_3HTJTiZKb/view?usp=sharing <br>
+
+## 🚩 In Unity
+1. Network_lab.scene으로 이동
+2. 실행
 <br>
 
 ## 🎮 Control & Play
@@ -91,18 +120,24 @@
 |움직임|W,A,S,D|
 |달리기|Shift|
 |활 줍기|E|
-|활 쏘기|마우스 좌클릭|
+|활 장전|마우스 좌클릭(Hold)|
+|활 쏘기|마우스 좌클릭(Release)|
 |활 초기화|R|
 
 ### | Play Method
-```
-1. 마스터 클라이언트가 서버를 연다.
-2. 나머지 플레이어가 참가한다.
-3. 4인이 모이면 게임이 시작된다.
-```
+1. Select Match 버튼 클릭
+![image](https://github.com/user-attachments/assets/f6883a72-fc72-461f-a699-1dc5d4fc938a)
+2. 5 vs 5 버튼 클릭
+![image](https://github.com/user-attachments/assets/a133e27d-2572-41b7-9fba-b54db0f946f7)
+3. Play 버튼 클릭
+![image](https://github.com/user-attachments/assets/eb3514b5-b86a-46f4-bc43-91272b2dfb83)
+4. 접속 대기
+![image](https://github.com/user-attachments/assets/0e5a8916-a7e2-4052-8b5d-259d509484f5)
+5. 게임 플레이
+![image](https://github.com/user-attachments/assets/5a661ae0-f529-43eb-a7ec-4bc175c83daa)
 
 ## 🔗 관련 링크
 - 시연 영상 링크 : ~
-- Notion : 
+- Notion : <br>https://acute-library-43c.notion.site/19de57fa71f28068ad51fa3b40ad7889?source=copy_link
 - Jira : <br>https://roadofmartialts.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?selectedIssue=SCRUM-96
 - Confluence : <br>https://roadofmartialts.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?selectedIssue=SCRUM-96
