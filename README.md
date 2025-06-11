@@ -110,6 +110,7 @@
 
 ## 🚩 In Unity
 1. Network_lab.scene으로 이동
+   
 2. 실행
 <br>
 
@@ -137,7 +138,7 @@
 ![image](https://github.com/user-attachments/assets/5a661ae0-f529-43eb-a7ec-4bc175c83daa)
 
 ## 🔗 관련 링크
-- 시연 영상 링크 : ~
+- 시연 영상 링크 : <br>https://youtu.be/F4DWmPACwdQ?feature=shared
 - Notion : <br>https://acute-library-43c.notion.site/19de57fa71f28068ad51fa3b40ad7889?source=copy_link
 - Jira : <br>https://roadofmartialts.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?selectedIssue=SCRUM-96
 - Confluence : <br>https://roadofmartialts.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog?selectedIssue=SCRUM-96
